@@ -70,6 +70,11 @@ img {
 /* ── Content sections ── */
 .section {
   padding: var(--space-2xl) var(--space-lg);
+  display: none;
+}
+
+.section.active {
+  display: block;
 }
 
 .container {
