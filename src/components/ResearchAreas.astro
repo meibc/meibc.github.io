@@ -1,0 +1,35 @@
+---
+import ResearchCard from './ResearchCard.astro';
+import research from '../data/research.json';
+---
+
+<section id="research" class="section">
+  <div class="container">
+    <h2 class="section-title">Research Areas</h2>
+    <div class="research-grid">
+      {research.map(item => (
+        <ResearchCard title={item.title} description={item.description} icon={item.icon} />
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .research-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+  }
+
+  @media (max-width: 1024px) {
+    .research-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .research-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

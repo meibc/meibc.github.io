@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Natural Language Processing",
+    "description": "Developing transformer-based models for understanding and generating human language, with a focus on low-resource settings and cross-lingual transfer.",
+    "icon": "brain"
+  },
+  {
+    "title": "Computational Social Science",
+    "description": "Applying NLP methods to study online discourse, misinformation, and social dynamics at scale across digital platforms.",
+    "icon": "network"
+  },
+  {
+    "title": "Machine Learning",
+    "description": "Exploring efficient training methods, few-shot learning, and model interpretability for real-world applications.",
+    "icon": "chart"
+  }
+]

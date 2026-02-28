@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import ResearchAreas from '../components/ResearchAreas.astro';
+import Publications from '../components/Publications.astro';
+import CV from '../components/CV.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Meibin Chen — PhD Student" description="Personal academic website of Meibin Chen, PhD student researching NLP and computational social science.">
+  <Navbar />
+  <main>
+    <Hero />
+    <ResearchAreas />
+    <Publications />
+    <CV />
+  </main>
+  <Footer />
+</BaseLayout>

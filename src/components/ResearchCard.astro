@@ -1,0 +1,53 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+const { title, description, icon } = Astro.props;
+
+const iconMap: Record<string, string> = {
+  brain: '🧠',
+  network: '🌐',
+  chart: '📊',
+};
+---
+
+<div class="card">
+  <div class="card-icon">{iconMap[icon] || '📄'}</div>
+  <h3>{title}</h3>
+  <p>{description}</p>
+</div>
+
+<style>
+  .card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: var(--space-lg);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+
+  .card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .card-icon {
+    font-size: 1.75rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .card h3 {
+    color: var(--color-accent);
+    font-size: 1.1rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .card p {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+</style>

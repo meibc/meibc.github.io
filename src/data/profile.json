@@ -1,0 +1,14 @@
+{
+  "name": "Meibin Chen",
+  "title": "PhD Student",
+  "affiliation": "Department of Computer Science, University ABC",
+  "bio": "I am a PhD student researching natural language processing and computational social science. My work focuses on developing methods to analyze and understand human language at scale, with applications in social media analysis and low-resource language processing.",
+  "photo": "/images/profile-placeholder.jpg",
+  "email": "meibin@university.edu",
+  "socialLinks": [
+    { "platform": "googleScholar", "url": "https://scholar.google.com/", "label": "Google Scholar" },
+    { "platform": "github", "url": "https://github.com/", "label": "GitHub" },
+    { "platform": "linkedin", "url": "https://linkedin.com/in/", "label": "LinkedIn" },
+    { "platform": "email", "url": "mailto:meibin@university.edu", "label": "Email" }
+  ]
+}

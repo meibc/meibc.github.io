@@ -1,0 +1,105 @@
+---
+interface Props {
+  title: string;
+  authors: string[];
+  venue: string;
+  year: number;
+  links?: {
+    pdf?: string;
+    doi?: string;
+    arxiv?: string;
+    code?: string;
+  };
+  highlight?: boolean;
+}
+
+const { title, authors, venue, year, links, highlight } = Astro.props;
+const ownerName = 'Meibin Chen';
+---
+
+<div class:list={['pub-entry', { highlight }]}>
+  <h3 class="pub-title">{title}</h3>
+  <p class="pub-authors">
+    {authors.map((author, i) => (
+      <>
+        <span class:list={{ 'author-highlight': author === ownerName }}>{author}</span>
+        {i < authors.length - 1 && ', '}
+      </>
+    ))}
+  </p>
+  <p class="pub-venue">{venue}, {year}</p>
+  {links && (
+    <div class="pub-links">
+      {links.pdf && <a href={links.pdf} target="_blank" rel="noopener">PDF</a>}
+      {links.doi && <a href={links.doi} target="_blank" rel="noopener">DOI</a>}
+      {links.arxiv && <a href={links.arxiv} target="_blank" rel="noopener">arXiv</a>}
+      {links.code && <a href={links.code} target="_blank" rel="noopener">Code</a>}
+    </div>
+  )}
+</div>
+
+<style>
+  .pub-entry {
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .pub-entry:last-child {
+    border-bottom: none;
+  }
+
+  .pub-entry.highlight {
+    background: var(--color-highlight);
+    padding: var(--space-md);
+    border-radius: 6px;
+    border-bottom: none;
+    margin-bottom: var(--space-sm);
+  }
+
+  .pub-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--space-xs);
+    line-height: 1.4;
+  }
+
+  .pub-authors {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-xs);
+  }
+
+  .author-highlight {
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .pub-venue {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    font-style: italic;
+    margin-bottom: var(--space-sm);
+  }
+
+  .pub-links {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+  }
+
+  .pub-links a {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    background: var(--color-highlight);
+    padding: 2px 10px;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+
+  .pub-links a:hover {
+    background: var(--color-accent);
+    color: white;
+  }
+</style>

@@ -1,0 +1,19 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; {year} Meibin Chen. Built with <a href="https://astro.build" target="_blank" rel="noopener">Astro</a>.</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    padding: var(--space-lg);
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+  }
+</style>

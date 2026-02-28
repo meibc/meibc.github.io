@@ -1,0 +1,34 @@
+{
+  "education": [
+    {
+      "degree": "PhD in Computer Science",
+      "institution": "University ABC",
+      "years": "2022 — Present",
+      "description": "Advisor: Prof. Jane Doe. Research focus on NLP and computational social science."
+    },
+    {
+      "degree": "BS in Computer Science",
+      "institution": "University XYZ",
+      "years": "2018 — 2022",
+      "description": "Graduated with honors. Minor in Linguistics."
+    }
+  ],
+  "experience": [
+    {
+      "role": "Research Intern",
+      "organization": "Tech Research Lab",
+      "years": "Summer 2024",
+      "description": "Worked on multilingual language model evaluation and benchmarking."
+    },
+    {
+      "role": "Teaching Assistant",
+      "organization": "University ABC",
+      "years": "2022 — 2024",
+      "description": "TA for Introduction to NLP and Machine Learning courses."
+    }
+  ],
+  "awards": [
+    { "name": "Best Paper Award", "venue": "NLP Workshop 2024", "year": "2024" },
+    { "name": "Graduate Fellowship", "venue": "University ABC", "year": "2022" }
+  ]
+}

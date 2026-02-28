@@ -1,0 +1,23 @@
+import { defineCollection } from 'astro:content';
+import { glob } from 'astro/loaders';
+import { z } from 'astro/zod';
+
+const publications = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/publications' }),
+  schema: z.object({
+    title: z.string(),
+    authors: z.array(z.string()),
+    venue: z.string(),
+    year: z.number(),
+    type: z.enum(['conference', 'journal', 'workshop', 'preprint']).optional(),
+    links: z.object({
+      pdf: z.string().optional(),
+      doi: z.string().optional(),
+      arxiv: z.string().optional(),
+      code: z.string().optional(),
+    }).optional(),
+    highlight: z.boolean().default(false),
+  }),
+});
+
+export const collections = { publications };
