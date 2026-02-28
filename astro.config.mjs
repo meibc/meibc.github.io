@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://meibin-chen.github.io',
+  site: 'https://meibc.github.io',
+  base: '/meibin-chen-website',
   output: 'static',
 });
