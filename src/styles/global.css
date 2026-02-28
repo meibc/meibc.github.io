@@ -1,19 +1,20 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --color-bg: #eee9e1;
+  --color-bg: #eae6de;
   --color-surface: #ffffff;
-  --color-text: #2a3240;
-  --color-text-secondary: #5a7080;
-  --color-accent: #7090b0;
-  --color-accent-light: #8aaac8;
-  --color-border: #d6d0c8;
+  --color-text: #1e2535;
+  --color-text-secondary: #5a5450;
+  --color-accent: #5b7c99;
+  --color-accent-light: #7a9ab5;
+  --color-border: #d0cbc3;
+  --color-highlight: #d4b896;
 
-  --sidebar-bg: #2a3240;
-  --sidebar-width: 280px;
+  --sidebar-bg: #1e2535;
+  --sidebar-width: 230px;
   --mobile-header-height: 52px;
 
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Lato', system-ui, -apple-system, sans-serif;
 
   --space-xs: 0.25rem;
   --space-sm: 0.5rem;
@@ -103,6 +104,11 @@ img {
   height: 3px;
   background: var(--color-accent);
   border-radius: 2px;
+}
+
+/* Keep mobile header out of the desktop grid */
+@media (min-width: 769px) {
+  .mobile-header { display: none !important; }
 }
 
 /* ── Mobile ── */
