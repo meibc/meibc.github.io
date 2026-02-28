@@ -64,7 +64,10 @@ img {
 
 .main-panel {
   background: var(--color-bg);
-  overflow-y: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* ── Content sections ── */
