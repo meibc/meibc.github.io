@@ -1,127 +1,166 @@
 ---
 const navLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'Research', href: '#research' },
-  { label: 'Publications', href: '#publications' },
-  { label: 'CV', href: '#cv' },
+  { label: 'about', href: '#about' },
+  { label: 'research', href: '#research' },
+  { label: 'publications', href: '#publications' },
+  { label: 'cv', href: '#cv' },
 ];
 ---
 
-<nav class="navbar">
-  <div class="nav-container">
-    <a href="#" class="nav-logo">MC</a>
-    <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-    <label for="nav-toggle" class="nav-hamburger" aria-label="Toggle navigation">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
-    <ul class="nav-links">
+<aside class="sidebar">
+  <div class="sidebar-inner">
+    <a href="#about" class="sidebar-name">meibin chen</a>
+    <nav class="sidebar-nav">
       {navLinks.map(link => (
-        <li><a href={link.href}>{link.label}</a></li>
+        <a href={link.href} class="nav-btn">{link.label}</a>
       ))}
-    </ul>
+    </nav>
   </div>
-</nav>
+  <div class="sidebar-divider" aria-hidden="true"></div>
+</aside>
+
+<header class="mobile-header">
+  <a href="#about" class="mobile-name">Meibin Chen</a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+  <label for="nav-toggle" class="nav-hamburger" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </label>
+  <nav class="mobile-nav">
+    {navLinks.map(link => (
+      <a href={link.href}>{link.label}</a>
+    ))}
+  </nav>
+</header>
 
 <style>
-  .navbar {
-    position: fixed;
+  /* ── Desktop sidebar ── */
+  .sidebar {
+    display: flex;
+    height: 100vh;
+    position: sticky;
     top: 0;
-    left: 0;
-    right: 0;
-    height: var(--nav-height);
-    background: rgba(250, 250, 250, 0.9);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--color-border);
-    z-index: 100;
   }
 
-  .nav-container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 var(--space-lg);
-    height: 100%;
+  .sidebar-inner {
+    flex: 1;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .nav-logo {
-    font-weight: 700;
-    font-size: 1.25rem;
-    color: var(--color-accent);
-  }
-
-  .nav-toggle {
-    display: none;
-  }
-
-  .nav-hamburger {
-    display: none;
     flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    padding: var(--space-sm);
+    justify-content: center;
+    padding: 3rem 2.5rem;
+    gap: 2rem;
   }
 
-  .nav-hamburger span {
-    width: 24px;
-    height: 2px;
-    background: var(--color-text);
-    transition: transform 0.2s;
+  .sidebar-name {
+    font-size: 2rem;
+    font-weight: 400;
+    color: rgba(210, 228, 255, 0.9);
+    text-decoration: none;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
   }
 
-  .nav-links {
-    list-style: none;
+  .sidebar-name:hover {
+    color: white;
+  }
+
+  .sidebar-nav {
     display: flex;
-    gap: var(--space-lg);
+    flex-direction: column;
+    gap: 0.6rem;
   }
 
-  .nav-links a {
+  .nav-btn {
+    display: block;
+    padding: 0.55rem 1.25rem;
+    border: 1px solid rgba(210, 228, 255, 0.35);
+    color: rgba(210, 228, 255, 0.8);
+    text-decoration: none;
     font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--color-text-secondary);
-    transition: color 0.2s;
+    text-align: center;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
   }
 
-  .nav-links a:hover {
-    color: var(--color-accent);
+  .nav-btn:hover {
+    background: rgba(210, 228, 255, 0.1);
+    border-color: rgba(210, 228, 255, 0.6);
+    color: rgba(210, 228, 255, 1);
   }
+
+  .sidebar-divider {
+    width: 1px;
+    background: rgba(210, 228, 255, 0.2);
+    align-self: stretch;
+  }
+
+  /* ── Mobile (hidden on desktop) ── */
+  .nav-toggle { display: none; }
+  .mobile-header { display: none; }
 
   @media (max-width: 768px) {
+    .sidebar { display: none; }
+
+    .mobile-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 0.875rem 1.25rem;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: #2d4060;
+      z-index: 100;
+      border-bottom: 1px solid rgba(210, 228, 255, 0.15);
+    }
+
+    .mobile-name {
+      color: rgba(210, 228, 255, 0.9);
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
     .nav-hamburger {
       display: flex;
-    }
-
-    .nav-links {
-      position: absolute;
-      top: var(--nav-height);
-      left: 0;
-      right: 0;
       flex-direction: column;
-      background: rgba(250, 250, 250, 0.97);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--color-border);
-      padding: var(--space-md) var(--space-lg);
-      gap: var(--space-md);
-      display: none;
+      gap: 5px;
+      cursor: pointer;
+      padding: 0.25rem;
     }
 
-    .nav-toggle:checked ~ .nav-links {
-      display: flex;
+    .nav-hamburger span {
+      width: 22px;
+      height: 2px;
+      background: rgba(210, 228, 255, 0.8);
+      transition: transform 0.2s, opacity 0.2s;
+      display: block;
+    }
+
+    .mobile-nav {
+      width: 100%;
+      display: none;
+      flex-direction: column;
+      gap: 0.25rem;
+      padding: 0.75rem 0 0.25rem;
+    }
+
+    .mobile-nav a {
+      color: rgba(210, 228, 255, 0.8);
+      text-decoration: none;
+      padding: 0.35rem 0;
+      font-size: 0.9rem;
     }
 
     .nav-toggle:checked ~ .nav-hamburger span:nth-child(1) {
       transform: rotate(45deg) translate(5px, 5px);
     }
-
     .nav-toggle:checked ~ .nav-hamburger span:nth-child(2) {
       opacity: 0;
     }
-
     .nav-toggle:checked ~ .nav-hamburger span:nth-child(3) {
       transform: rotate(-45deg) translate(5px, -5px);
+    }
+    .nav-toggle:checked ~ .mobile-nav {
+      display: flex;
     }
   }
 </style>

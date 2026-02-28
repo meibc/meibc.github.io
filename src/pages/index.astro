@@ -9,12 +9,14 @@ import Footer from '../components/Footer.astro';
 ---
 
 <BaseLayout title="Meibin Chen — PhD Student" description="Personal academic website of Meibin Chen, PhD student researching NLP and computational social science.">
-  <Navbar />
-  <main>
-    <Hero />
-    <ResearchAreas />
-    <Publications />
-    <CV />
-  </main>
-  <Footer />
+  <div class="page-layout">
+    <Navbar />
+    <main class="main-panel">
+      <Hero />
+      <ResearchAreas />
+      <Publications />
+      <CV />
+      <Footer />
+    </main>
+  </div>
 </BaseLayout>
