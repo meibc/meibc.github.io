@@ -33,5 +33,13 @@ import Footer from '../components/Footer.astro';
 
   showSection(location.hash);
   window.addEventListener('hashchange', () => showSection(location.hash));
+
+  // Close hamburger menu after selecting a section on mobile
+  document.querySelectorAll<HTMLInputElement>('.mobile-nav a').forEach(a => {
+    a.addEventListener('click', () => {
+      const toggle = document.getElementById('nav-toggle') as HTMLInputElement;
+      if (toggle) toggle.checked = false;
+    });
+  });
 </script>
 </BaseLayout>

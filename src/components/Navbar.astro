@@ -156,9 +156,17 @@ const navLinks = [
 
     .mobile-nav {
       width: 100%;
-      display: none;
+      display: flex;
       flex-direction: column;
-      padding: 0.75rem 0 0.25rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                  padding 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      padding: 0;
+    }
+
+    .nav-toggle:checked ~ .mobile-nav {
+      padding-top: 0.75rem;
     }
 
     .mobile-nav a {
@@ -175,6 +183,6 @@ const navLinks = [
     .nav-toggle:checked ~ .nav-hamburger span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
     .nav-toggle:checked ~ .nav-hamburger span:nth-child(2) { opacity: 0; }
     .nav-toggle:checked ~ .nav-hamburger span:nth-child(3) { transform: rotate(-45deg) translate(4px, -4px); }
-    .nav-toggle:checked ~ .mobile-nav { display: flex; }
+    .nav-toggle:checked ~ .mobile-nav { max-height: 300px; }
   }
 </style>
