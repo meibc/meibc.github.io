@@ -1,0 +1,71 @@
+---
+interface Props {
+  title?: string;
+  date?: string;
+  subtitle?: string;
+  body?: string;
+}
+const { title, date, subtitle, body } = Astro.props;
+---
+
+<div class="content-row">
+  {(title || date) && (
+    <div class="row-header">
+      {title && <span class="row-title">{title}</span>}
+      {date && <span class="row-date">{date}</span>}
+    </div>
+  )}
+  {subtitle && <p class="row-subtitle">{subtitle}</p>}
+  {body && <p class="row-body">{body}</p>}
+  <slot />
+</div>
+
+<style>
+  .content-row {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .content-row:last-child {
+    border-bottom: none;
+  }
+
+  .row-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 4px;
+  }
+
+  .row-title {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .row-date {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--text-dim);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .row-subtitle {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    color: var(--text-mid);
+    margin-bottom: 4px;
+  }
+
+  .row-body {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: var(--text-mid);
+    line-height: 1.65;
+    margin-top: 2px;
+  }
+</style>

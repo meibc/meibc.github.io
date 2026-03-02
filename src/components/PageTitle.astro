@@ -1,0 +1,29 @@
+---
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+
+<div class="page-title">
+  <h2>{title}</h2>
+  <div class="title-rule"></div>
+</div>
+
+<style>
+  h2 {
+    font-family: var(--font-sans);
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+
+  .title-rule {
+    width: 28px;
+    height: 2px;
+    background: var(--gold);
+    margin-bottom: 40px;
+  }
+</style>

@@ -1,4 +1,6 @@
 ---
+import Tag from './Tag.astro';
+
 interface Props {
   title: string;
   authors: string[];
@@ -10,96 +12,85 @@ interface Props {
     arxiv?: string;
     code?: string;
   };
-  highlight?: boolean;
 }
 
-const { title, authors, venue, year, links, highlight } = Astro.props;
+const { title, authors, venue, year, links } = Astro.props;
 const ownerName = 'Meibin Chen';
 ---
 
-<div class:list={['pub-entry', { highlight }]}>
-  <h3 class="pub-title">{title}</h3>
+<div class="pub-entry">
   <p class="pub-authors">
     {authors.map((author, i) => (
       <>
-        <span class:list={{ 'author-highlight': author === ownerName }}>{author}</span>
-        {i < authors.length - 1 && ', '}
+        <span class:list={{ owner: author === ownerName, other: author !== ownerName }}>
+          {author}
+        </span>
+        {i < authors.length - 1 && <span class="sep">, </span>}
       </>
     ))}
   </p>
+  <h3 class="pub-title">{title}</h3>
   <p class="pub-venue">{venue}, {year}</p>
   {links && (
     <div class="pub-links">
-      {links.pdf && <a href={links.pdf} target="_blank" rel="noopener">PDF</a>}
-      {links.doi && <a href={links.doi} target="_blank" rel="noopener">DOI</a>}
-      {links.arxiv && <a href={links.arxiv} target="_blank" rel="noopener">arXiv</a>}
-      {links.code && <a href={links.code} target="_blank" rel="noopener">Code</a>}
+      {links.pdf && <Tag label="PDF" />}
+      {links.doi && <Tag label="DOI" />}
+      {links.arxiv && <Tag label="arXiv" />}
+      {links.code && <Tag label="Code" />}
     </div>
   )}
 </div>
 
 <style>
   .pub-entry {
-    padding: var(--space-md) 0;
-    border-bottom: 1px solid var(--color-border);
+    padding: 20px 0;
+    border-bottom: 1px solid var(--rule);
   }
 
   .pub-entry:last-child {
     border-bottom: none;
   }
 
-  .pub-entry.highlight {
-    background: var(--color-highlight);
-    padding: var(--space-md);
-    border-radius: 6px;
-    border-bottom: none;
-    margin-bottom: var(--space-sm);
+  .pub-authors {
+    font-size: 0.78rem;
+    margin-bottom: 4px;
+    line-height: 1.5;
+  }
+
+  .pub-authors .owner {
+    font-weight: 400;
+    color: var(--text);
+  }
+
+  .pub-authors .other {
+    font-weight: 300;
+    color: var(--text-mid);
+  }
+
+  .pub-authors .sep {
+    color: var(--text-mid);
+    font-weight: 300;
   }
 
   .pub-title {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--color-text);
-    margin-bottom: var(--space-xs);
-    line-height: 1.4;
-  }
-
-  .pub-authors {
-    font-size: 0.9rem;
-    color: var(--color-text-secondary);
-    margin-bottom: var(--space-xs);
-  }
-
-  .author-highlight {
-    font-weight: 600;
-    color: var(--color-text);
+    font-family: var(--font-sans);
+    font-size: 0.88rem;
+    font-weight: 400;
+    color: var(--slate);
+    line-height: 1.5;
+    margin-bottom: 4px;
   }
 
   .pub-venue {
-    font-size: 0.85rem;
-    color: var(--color-text-secondary);
+    font-size: 0.75rem;
     font-style: italic;
-    margin-bottom: var(--space-sm);
+    color: var(--text-dim);
+    margin-bottom: 8px;
   }
 
   .pub-links {
     display: flex;
-    gap: var(--space-sm);
+    gap: 6px;
     flex-wrap: wrap;
-  }
-
-  .pub-links a {
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--color-accent);
-    background: var(--color-highlight);
-    padding: 2px 10px;
-    border-radius: 4px;
-    transition: background 0.2s;
-  }
-
-  .pub-links a:hover {
-    background: var(--color-accent);
-    color: white;
   }
 </style>

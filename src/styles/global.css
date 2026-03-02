@@ -1,20 +1,30 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --color-bg: #eae6de;
-  --color-surface: #ffffff;
-  --color-text: #1e2535;
-  --color-text-secondary: #5a5450;
-  --color-accent: #5b7c99;
-  --color-accent-light: #7a9ab5;
-  --color-border: #d0cbc3;
-  --color-highlight: #d4b896;
+  --navy:      #1e2535;
+  --beige:     #e8e4dc;
+  --beige-mid: #dedad2;
+  --slate:     #5b7c99;
+  --slate-dim: #4a6478;
+  --gold:      #c9a961;
+  --text:      #2e2b27;
+  --text-mid:  #5a5450;
+  --text-dim:  #8a8480;
+  --rule:      rgba(0,0,0,0.1);
 
-  --sidebar-bg: #1e2535;
+  /* legacy aliases kept for sidebar */
+  --color-bg: var(--beige);
+  --color-text: var(--text);
+  --color-text-secondary: var(--text-mid);
+  --color-accent: var(--slate);
+  --color-accent-light: #7a9ab5;
+  --color-border: var(--rule);
+  --sidebar-bg: var(--navy);
   --sidebar-width: 230px;
   --mobile-header-height: 52px;
 
   --font-sans: 'Lato', system-ui, -apple-system, sans-serif;
+  --font-mono: 'DM Mono', monospace;
 
   --space-xs: 0.25rem;
   --space-sm: 0.5rem;

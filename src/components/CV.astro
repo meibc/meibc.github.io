@@ -1,61 +1,56 @@
 ---
+import PageTitle from './PageTitle.astro';
+import SectionHeader from './SectionHeader.astro';
+import ContentRow from './ContentRow.astro';
 import cv from '../data/cv-entries.json';
 ---
 
 <section id="cv" class="section">
   <div class="container">
-    <h2 class="section-title">CV</h2>
+    <PageTitle title="CV" />
 
-    <div class="cv-download">
-      <a href="/cv.pdf" target="_blank" rel="noopener" class="download-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-          <polyline points="7 10 12 15 17 10"/>
-          <line x1="12" y1="15" x2="12" y2="3"/>
-        </svg>
-        Download Full CV (PDF)
-      </a>
-    </div>
+    <a href="/cv.pdf" target="_blank" rel="noopener" class="download-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="7 10 12 15 17 10"/>
+        <line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+      Download CV
+    </a>
 
     <div class="cv-sections">
       <div class="cv-group">
-        <h3>Education</h3>
+        <SectionHeader label="Education" />
         {cv.education.map(item => (
-          <div class="cv-item">
-            <div class="cv-item-header">
-              <span class="cv-item-title">{item.degree}</span>
-              <span class="cv-item-years">{item.years}</span>
-            </div>
-            <p class="cv-item-org">{item.institution}</p>
-            <p class="cv-item-desc">{item.description}</p>
-          </div>
+          <ContentRow
+            title={item.degree}
+            date={item.years}
+            subtitle={item.institution}
+            body={item.description}
+          />
         ))}
       </div>
 
       <div class="cv-group">
-        <h3>Experience</h3>
+        <SectionHeader label="Experience" />
         {cv.experience.map(item => (
-          <div class="cv-item">
-            <div class="cv-item-header">
-              <span class="cv-item-title">{item.role}</span>
-              <span class="cv-item-years">{item.years}</span>
-            </div>
-            <p class="cv-item-org">{item.organization}</p>
-            <p class="cv-item-desc">{item.description}</p>
-          </div>
+          <ContentRow
+            title={item.role}
+            date={item.years}
+            subtitle={item.organization}
+            body={item.description}
+          />
         ))}
       </div>
 
       <div class="cv-group">
-        <h3>Awards</h3>
+        <SectionHeader label="Awards" />
         {cv.awards.map(item => (
-          <div class="cv-item">
-            <div class="cv-item-header">
-              <span class="cv-item-title">{item.name}</span>
-              <span class="cv-item-years">{item.year}</span>
-            </div>
-            <p class="cv-item-org">{item.venue}</p>
-          </div>
+          <ContentRow
+            title={item.name}
+            date={item.year}
+            subtitle={item.venue}
+          />
         ))}
       </div>
     </div>
@@ -63,82 +58,29 @@ import cv from '../data/cv-entries.json';
 </section>
 
 <style>
-  .cv-download {
-    margin-bottom: var(--space-xl);
-  }
-
   .download-btn {
     display: inline-flex;
     align-items: center;
-    gap: var(--space-sm);
-    background: var(--color-accent);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 6px;
-    font-weight: 500;
-    font-size: 0.9rem;
-    transition: background 0.2s, transform 0.2s;
+    gap: 6px;
+    border: 1px solid rgba(91, 124, 153, 0.4);
+    color: var(--slate);
+    font-family: var(--font-sans);
+    font-weight: 300;
+    font-size: 0.78rem;
+    padding: 9px 16px;
+    border-radius: 2px;
+    margin-bottom: var(--space-lg);
+    transition: border-color 0.2s, color 0.2s;
   }
 
   .download-btn:hover {
-    background: var(--color-accent-light);
-    color: white;
-    transform: translateY(-1px);
+    border-color: var(--slate);
+    color: var(--slate-dim);
   }
 
   .cv-sections {
     display: flex;
     flex-direction: column;
-    gap: var(--space-xl);
-  }
-
-  .cv-group h3 {
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: var(--color-accent);
-    margin-bottom: var(--space-md);
-    padding-bottom: var(--space-sm);
-    border-bottom: 2px solid var(--color-border);
-  }
-
-  .cv-item {
-    padding: var(--space-md) 0;
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .cv-item:last-child {
-    border-bottom: none;
-  }
-
-  .cv-item-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: var(--space-md);
-    flex-wrap: wrap;
-  }
-
-  .cv-item-title {
-    font-weight: 600;
-    font-size: 0.95rem;
-  }
-
-  .cv-item-years {
-    font-size: 0.85rem;
-    color: var(--color-text-secondary);
-    white-space: nowrap;
-  }
-
-  .cv-item-org {
-    font-size: 0.9rem;
-    color: var(--color-text-secondary);
-    margin-top: var(--space-xs);
-  }
-
-  .cv-item-desc {
-    font-size: 0.85rem;
-    color: var(--color-text-secondary);
-    margin-top: var(--space-xs);
-    line-height: 1.6;
+    gap: var(--space-lg);
   }
 </style>

@@ -1,35 +1,55 @@
 ---
-import ResearchCard from './ResearchCard.astro';
+import PageTitle from './PageTitle.astro';
 import research from '../data/research.json';
 ---
 
 <section id="research" class="section">
   <div class="container">
-    <h2 class="section-title">Research Areas</h2>
-    <div class="research-grid">
-      {research.map(item => (
-        <ResearchCard title={item.title} description={item.description} icon={item.icon} />
+    <PageTitle title="Research" />
+    <div class="research-list">
+      {research.map((area, i) => (
+        <div class:list={['research-area', { active: i === 0 }]}>
+          <h3 class="area-title">{area.title}</h3>
+          <p class="area-desc">{area.description}</p>
+        </div>
       ))}
     </div>
   </div>
 </section>
 
 <style>
-  .research-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-lg);
+  .research-list {
+    display: flex;
+    flex-direction: column;
   }
 
-  @media (max-width: 1024px) {
-    .research-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  .research-area {
+    padding: 20px 0 20px 16px;
+    border-bottom: 1px solid var(--rule);
+    border-left: 2px solid transparent;
   }
 
-  @media (max-width: 768px) {
-    .research-grid {
-      grid-template-columns: 1fr;
-    }
+  .research-area:last-child {
+    border-bottom: none;
+  }
+
+  .research-area.active {
+    border-left-color: var(--gold);
+  }
+
+  .area-title {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .area-desc {
+    font-family: var(--font-sans);
+    font-weight: 300;
+    font-size: 0.8rem;
+    color: var(--text-mid);
+    line-height: 1.7;
   }
 </style>

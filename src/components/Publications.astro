@@ -1,19 +1,18 @@
 ---
 import { getCollection } from 'astro:content';
+import PageTitle from './PageTitle.astro';
 import PublicationEntry from './PublicationEntry.astro';
 
 const publications = await getCollection('publications');
 const sorted = publications.sort((a, b) => {
   if (b.data.year !== a.data.year) return b.data.year - a.data.year;
-  if (b.data.highlight && !a.data.highlight) return 1;
-  if (a.data.highlight && !b.data.highlight) return -1;
   return a.data.title.localeCompare(b.data.title);
 });
 ---
 
 <section id="publications" class="section">
   <div class="container">
-    <h2 class="section-title">Publications</h2>
+    <PageTitle title="Publications" />
     <div class="pub-list">
       {sorted.map(pub => (
         <PublicationEntry
@@ -22,7 +21,6 @@ const sorted = publications.sort((a, b) => {
           venue={pub.data.venue}
           year={pub.data.year}
           links={pub.data.links}
-          highlight={pub.data.highlight}
         />
       ))}
     </div>
