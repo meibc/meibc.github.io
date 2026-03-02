@@ -1,5 +1,6 @@
 ---
 import PageTitle from './PageTitle.astro';
+import Tag from './Tag.astro';
 import research from '../data/research.json';
 ---
 
@@ -7,10 +8,34 @@ import research from '../data/research.json';
   <div class="container">
     <PageTitle title="Research" />
     <div class="research-list">
-      {research.map((area, i) => (
-        <div class:list={['research-area', { active: i === 0 }]}>
-          <h3 class="area-title">{area.title}</h3>
-          <p class="area-desc">{area.description}</p>
+      {research.map(area => (
+        <div class="research-area">
+          <div class="area-main">
+            <h3 class="area-title">{area.title}</h3>
+            <p class="area-desc">{area.description}</p>
+          </div>
+          <div class="featured-paper">
+            <p class="paper-label">Featured Paper</p>
+            <p class="paper-title">{area.featuredPaper.title}</p>
+            <p class="paper-venue">{area.featuredPaper.venue}</p>
+            <div class="paper-links">
+              {area.featuredPaper.links.doi && (
+                <a href={area.featuredPaper.links.doi} target="_blank" rel="noopener">
+                  <Tag label="DOI" />
+                </a>
+              )}
+              {area.featuredPaper.links.arxiv && (
+                <a href={area.featuredPaper.links.arxiv} target="_blank" rel="noopener">
+                  <Tag label="arXiv" />
+                </a>
+              )}
+              {area.featuredPaper.links.code && (
+                <a href={area.featuredPaper.links.code} target="_blank" rel="noopener">
+                  <Tag label="Code" />
+                </a>
+              )}
+            </div>
+          </div>
         </div>
       ))}
     </div>
@@ -24,16 +49,21 @@ import research from '../data/research.json';
   }
 
   .research-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
     padding: 20px 0 20px 16px;
     border-bottom: 1px solid var(--rule);
     border-left: 2px solid transparent;
+    transition: border-left-color 0.2s ease;
+    align-items: start;
   }
 
   .research-area:last-child {
     border-bottom: none;
   }
 
-  .research-area.active {
+  .research-area:hover {
     border-left-color: var(--gold);
   }
 
@@ -51,5 +81,52 @@ import research from '../data/research.json';
     font-size: 0.95rem;
     color: var(--text-mid);
     line-height: 1.7;
+  }
+
+  .featured-paper {
+    padding: 14px 16px;
+    border: 1px solid var(--rule);
+    border-left: 2px solid var(--gold);
+    background: rgba(201, 169, 97, 0.04);
+  }
+
+  .paper-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  .paper-title {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--slate);
+    line-height: 1.5;
+    margin-bottom: 4px;
+  }
+
+  .paper-venue {
+    font-size: 0.88rem;
+    font-style: italic;
+    color: var(--text-dim);
+    margin-bottom: 10px;
+  }
+
+  .paper-links {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .paper-links a {
+    text-decoration: none;
+  }
+
+  @media (max-width: 640px) {
+    .research-area {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

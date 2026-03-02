@@ -2,16 +2,36 @@
   {
     "title": "Natural Language Processing",
     "description": "Developing transformer-based models for understanding and generating human language, with a focus on low-resource settings and cross-lingual transfer.",
-    "icon": "brain"
+    "featuredPaper": {
+      "title": "Cross-Lingual Transfer for Low-Resource Language Understanding",
+      "venue": "EMNLP 2024",
+      "links": {
+        "doi": "https://doi.org/10.xxxx/xxxxx",
+        "code": "https://github.com/"
+      }
+    }
   },
   {
     "title": "Computational Social Science",
     "description": "Applying NLP methods to study online discourse, misinformation, and social dynamics at scale across digital platforms.",
-    "icon": "network"
+    "featuredPaper": {
+      "title": "Understanding Online Discourse Dynamics Through Multi-Scale NLP Analysis",
+      "venue": "ACL 2025",
+      "links": {
+        "doi": "https://doi.org/10.xxxx/xxxxx",
+        "arxiv": "https://arxiv.org/abs/xxxx.xxxxx"
+      }
+    }
   },
   {
     "title": "Machine Learning",
     "description": "Exploring efficient training methods, few-shot learning, and model interpretability for real-world applications.",
-    "icon": "chart"
+    "featuredPaper": {
+      "title": "Efficient Few-Shot Learning for Social Media Text Classification",
+      "venue": "ACL 2024 Workshop",
+      "links": {
+        "arxiv": "https://arxiv.org/abs/xxxx.xxxxx"
+      }
+    }
   }
 ]
