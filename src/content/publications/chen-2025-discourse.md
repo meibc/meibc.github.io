@@ -10,5 +10,5 @@ type: "conference"
 links:
   doi: "https://doi.org/10.xxxx/xxxxx"
   arxiv: "https://arxiv.org/abs/xxxx.xxxxx"
-highlight: true
+highlight: false
 ---
