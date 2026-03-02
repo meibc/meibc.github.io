@@ -33,10 +33,10 @@ const ownerName = 'Meibin Chen';
   <p class="pub-venue">{venue}, {year}</p>
   {links && (
     <div class="pub-links">
-      {links.pdf && <Tag label="PDF" />}
-      {links.doi && <Tag label="DOI" />}
-      {links.arxiv && <Tag label="arXiv" />}
-      {links.code && <Tag label="Code" />}
+      {links.pdf && <a href={links.pdf} target="_blank" rel="noopener"><Tag label="PDF" /></a>}
+      {links.doi && <a href={links.doi} target="_blank" rel="noopener"><Tag label="DOI" /></a>}
+      {links.arxiv && <a href={links.arxiv} target="_blank" rel="noopener"><Tag label="arXiv" /></a>}
+      {links.code && <a href={links.code} target="_blank" rel="noopener"><Tag label="Code" /></a>}
     </div>
   )}
 </div>
