@@ -14,27 +14,25 @@ import research from '../data/research.json';
             <h3 class="area-title">{area.title}</h3>
             <p class="area-desc">{area.description}</p>
           </div>
-          <div class="featured-paper">
-            <p class="paper-label">Featured Paper</p>
-            <p class="paper-title">{area.featuredPaper.title}</p>
-            <p class="paper-venue">{area.featuredPaper.venue}</p>
-            <div class="paper-links">
-              {area.featuredPaper.links.doi && (
-                <a href={area.featuredPaper.links.doi} target="_blank" rel="noopener">
-                  <Tag label="DOI" />
-                </a>
-              )}
-              {area.featuredPaper.links.arxiv && (
-                <a href={area.featuredPaper.links.arxiv} target="_blank" rel="noopener">
-                  <Tag label="arXiv" />
-                </a>
-              )}
-              {area.featuredPaper.links.code && (
-                <a href={area.featuredPaper.links.code} target="_blank" rel="noopener">
-                  <Tag label="Code" />
-                </a>
-              )}
-            </div>
+          <div class="featured-papers">
+            <p class="paper-label">Featured Paper{area.featuredPapers.length > 1 ? 's' : ''}</p>
+            {area.featuredPapers.map(paper => (
+              <div class="featured-paper">
+                <p class="paper-title">{paper.title}</p>
+                <p class="paper-venue">{paper.venue}</p>
+                <div class="paper-links">
+                  {paper.links.doi && (
+                    <a href={paper.links.doi} target="_blank" rel="noopener"><Tag label="DOI" /></a>
+                  )}
+                  {paper.links.arxiv && (
+                    <a href={paper.links.arxiv} target="_blank" rel="noopener"><Tag label="arXiv" /></a>
+                  )}
+                  {paper.links.code && (
+                    <a href={paper.links.code} target="_blank" rel="noopener"><Tag label="Code" /></a>
+                  )}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       ))}
@@ -81,6 +79,12 @@ import research from '../data/research.json';
     font-size: 0.95rem;
     color: var(--text-mid);
     line-height: 1.7;
+  }
+
+  .featured-papers {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
 
   .featured-paper {
