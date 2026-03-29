@@ -1,13 +1,32 @@
 ---
-title: "Cross-Lingual Transfer for Low-Resource Language Understanding"
+title: "Implementation pathways of a health services delivery redesign model to improve maternal and newborn outcomes in Kenya"
 authors:
   - "Meibin Chen"
   - "Alice Wang"
-venue: "EMNLP 2024"
-year: 2024
-type: "conference"
+  - "Marleen Temmerman"
+  - "Gregory S. Omondi"
+  - "Zahida Qureshi"
+  - "Margaret W. Gachiri"
+  - "Beldine Gathigia"
+  - "Nora J. Kenworthy"
+  - "S. Patrick Kachur"
+  - "Margaret E. Kruk"
+  - "Patrick T. Wedlock"
+  - "Victor Bwire"
+  - "Everline Nyanchama"
+  - "Jacinta Angote Mbelesia"
+  - "Stephen Wandei"
+  - "Anna Kalbarczyk"
+  - "Kojo Nimako"
+  - "Savitha Subramanian"
+  - "David H. Peters"
+  - "Takeru Igusa"
+  - "Olakunle Alonge"
+venue: "BMJ Global Health"
+year: 2026
+type: "journal"
 links:
-  doi: "https://doi.org/10.xxxx/xxxxx"
+  doi: "https://doi.org/10.1136/bmjgh-2024-018240"
   code: "https://github.com/"
 highlight: false
 ---
