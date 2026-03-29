@@ -2,16 +2,8 @@
 title: "Implementation pathways of a health services delivery redesign model to improve maternal and newborn outcomes in Kenya"
 authors:
   - "Meibin Chen"
-  - "Alice Wang"
-  - "Marleen Temmerman"
-  - "Gregory S. Omondi"
-  - "Zahida Qureshi"
-  - "Margaret W. Gachiri"
-  - "Beldine Gathigia"
-  - "Nora J. Kenworthy"
-  - "S. Patrick Kachur"
-  - "Margaret E. Kruk"
-  - "Patrick T. Wedlock"
+  - "Tingting Ji"
+  - "Patrick T Wedlock"
   - "Victor Bwire"
   - "Everline Nyanchama"
   - "Jacinta Angote Mbelesia"
@@ -30,3 +22,4 @@ links:
   pdf: "https://gh.bmj.com/content/bmjgh/11/1/e018240.full.pdf"
 highlight: false
 ---
+
