@@ -1,16 +1,22 @@
 {
   "education": [
     {
-      "degree": "PhD in Computer Science",
-      "institution": "University ABC",
-      "years": "2022 — Present",
-      "description": "Advisor: Prof. Jane Doe. Research focus on NLP and computational social science."
+      "degree": "PhD in Systems Science",
+      "institution": "Johns Hopkins University",
+      "years": "2021 — Present",
+      "description": "Advisor: Prof. Tak Igusa."
     },
     {
-      "degree": "BS in Computer Science",
-      "institution": "University XYZ",
-      "years": "2018 — 2022",
-      "description": "Graduated with honors. Minor in Linguistics."
+      "degree": "MS in Applied Math and Statistics",
+      "institution": "Johns Hopkins University",
+      "years": "2024-2026",
+      "description": ""
+    },
+    {
+      "degree": "BS in Biomedical Engineering",
+      "institution": "Yale University",
+      "years": "2015-2019",
+      "description": ""
     }
   ],
   "experience": [

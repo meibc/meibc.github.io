@@ -1,14 +1,14 @@
 {
   "name": "Meibin Chen",
   "title": "PhD Student",
-  "affiliation": "Department of Computer Science, University ABC",
-  "bio": "I am a PhD student researching natural language processing and computational social science. My work focuses on developing methods to analyze and understand human language at scale, with applications in social media analysis and low-resource language processing.",
+  "affiliation": "Department of Systems Science, Johns Hopkins University",
+  "bio": "I am a PhD student developing quantitative and systems-based approaches to conduct intervention evaluation, integrating statistical modeling, conceptual frameworks, and real-world implementation insights. My work focuses on translating complex social and behavioral dynamics into decision-relevant tools.",
   "photo": "/images/profile-placeholder.jpg",
-  "email": "meibin@university.edu",
+  "email": "mchen148@jhu.edu",
   "socialLinks": [
-    { "platform": "googleScholar", "url": "https://scholar.google.com/", "label": "Google Scholar" },
-    { "platform": "github", "url": "https://github.com/", "label": "GitHub" },
+    { "platform": "googleScholar", "url": "https://scholar.google.com/citations?hl=en&user=oX4PyY8AAAAJ&view_op=list_works&sortby=pubdate", "label": "Google Scholar" },
+    { "platform": "github", "url": "https://github.com/meibc", "label": "GitHub" },
     { "platform": "linkedin", "url": "https://linkedin.com/in/", "label": "LinkedIn" },
-    { "platform": "email", "url": "mailto:meibin@university.edu", "label": "Email" }
+    { "platform": "email", "url": "mailto:mchen148@jhu.edu", "label": "Email" }
   ]
 }
