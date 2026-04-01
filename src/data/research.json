@@ -1,48 +1,102 @@
 [
   {
-    "title": "Natural Language Processing",
-    "description": "Developing transformer-based models for understanding and generating human language, with a focus on low-resource settings and cross-lingual transfer.",
-    "featuredPapers": [
+    "title": "Modeling Complex Systems",
+    "description": "Building conceptual and quantitative models to understand how health and social systems behave over time, especially when outcomes depend on feedback, implementation, and local context.",
+    "subareas": [
       {
-        "title": "Cross-Lingual Transfer for Low-Resource Language Understanding",
-        "venue": "EMNLP 2024",
-        "links": {
-          "doi": "https://doi.org/10.xxxx/xxxxx",
-          "code": "https://github.com/"
-        }
+        "title": "HIV Stigma & Service Engagement",
+        "description": "Developing systems models that connect stigma, healthcare engagement, and prevention behaviors, including causal loop diagrams and quantitative dynamic models."
+      },
+      {
+        "title": "Maternal Health & Service Delivery Redesign",
+        "description": "Modeling maternal and neonatal health interventions in Kenya, with a focus on how implementation design, referral systems, and health-system constraints shape outcomes."
+      },
+      {
+        "title": "Qualitative-to-Quantitative Translation",
+        "description": "Translating conceptual and qualitative systems work into quantitative models that can be used for simulation, evaluation, and decision-making."
       }
-    ]
-  },
-  {
-    "title": "Computational Social Science",
-    "description": "Applying NLP methods to study online discourse, misinformation, and social dynamics at scale across digital platforms.",
-    "featuredPapers": [
+    ],
+    "featuredProjects": [
       {
-        "title": "Understanding Online Discourse Dynamics Through Multi-Scale NLP Analysis",
-        "venue": "ACL 2025",
+        "title": "Visualizing Stigma and HIV Service Engagement",
+        "venue": "Participatory systems modeling and quantitative translation",
         "links": {
-          "doi": "https://doi.org/10.xxxx/xxxxx",
-          "arxiv": "https://arxiv.org/abs/xxxx.xxxxx"
+          "project": "/projects/hiv-stigma-model"
         }
       },
       {
-        "title": "Efficient Few-Shot Learning for Social Media Text Classification",
-        "venue": "ACL 2024 Workshop",
+        "title": "Service Delivery Redesign Modeling in Kenya",
+        "venue": "Maternal and neonatal health systems modeling",
         "links": {
-          "arxiv": "https://arxiv.org/abs/xxxx.xxxxx"
+          "project": "/projects/sdr-model"
         }
       }
     ]
   },
   {
-    "title": "Machine Learning",
-    "description": "Exploring efficient training methods, few-shot learning, and model interpretability for real-world applications.",
-    "featuredPapers": [
+    "title": "Data & Inference",
+    "description": "Using statistical modeling, estimation, and reweighting methods to learn from incomplete or biased health data and produce more decision-relevant population estimates.",
+    "subareas": [
       {
-        "title": "Efficient Few-Shot Learning for Social Media Text Classification",
-        "venue": "ACL 2024 Workshop",
+        "title": "Population Estimation",
+        "description": "Estimating MSM populations and related demographic distributions using survey data, ACS data, and simulation-based methods."
+      },
+      {
+        "title": "Reweighting & Bias Correction",
+        "description": "Applying IPF, raking, and related methods to align nonprobability samples with target populations and improve downstream inference."
+      },
+      {
+        "title": "Survey-Based Estimation",
+        "description": "Working with repeated cross-sectional and observational health datasets to estimate latent or hard-to-measure quantities."
+      }
+    ],
+    "featuredProjects": [
+      {
+        "title": "MSM Population Estimation Framework",
+        "venue": "Survey-based demographic estimation and simulation",
         "links": {
-          "arxiv": "https://arxiv.org/abs/xxxx.xxxxx"
+          "project": "/projects/msm-estimation"
+        }
+      },
+      {
+        "title": "Reweighting AMIS Data for Population-Level Inference",
+        "venue": "Bias correction and calibration for health surveys",
+        "links": {
+          "project": "/projects/reweighting-bias-correction"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Decision Support & Tools",
+    "description": "Designing outputs that make complex analyses usable for real-world decision-making, including dashboards, stakeholder-facing tools, and intervention-focused evaluation frameworks.",
+    "subareas": [
+      {
+        "title": "Dashboards & Stakeholder Tools",
+        "description": "Building interfaces and decision tools that help partners explore model results, compare scenarios, and understand uncertainty."
+      },
+      {
+        "title": "Funding & Intervention Evaluation",
+        "description": "Using models and quantitative analysis to support strategic decisions about which interventions to fund, scale, or prioritize."
+      },
+      {
+        "title": "Participatory Decision Support",
+        "description": "Integrating stakeholder knowledge into model design and interpretation so outputs are more aligned with real implementation contexts."
+      }
+    ],
+    "featuredProjects": [
+      {
+        "title": "Maternal Health Decision Dashboard",
+        "venue": "Scenario-based decision support for health systems",
+        "links": {
+          "project": "/projects/decision-dashboard"
+        }
+      },
+      {
+        "title": "Intervention Evaluation for Public Health Funding Decisions",
+        "venue": "Quantitative support for strategic decision-making",
+        "links": {
+          "project": "/projects/intervention-evaluation"
         }
       }
     ]
