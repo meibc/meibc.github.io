@@ -1,32 +1,47 @@
 [
   {
     "title": "Modeling Complex Systems",
-    "description": "Building conceptual and quantitative models to understand how health and social systems behave over time. Current work includes HIV stigma and service engagement models, maternal health and service delivery redesign models, and translating qualitative systems work into quantitative simulation frameworks.",
-    "featuredPapers": [
+    "description": "Building conceptual and quantitative models to understand how health and social systems behave over time.",
+    "subareas": [
       {
-        "title": "HIV Stigma & Service Engagement Modeling",
-        "venue": "Systems modeling and quantitative translation",
-        "links": {
-          "code": "/projects/hiv-stigma-model"
-        }
+        "title": "HIV Stigma & Service Engagement",
+        "description": "This line of work develops conceptual and quantitative models to represent how stigma influences service engagement over time, and translates qualitative systems insights into simulation-ready structures for intervention testing.",
+        "featuredWork": [
+          {
+            "title": "HIV Stigma & Service Engagement Modeling",
+            "venue": "Systems modeling and quantitative translation",
+            "links": {
+              "viewMore": "/research/hiv-stigma-service-engagement",
+              "code": "/projects/hiv-stigma-model"
+            }
+          }
+        ]
       },
       {
-        "title": "Maternal Health & Service Delivery Redesign Modeling",
-        "venue": "Health systems modeling in Kenya",
-        "links": {
-          "code": "/projects/sdr-model"
-        }
+        "title": "Maternal Health & Service Delivery Redesign",
+        "description": "Modeling service pathways, constraints, and redesign options to support maternal health program decision-making in Kenyan health systems.",
+        "featuredWork": [
+          {
+            "title": "Maternal Health & Service Delivery Redesign Modeling",
+            "venue": "Health systems modeling in Kenya",
+            "links": {
+              "viewMore": "/research/maternal-health-service-redesign",
+              "code": "/projects/sdr-model"
+            }
+          }
+        ]
       }
     ]
   },
   {
     "title": "Data & Inference",
     "description": "Using statistical modeling, estimation, and reweighting methods to learn from incomplete or biased health data. This includes MSM population estimation, survey-based inference, and bias correction through methods like IPF and raking.",
-    "featuredPapers": [
+    "featuredWork": [
       {
         "title": "MSM Population Estimation",
         "venue": "Population estimation and simulation",
         "links": {
+          "viewMore": "/research/msm-population-estimation",
           "code": "/projects/msm-estimation"
         }
       },
@@ -34,6 +49,7 @@
         "title": "Reweighting & Bias Correction for Health Surveys",
         "venue": "Survey calibration and inference",
         "links": {
+          "viewMore": "/research/reweighting-bias-correction",
           "code": "/projects/reweighting-bias-correction"
         }
       }
@@ -42,11 +58,12 @@
   {
     "title": "Decision Support & Tools",
     "description": "Designing outputs that make complex analyses usable for real-world decision-making, including dashboards, stakeholder-facing tools, and intervention-focused evaluation frameworks.",
-    "featuredPapers": [
+    "featuredWork": [
       {
         "title": "Decision Dashboards for Health Systems",
         "venue": "Stakeholder-facing tools and scenario exploration",
         "links": {
+          "viewMore": "/research/decision-dashboards-health-systems",
           "code": "/projects/decision-dashboard"
         }
       },
@@ -54,6 +71,7 @@
         "title": "Intervention Evaluation for Funding Decisions",
         "venue": "Decision support and applied modeling",
         "links": {
+          "viewMore": "/research/intervention-evaluation-funding-decisions",
           "code": "/projects/intervention-evaluation"
         }
       }

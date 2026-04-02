@@ -2,6 +2,8 @@
 import PageTitle from './PageTitle.astro';
 import Tag from './Tag.astro';
 import research from '../data/research.json';
+
+const getFeaturedWork = (item) => item.featuredWork ?? item.featuredPapers ?? [];
 ---
 
 <section id="research" class="section">
@@ -14,26 +16,63 @@ import research from '../data/research.json';
             <h3 class="area-title">{area.title}</h3>
             <p class="area-desc">{area.description}</p>
           </div>
-          <div class="featured-papers">
-            <p class="paper-label">Featured Paper{area.featuredPapers.length > 1 ? 's' : ''}</p>
-            {area.featuredPapers.map(paper => (
-              <div class="featured-paper">
-                <p class="paper-title">{paper.title}</p>
-                <p class="paper-venue">{paper.venue}</p>
-                <div class="paper-links">
-                  {paper.links.doi && (
-                    <a href={paper.links.doi} target="_blank" rel="noopener"><Tag label="DOI" /></a>
-                  )}
-                  {paper.links.arxiv && (
-                    <a href={paper.links.arxiv} target="_blank" rel="noopener"><Tag label="arXiv" /></a>
-                  )}
-                  {paper.links.code && (
-                    <a href={paper.links.code} target="_blank" rel="noopener"><Tag label="Code" /></a>
+
+          {area.subareas?.length ? (
+            <div class="subareas">
+              {area.subareas.map(subarea => (
+                <div class="subarea">
+                  <h4 class="subarea-title">{subarea.title}</h4>
+                  {subarea.description && <p class="subarea-desc">{subarea.description}</p>}
+
+                  {getFeaturedWork(subarea).length > 0 && (
+                    <div class="featured-papers">
+                      <p class="paper-label">
+                        Featured Work{getFeaturedWork(subarea).length > 1 ? 's' : ''}
+                      </p>
+                      {getFeaturedWork(subarea).map(work => (
+                        <div class="featured-paper">
+                          <p class="paper-title">{work.title}</p>
+                          <p class="paper-venue">{work.venue}</p>
+                          <div class="paper-links">
+                            {work.links.viewMore && (
+                              <a href={work.links.viewMore}><Tag label="View More" /></a>
+                            )}
+                            {work.links.paper && (
+                              <a href={work.links.paper} target="_blank" rel="noopener"><Tag label="Paper" /></a>
+                            )}
+                            {work.links.code && (
+                              <a href={work.links.code} target="_blank" rel="noopener"><Tag label="Code" /></a>
+                            )}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   )}
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <div class="featured-papers">
+              <p class="paper-label">Featured Work{getFeaturedWork(area).length > 1 ? 's' : ''}</p>
+              {getFeaturedWork(area).map(work => (
+                <div class="featured-paper">
+                  <p class="paper-title">{work.title}</p>
+                  <p class="paper-venue">{work.venue}</p>
+                  <div class="paper-links">
+                    {work.links.viewMore && (
+                      <a href={work.links.viewMore}><Tag label="View More" /></a>
+                    )}
+                    {work.links.paper && (
+                      <a href={work.links.paper} target="_blank" rel="noopener"><Tag label="Paper" /></a>
+                    )}
+                    {work.links.code && (
+                      <a href={work.links.code} target="_blank" rel="noopener"><Tag label="Code" /></a>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       ))}
     </div>
@@ -79,6 +118,32 @@ import research from '../data/research.json';
     font-size: 0.95rem;
     color: var(--text-mid);
     line-height: 1.7;
+  }
+
+  .subareas {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .subarea {
+    padding: 14px 16px;
+    border: 1px solid var(--rule);
+    background: rgba(201, 169, 97, 0.03);
+  }
+
+  .subarea-title {
+    font-size: 0.96rem;
+    font-weight: 600;
+    color: var(--slate);
+    margin-bottom: 6px;
+  }
+
+  .subarea-desc {
+    font-size: 0.9rem;
+    color: var(--text-mid);
+    line-height: 1.6;
+    margin-bottom: 10px;
   }
 
   .featured-papers {
