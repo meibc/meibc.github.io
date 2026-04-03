@@ -9,10 +9,15 @@ const sorted = publications.sort((a, b) => {
   return a.data.title.localeCompare(b.data.title);
 });
 
-const explicitlySelected = sorted.filter((pub) => pub.data.selected);
-const selectedPublications = explicitlySelected.length > 0 ? explicitlySelected : sorted.slice(0, 3);
+const deduped = sorted.filter((pub, index, arr) => {
+  const key = `${pub.data.title}|${pub.data.venue}|${pub.data.year}`;
+  return index === arr.findIndex((other) => `${other.data.title}|${other.data.venue}|${other.data.year}` === key);
+});
+
+const explicitlySelected = deduped.filter((pub) => pub.data.selected);
+const selectedPublications = explicitlySelected.length > 0 ? explicitlySelected : deduped.slice(0, 3);
 const selectedIds = new Set(selectedPublications.map((pub) => pub.id));
-const additionalPublications = sorted.filter((pub) => !selectedIds.has(pub.id));
+const additionalPublications = deduped.filter((pub) => !selectedIds.has(pub.id));
 ---
 
 <section id="publications" class="section">
@@ -56,24 +61,19 @@ const additionalPublications = sorted.filter((pub) => !selectedIds.has(pub.id));
       <div class="pub-block">
         <h3 class="pub-block-title">Additional Publications</h3>
         {additionalPublications.length > 0 ? (
-          <>
-            <button type="button" class="show-more" data-toggle-additional aria-expanded="false">
-              Show more
-            </button>
-            <ul class="pub-bullets additional-list" data-additional-list>
-              {additionalPublications.map((pub) => (
-                <li>
-                  {(pub.data.links?.doi || pub.data.links?.pdf) ? (
-                    <a href={pub.data.links?.doi ?? pub.data.links?.pdf} target="_blank" rel="noopener">
-                      {pub.data.title}
-                    </a>
-                  ) : (
-                    <span>{pub.data.title}</span>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </>
+          <ul class="pub-bullets">
+            {additionalPublications.map((pub) => (
+              <li>
+                {(pub.data.links?.doi || pub.data.links?.pdf) ? (
+                  <a href={pub.data.links?.doi ?? pub.data.links?.pdf} target="_blank" rel="noopener">
+                    {pub.data.title}
+                  </a>
+                ) : (
+                  <span>{pub.data.title}</span>
+                )}
+              </li>
+            ))}
+          </ul>
         ) : (
           <p class="meta">No additional publications listed yet.</p>
         )}
@@ -81,20 +81,6 @@ const additionalPublications = sorted.filter((pub) => !selectedIds.has(pub.id));
     </div>
   </div>
 </section>
-
-<script>
-  const toggle = document.querySelector<HTMLButtonElement>('[data-toggle-additional]');
-  const list = document.querySelector<HTMLElement>('[data-additional-list]');
-
-  if (toggle && list) {
-    toggle.addEventListener('click', () => {
-      const willOpen = !list.classList.contains('open');
-      list.classList.toggle('open', willOpen);
-      toggle.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
-      toggle.textContent = willOpen ? 'Show less' : 'Show more';
-    });
-  }
-</script>
 
 <style>
   .pub-sections {
@@ -145,21 +131,4 @@ const additionalPublications = sorted.filter((pub) => !selectedIds.has(pub.id));
     color: var(--text-dim);
   }
 
-  .show-more {
-    border: 1px solid var(--rule);
-    background: transparent;
-    color: var(--slate);
-    padding: 4px 10px;
-    font-size: 0.85rem;
-    cursor: pointer;
-    margin-bottom: 10px;
-  }
-
-  .additional-list {
-    display: none;
-  }
-
-  .additional-list.open {
-    display: flex;
-  }
 </style>
