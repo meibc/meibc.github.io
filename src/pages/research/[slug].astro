@@ -108,6 +108,27 @@ const { Content } = await render(work);
     line-height: 1.8;
   }
 
+  .detail-content :global(img) {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 12px 0 16px;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .detail-content :global(.research-image-grid) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 12px 0 16px;
+  }
+
+  .detail-content :global(.research-image-grid img) {
+    margin: 0;
+  }
+
   @media (max-width: 768px) {
     .research-detail {
       padding: var(--space-lg) var(--space-md);
@@ -115,6 +136,10 @@ const { Content } = await render(work);
 
     h1 {
       font-size: 1.45rem;
+    }
+
+    .detail-content :global(.research-image-grid) {
+      grid-template-columns: 1fr;
     }
   }
 </style>
