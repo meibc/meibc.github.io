@@ -1,9 +1,9 @@
 ---
 title: "Integrating systems and implementation science in modeling and evaluating complex health interventions: methodological reflections from service delivery redesign in Kakamega, Kenya"
 authors:
+  - "Meibin Chen"
   - "Olakunle Alonge"
   - "Tingting Ji"
-  - "Meibin Chen"
   - "Takeru Igusa"
 venue: "Health Policy and Planning"
 year: 2025

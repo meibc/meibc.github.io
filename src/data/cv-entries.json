@@ -1,40 +1,54 @@
 {
   "education": [
     {
-      "degree": "PhD in Systems Science",
+      "degree": "PhD in Systems Engineering",
       "institution": "Johns Hopkins University",
-      "years": "2021 — Present",
-      "description": "Advisor: Prof. Tak Igusa."
+      "years": "2021 — 2026 (Expected)",
+      "description": "Advisor: Prof. Takeru Igusa. Focus on Computational Social Science and health systems modeling."
     },
     {
-      "degree": "MS in Applied Math and Statistics",
+      "degree": "MS in Applied Mathematics & Statistics",
       "institution": "Johns Hopkins University",
-      "years": "2024-2026",
+      "years": "2024 — 2026 (Expected)",
       "description": ""
     },
     {
       "degree": "BS in Biomedical Engineering",
       "institution": "Yale University",
-      "years": "2015-2019",
+      "years": "2015 — 2019",
       "description": ""
     }
   ],
   "experience": [
     {
-      "role": "Research Intern",
-      "organization": "Tech Research Lab",
-      "years": "Summer 2024",
-      "description": "Worked on multilingual language model evaluation and benchmarking."
+      "role": "PhD Candidate / Researcher",
+      "organization": "Johns Hopkins University",
+      "years": "2021 — Present",
+      "description": "Developing implementation pathways and system dynamics models for maternal health and HIV stigma (StigmaScope) in Kenya and other LMIC settings."
     },
     {
-      "role": "Teaching Assistant",
-      "organization": "University ABC",
-      "years": "2022 — 2024",
-      "description": "TA for Introduction to NLP and Machine Learning courses."
+      "role": "Team Lead, Data Analytics",
+      "organization": "H1",
+      "years": "2020 — 2021",
+      "description": "Led a global data analytics team to integrate medical affairs data into a health intelligence platform; established new protocols for data validation and cross-functional leadership."
+    },
+    {
+      "role": "Parker Huang Postgraduate Research Fellow",
+      "organization": "Yale University (Peru & China)",
+      "years": "2019 — 2020",
+      "description": "Conducted survey analyses and quantitative behavioral research on quality of life in HIV-positive populations."
     }
   ],
   "awards": [
-    { "name": "Best Paper Award", "venue": "NLP Workshop 2024", "year": "2024" },
-    { "name": "Graduate Fellowship", "venue": "University ABC", "year": "2022" }
+    { 
+      "name": "Parker Huang Postgraduate Fellowship", 
+      "venue": "Yale University", 
+      "year": "2019" 
+    },
+    { 
+      "name": "Full Doctoral Fellowship", 
+      "venue": "Johns Hopkins University", 
+      "year": "2021" 
+    }
   ]
 }
