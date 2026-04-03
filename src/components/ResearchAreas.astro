@@ -48,37 +48,90 @@ const getAreaWork = (area: ResearchArea): WorkItem[] => {
   <div class="container">
     <PageTitle title="Research" />
     <div class="research-list">
-      {researchAreas.map((area) => (
-        <div class="research-area">
-          <div class="area-main">
-            <h3 class="area-title">{area.title}</h3>
-            <p class="area-desc">{area.description}</p>
-          </div>
-          <div class="featured-papers">
-            <p class="paper-label">Featured Work{getAreaWork(area).length > 1 ? 's' : ''}</p>
-            {getAreaWork(area).map((work) => (
-              <div class="featured-paper">
-                <p class="paper-title">{work.title}</p>
-                <p class="paper-venue">{work.venue}</p>
-                <div class="paper-links">
-                  {work.links?.viewMore && (
-                    <a href={work.links.viewMore}><Tag label="View More" /></a>
-                  )}
-                  {work.links?.paper && (
-                    <a href={work.links.paper} target="_blank" rel="noopener"><Tag label="Paper" /></a>
-                  )}
-                  {isExternalUrl(work.links?.code) && (
-                    <a href={work.links.code} target="_blank" rel="noopener"><Tag label="Code" /></a>
-                  )}
+      {researchAreas.map((area, areaIndex) => {
+        const works = getAreaWork(area);
+        return (
+          <div class="research-area">
+            <div class="area-main">
+              <h3 class="area-title">{area.title}</h3>
+              <p class="area-desc">{area.description}</p>
+
+              {works.length > 0 && (
+                <ul class="work-list">
+                  {works.map((work, workIndex) => (
+                    <li>
+                      <button
+                        class={`work-link ${workIndex === 0 ? 'active' : ''}`}
+                        type="button"
+                        data-work-trigger
+                        data-area={areaIndex}
+                        data-work={workIndex}
+                        aria-expanded={workIndex === 0 ? 'true' : 'false'}
+                      >
+                        {work.title}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+
+            <div class="work-detail-panel">
+              {works.map((work, workIndex) => (
+                <div
+                  class={`featured-paper work-detail ${workIndex === 0 ? 'active' : ''}`}
+                  data-work-detail
+                  data-area={areaIndex}
+                  data-work={workIndex}
+                >
+                  <p class="paper-label">Project Details</p>
+                  <p class="paper-title">{work.title}</p>
+                  <p class="paper-venue">{work.venue}</p>
+                  <div class="paper-links">
+                    {work.links?.viewMore && (
+                      <a href={work.links.viewMore}><Tag label="View More" /></a>
+                    )}
+                    {work.links?.paper && (
+                      <a href={work.links.paper} target="_blank" rel="noopener"><Tag label="Paper" /></a>
+                    )}
+                    {isExternalUrl(work.links?.code) && (
+                      <a href={work.links.code} target="_blank" rel="noopener"><Tag label="Code" /></a>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   </div>
 </section>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.research-area').forEach((areaEl) => {
+    const triggers = areaEl.querySelectorAll<HTMLButtonElement>('[data-work-trigger]');
+    const details = areaEl.querySelectorAll<HTMLElement>('[data-work-detail]');
+
+    if (!triggers.length || !details.length) return;
+
+    triggers.forEach((trigger) => {
+      trigger.addEventListener('click', () => {
+        const selected = trigger.dataset.work;
+
+        triggers.forEach((item) => {
+          const isActive = item.dataset.work === selected;
+          item.classList.toggle('active', isActive);
+          item.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+        });
+
+        details.forEach((detail) => {
+          detail.classList.toggle('active', detail.dataset.work === selected);
+        });
+      });
+    });
+  });
+</script>
 
 <style>
   .research-list {
@@ -125,6 +178,44 @@ const getAreaWork = (area: ResearchArea): WorkItem[] => {
     display: flex;
     flex-direction: column;
     gap: 8px;
+  }
+
+  .work-list {
+    list-style: none;
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .work-link {
+    font: inherit;
+    background: none;
+    border: none;
+    padding: 0;
+    text-align: left;
+    color: var(--slate-dim);
+    cursor: pointer;
+    line-height: 1.55;
+    transition: color 0.15s ease;
+  }
+
+  .work-link::before {
+    content: '* ';
+    color: var(--gold);
+  }
+
+  .work-link:hover,
+  .work-link.active {
+    color: var(--slate);
+  }
+
+  .work-detail {
+    display: none;
+  }
+
+  .work-detail.active {
+    display: block;
   }
 
   .featured-paper {
