@@ -32,27 +32,43 @@
     ]
   },
   {
-    "title": "Data & Inference",
-    "description": "Using statistical modeling, estimation, and reweighting methods to learn from incomplete or biased health data. This includes MSM population estimation, survey-based inference, and bias correction through methods like IPF and raking.",
-    "featuredWork": [
-      {
-        "title": "MSM Population Estimation",
-        "venue": "Population estimation and simulation",
-        "links": {
-          "viewMore": "/research/msm-population-estimation",
-          "code": "/projects/msm-estimation"
+  "title": "Data & Inference",
+  "description": "Developing statistical and methodological approaches to learn from incomplete, biased, or structurally constrained data, with a focus on integrating qualitative system structure with quantitative inference.",
+  "subareas": [
+    {
+      "title": "Structure-Constrained Inference for System Dynamics",
+      "description": "Translating qualitative system representations (e.g., causal loop diagrams) into empirically parameterized dynamic models using constrained estimation approaches.",
+      "featuredWork": [
+        {
+          "title": "From Causal Loop Diagrams to Quantitative Dynamics",
+          "venue": "IC2S2, ISD (Work in Progress)",
+          "links": {
+            "viewMore": "/research/cld-to-dynamics",
+            "code": "/projects/cld-inference"
+          }
         }
-      },
-      {
-        "title": "Reweighting & Bias Correction for Health Surveys",
-        "venue": "Survey calibration and inference",
-        "links": {
-          "viewMore": "/research/reweighting-bias-correction",
-          "code": "/projects/reweighting-bias-correction"
-        }
+      ]
+    }
+  ],
+  "featuredWork": [
+    {
+      "title": "MSM Population Estimation",
+      "venue": "Population estimation and simulation",
+      "links": {
+        "viewMore": "/research/msm-population-estimation",
+        "code": "/projects/msm-estimation"
       }
-    ]
-  },
+    },
+    {
+      "title": "Reweighting & Bias Correction for Health Surveys",
+      "venue": "Survey calibration and inference",
+      "links": {
+        "viewMore": "/research/reweighting-bias-correction",
+        "code": "/projects/reweighting-bias-correction"
+      }
+    }
+  ]
+},
   {
     "title": "Decision Support & Tools",
     "description": "Designing outputs that make complex analyses usable for real-world decision-making, including dashboards, stakeholder-facing tools, and intervention-focused evaluation frameworks.",

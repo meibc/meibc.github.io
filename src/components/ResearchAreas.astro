@@ -3,33 +3,68 @@ import PageTitle from './PageTitle.astro';
 import Tag from './Tag.astro';
 import research from '../data/research.json';
 
-const getFeaturedWork = (item) => item.featuredWork ?? item.featuredPapers ?? [];
+type WorkLinks = {
+  viewMore?: string;
+  paper?: string;
+  code?: string;
+};
+
+type WorkItem = {
+  title: string;
+  venue?: string;
+  links?: WorkLinks;
+};
+
+type WorkContainer = {
+  featuredWork?: WorkItem[];
+  featuredPapers?: WorkItem[];
+};
+
+type ResearchSubarea = WorkContainer & {
+  title: string;
+  description?: string;
+};
+
+type ResearchArea = WorkContainer & {
+  title: string;
+  description: string;
+  subareas?: ResearchSubarea[];
+};
+
+const researchAreas = research as ResearchArea[];
+
+const getFeaturedWork = (item: WorkContainer): WorkItem[] => item.featuredWork ?? item.featuredPapers ?? [];
+const getAreaWork = (area: ResearchArea): WorkItem[] => {
+  const topLevel = getFeaturedWork(area);
+  const nested = (area.subareas ?? []).flatMap((subarea) => getFeaturedWork(subarea));
+  return [...topLevel, ...nested];
+};
 ---
 
 <section id="research" class="section">
   <div class="container">
     <PageTitle title="Research" />
     <div class="research-list">
-      {research.map(area => (
+      {researchAreas.map((area) => (
         <div class="research-area">
           <div class="area-main">
             <h3 class="area-title">{area.title}</h3>
             <p class="area-desc">{area.description}</p>
           </div>
           <div class="featured-papers">
-            <p class="paper-label">Featured Work{getFeaturedWork(area).length > 1 ? 's' : ''}</p>
-            {getFeaturedWork(area).map(work => (
+            <p class="paper-label">Featured Work{getAreaWork(area).length > 1 ? 's' : ''}</p>
+            {getAreaWork(area).map((work) => (
               <div class="featured-paper">
                 <p class="paper-title">{work.title}</p>
                 <p class="paper-venue">{work.venue}</p>
                 <div class="paper-links">
-                  {work.links.viewMore && (
+                  {work.links?.viewMore && (
                     <a href={work.links.viewMore}><Tag label="View More" /></a>
                   )}
-                  {work.links.paper && (
+                  {work.links?.paper && (
                     <a href={work.links.paper} target="_blank" rel="noopener"><Tag label="Paper" /></a>
                   )}
-                  {work.links.code && (
+                  {work.links?.code && (
                     <a href={work.links.code} target="_blank" rel="noopener"><Tag label="Code" /></a>
                   )}
                 </div>

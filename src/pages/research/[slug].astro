@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getCollection, render } from 'astro:content';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
   const workDetails = await getCollection('research');
@@ -11,7 +11,11 @@ export async function getStaticPaths() {
   }));
 }
 
-const { work } = Astro.props;
+interface Props {
+  work: CollectionEntry<'research'>;
+}
+
+const { work } = Astro.props as Props;
 const { Content } = await render(work);
 ---
 
