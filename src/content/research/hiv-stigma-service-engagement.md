@@ -1,6 +1,6 @@
 ---
 title: "HIV Stigma & Service Engagement Modeling"
-area: "Modeling Complex Systems"
+area: "Quantitative Modeling of Complex Systems"
 summary: This project models how social stigma, trust, and service access interact over time to shape HIV service uptake and retention.
 ---
 

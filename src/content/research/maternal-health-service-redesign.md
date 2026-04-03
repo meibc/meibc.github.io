@@ -1,6 +1,6 @@
 ---
 title: "Maternal Health & Service Delivery Redesign Modeling"
-area: "Modeling Complex Systems"
+area: "Quantitative Modeling of Complex Systems"
 summary: This work examines maternal care delivery pathways and redesign options to improve continuity, quality, and timeliness of care.
 ---
 

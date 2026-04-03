@@ -1,6 +1,6 @@
 ---
 title: Intervention Evaluation for Funding Decisions
-area: "Decision Support & Tools"
+area: "Decision Support & Participatory Methods"
 summary: This work evaluates intervention portfolios to inform resource allocation and funding prioritization decisions.
 ---
 

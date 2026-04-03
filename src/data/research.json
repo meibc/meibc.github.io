@@ -37,11 +37,11 @@
   "subareas": [
     {
       "title": "Structure-Constrained Inference for System Dynamics",
-      "description": "Translating qualitative system representations (e.g., causal loop diagrams) into empirically parameterized dynamic models using constrained estimation approaches.",
+      "description": "Translating qualitative system representations (e.g., causal maps) into empirically parameterized dynamic models using constrained estimation approaches.",
       "featuredWork": [
         {
-          "title": "From Causal Loop Diagrams to Quantitative Dynamics",
-          "venue": "IC2S2, ISD (Work in Progress)",
+          "title": "From Causal Maps to Quantitative Dynamics",
+          "venue": "Dynamic model estimation from qualitative system structure",
           "links": {
             "viewMore": "/research/cld-to-dynamics",
             "code": "/projects/cld-inference"
@@ -52,16 +52,16 @@
   ],
   "featuredWork": [
     {
-      "title": "MSM Population Estimation",
-      "venue": "Population estimation and simulation",
+      "title": "Latent MSM Population Estimation from Survey and Census Data",
+      "venue": "Multi-source population estimation and simulation",
       "links": {
         "viewMore": "/research/msm-population-estimation",
         "code": "/projects/msm-estimation"
       }
     },
     {
-      "title": "Reweighting & Bias Correction for Health Surveys",
-      "venue": "Survey calibration and inference",
+      "title": "Bias-Corrected Trend Estimation from Survey Data",
+      "venue": "Survey harmonization and calibration",
       "links": {
         "viewMore": "/research/reweighting-bias-correction",
         "code": "/projects/reweighting-bias-correction"
