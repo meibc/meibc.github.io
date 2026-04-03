@@ -1,6 +1,6 @@
 ---
 title: MSM Population Estimation
-area: Data & Inference
+area: "Data & Inference"
 summary: This project develops robust estimates for MSM population size in settings with sparse or biased data sources.
 ---
 

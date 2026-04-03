@@ -1,6 +1,6 @@
 ---
 title: Decision Dashboards for Health Systems
-area: Decision Support & Tools
+area: "Decision Support & Tools"
 summary: This project turns model outputs into stakeholder-facing dashboards that support scenario comparison and planning decisions.
 ---
 

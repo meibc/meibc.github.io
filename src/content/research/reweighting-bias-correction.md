@@ -1,6 +1,6 @@
 ---
-title: Reweighting & Bias Correction for Health Surveys
-area: Data & Inference
+title: "Reweighting & Bias Correction for Health Surveys"
+area: "Data & Inference"
 summary: This line of work improves inference from non-representative health survey data using calibration and reweighting methods.
 ---
 

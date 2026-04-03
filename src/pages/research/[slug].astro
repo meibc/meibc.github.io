@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
   const workDetails = await getCollection('research');
@@ -12,7 +12,7 @@ export async function getStaticPaths() {
 }
 
 const { work } = Astro.props;
-const { Content } = await work.render();
+const { Content } = await render(work);
 ---
 
 <BaseLayout title={`${work.data.title} | Research | Meibin Chen`} description={work.data.summary}>
