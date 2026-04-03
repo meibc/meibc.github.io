@@ -9,7 +9,7 @@ authors:
   - "Patricia J. Garcia"
   - "Evelyn Hsieh"
 
-venue: "Plos One"
+venue: "PLOS One"
 year: 2022
 type: "journal"
 links:
