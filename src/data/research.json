@@ -1,6 +1,6 @@
 [
   {
-    "title": "Modeling Complex Systems",
+    "title": "Quantitative Modeling of Complex Systems",
     "description": "Developing and translating conceptual models and behavioral frameworks to quantitative simlulations to understand health and social system dynamics on key behavioral outcomes",
     "subareas": [
       {
@@ -33,7 +33,7 @@
   },
   {
   "title": "Data & Inference",
-  "description": "Developing statistical and methodological approaches to learn from incomplete, biased, or structurally constrained data, with a focus on integrating qualitative system structure with quantitative inference.",
+  "description": "Developing statistical and methodological approaches to learn from incomplete, biased, or structurally constrained data, with a focus on using qualitative knowledge for quantitative translation.",
   "subareas": [
     {
       "title": "Structure-Constrained Inference for System Dynamics",
@@ -70,25 +70,49 @@
   ]
 },
   {
-    "title": "Decision Support & Tools",
-    "description": "Designing outputs that make complex analyses usable for real-world decision-making, including dashboards, stakeholder-facing tools, and intervention-focused evaluation frameworks.",
-    "featuredWork": [
-      {
-        "title": "Decision Dashboards for Health Systems",
-        "venue": "Stakeholder-facing tools and scenario exploration",
-        "links": {
-          "viewMore": "/research/decision-dashboards-health-systems",
-          "code": "/projects/decision-dashboard"
+  "title": "Decision Support & Participatory Methods",
+  "description": "Designing participatory approaches and decision-support tools that translate complex system insights into actionable knowledge, including stakeholder-engaged modeling, survey design, and dashboards.",
+  "subareas": [
+    {
+      "title": "Participatory Modeling & Stakeholder-Informed Design",
+      "description": "Using group model building, causal loop diagramming, and survey-based methods to capture stakeholder perspectives and inform system structure and decision-making.",
+      "featuredWork": [
+        {
+          "title": "HIV Stigma Causal Loop Diagramming",
+          "venue": "Participatory modeling with U.S. health departments",
+          "links": {
+            "viewMore": "/research/hiv-stigma-service-engagement",
+            "code": "/projects/hiv-stigma-model"
+          }
+        },
+        {
+          "title": "Maternal Health Stakeholder Modeling in Kenya",
+          "venue": "Group model building and implementation research",
+          "links": {
+            "viewMore": "/research/maternal-health-service-redesign",
+            "code": "/projects/sdr-model"
+          }
         }
-      },
-      {
-        "title": "Intervention Evaluation for Funding Decisions",
-        "venue": "Decision support and applied modeling",
-        "links": {
-          "viewMore": "/research/intervention-evaluation-funding-decisions",
-          "code": "/projects/intervention-evaluation"
-        }
+      ]
+    }
+  ],
+  "featuredWork": [
+    {
+      "title": "Decision Dashboards for Health Systems",
+      "venue": "Stakeholder-facing tools and scenario exploration",
+      "links": {
+        "viewMore": "/research/decision-dashboards-health-systems",
+        "code": "/projects/decision-dashboard"
       }
-    ]
-  }
+    },
+    {
+      "title": "Wiki-Surveys for Health System Prioritization",
+      "venue": "Survey design and preference elicitation",
+      "links": {
+        "viewMore": "/research/wiki-survey",
+        "code": "/projects/wiki-survey"
+      }
+    }
+  ]
+}
 ]
