@@ -19,11 +19,18 @@ I design stakeholder-facing dashboards that translate complex system models into
 * Work collaboratively with design/dev teams to build a  dashboard for exploring relationships between stigma and HIV care services to serve public health researchers and US county public health departments
 * Provide complex model outputs for data visualizations
 * Developed survey-based feedback tools to assess usability and guide iterative design improvements
+
 [View StigmaScope Dashboard](StigmaScope.com)
 
 ### Service Delivery Redesign Dashboard (Maternal Health, Kenya)
 
+<div class="research-image-grid">
+  <img src="/images/research/SDR1.png" alt="Service Delivery Redesign dashboard screenshot" />
+  <img src="/images/research/sankey1.png" alt="Service Delivery Redesign sankey visualization" />
+</div>
+
 * Designed and built an end-to-end Streamlit dashboard for exploring maternal health system dynamics and intervention scenarios
 * Implemented scenario comparison tools to evaluate policy strategies across outcomes
 * Developed visualizations across the maternal care continuum, including system processes and health indicators
+
 [View SDR Dashboard](https://sdr-dashboard-2025-j746auefxbp4fh8r642ryj.streamlit.app/)

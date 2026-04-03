@@ -20,6 +20,6 @@ type: "journal"
 links:
   doi: "https://doi.org/10.1136/bmjgh-2024-018240"
   pdf: "https://gh.bmj.com/content/bmjgh/11/1/e018240.full.pdf"
+selected: true
 highlight: false
 ---
-
