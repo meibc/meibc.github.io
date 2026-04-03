@@ -2,34 +2,22 @@
   {
     "title": "Modeling Complex Systems",
     "description": "Building conceptual and quantitative models to understand how health and social systems behave over time.",
-    "subareas": [
+    "featuredWork": [
       {
         "title": "HIV Stigma & Service Engagement",
-        "description": "",
-        "featuredWork": [
-          {
-            "title": "HIV Stigma & Service Engagement Modeling",
-            "venue": "Systems modeling and quantitative translation",
-            "links": {
-              "viewMore": "/research/hiv-stigma-service-engagement",
-              "code": "/projects/hiv-stigma-model"
-            }
-          }
-        ]
+        "venue": "Systems modeling and quantitative translation",
+        "links": {
+          "viewMore": "/research/hiv-stigma-service-engagement",
+          "code": "/projects/hiv-stigma-model"
+        }
       },
       {
         "title": "Maternal Health & Service Delivery Redesign",
-        "description": "",
-        "featuredWork": [
-          {
-            "title": "Maternal Health & Service Delivery Redesign Modeling",
-            "venue": "Health systems modeling in Kenya",
-            "links": {
-              "viewMore": "/research/maternal-health-service-redesign",
-              "code": "/projects/sdr-model"
-            }
-          }
-        ]
+        "venue": "Health systems modeling in Kenya",
+        "links": {
+          "viewMore": "/research/maternal-health-service-redesign",
+          "code": "/projects/sdr-model"
+        }
       }
     ]
   },
