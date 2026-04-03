@@ -1,35 +1,165 @@
 ---
 import { getCollection } from 'astro:content';
 import PageTitle from './PageTitle.astro';
-import PublicationEntry from './PublicationEntry.astro';
+import workingPapers from '../data/working-papers.json';
 
 const publications = await getCollection('publications');
 const sorted = publications.sort((a, b) => {
   if (b.data.year !== a.data.year) return b.data.year - a.data.year;
   return a.data.title.localeCompare(b.data.title);
 });
+
+const explicitlySelected = sorted.filter((pub) => pub.data.selected);
+const selectedPublications = explicitlySelected.length > 0 ? explicitlySelected : sorted.slice(0, 3);
+const selectedIds = new Set(selectedPublications.map((pub) => pub.id));
+const additionalPublications = sorted.filter((pub) => !selectedIds.has(pub.id));
 ---
 
 <section id="publications" class="section">
   <div class="container">
     <PageTitle title="Publications" />
-    <div class="pub-list">
-      {sorted.map(pub => (
-        <PublicationEntry
-          title={pub.data.title}
-          authors={pub.data.authors}
-          venue={pub.data.venue}
-          year={pub.data.year}
-          links={pub.data.links}
-        />
-      ))}
+    <div class="pub-sections">
+      <div class="pub-block">
+        <h3 class="pub-block-title">Selected Publications</h3>
+        <ul class="pub-bullets">
+          {selectedPublications.map((pub) => (
+            <li>
+              {(pub.data.links?.doi || pub.data.links?.pdf) ? (
+                <a href={pub.data.links?.doi ?? pub.data.links?.pdf} target="_blank" rel="noopener">
+                  {pub.data.title}
+                </a>
+              ) : (
+                <span>{pub.data.title}</span>
+              )}{' '}
+              <span class="meta">({pub.data.venue}, {pub.data.year})</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="pub-block">
+        <h3 class="pub-block-title">Working Papers &amp; Under Review</h3>
+        <ul class="pub-bullets">
+          {workingPapers.map((paper) => (
+            <li>
+              {paper.link ? (
+                <a href={paper.link} target="_blank" rel="noopener">{paper.title}</a>
+              ) : (
+                <span>{paper.title}</span>
+              )}{' '}
+              <span class="meta">- {paper.status} ({paper.outlet})</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="pub-block">
+        <h3 class="pub-block-title">Additional Publications</h3>
+        {additionalPublications.length > 0 ? (
+          <>
+            <button type="button" class="show-more" data-toggle-additional aria-expanded="false">
+              Show more
+            </button>
+            <ul class="pub-bullets additional-list" data-additional-list>
+              {additionalPublications.map((pub) => (
+                <li>
+                  {(pub.data.links?.doi || pub.data.links?.pdf) ? (
+                    <a href={pub.data.links?.doi ?? pub.data.links?.pdf} target="_blank" rel="noopener">
+                      {pub.data.title}
+                    </a>
+                  ) : (
+                    <span>{pub.data.title}</span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </>
+        ) : (
+          <p class="meta">No additional publications listed yet.</p>
+        )}
+      </div>
     </div>
   </div>
 </section>
 
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('[data-toggle-additional]');
+  const list = document.querySelector<HTMLElement>('[data-additional-list]');
+
+  if (toggle && list) {
+    toggle.addEventListener('click', () => {
+      const willOpen = !list.classList.contains('open');
+      list.classList.toggle('open', willOpen);
+      toggle.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+      toggle.textContent = willOpen ? 'Show less' : 'Show more';
+    });
+  }
+</script>
+
 <style>
-  .pub-list {
+  .pub-sections {
     display: flex;
     flex-direction: column;
+    gap: 18px;
+  }
+
+  .pub-block {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .pub-block:last-child {
+    border-bottom: none;
+  }
+
+  .pub-block-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .pub-bullets {
+    list-style: disc;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .pub-bullets li {
+    color: var(--slate);
+    line-height: 1.55;
+  }
+
+  .pub-bullets a {
+    color: var(--slate);
+    text-decoration: none;
+  }
+
+  .pub-bullets a:hover {
+    color: var(--slate-dim);
+  }
+
+  .meta {
+    color: var(--text-dim);
+  }
+
+  .show-more {
+    border: 1px solid var(--rule);
+    background: transparent;
+    color: var(--slate);
+    padding: 4px 10px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+
+  .additional-list {
+    display: none;
+  }
+
+  .additional-list.open {
+    display: flex;
   }
 </style>

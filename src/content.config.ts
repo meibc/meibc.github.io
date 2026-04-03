@@ -16,6 +16,7 @@ const publications = defineCollection({
       arxiv: z.string().optional(),
       code: z.string().optional(),
     }).optional(),
+    selected: z.boolean().default(false),
     highlight: z.boolean().default(false),
   }),
 });
