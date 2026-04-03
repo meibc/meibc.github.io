@@ -61,12 +61,12 @@ const getAreaWork = (area: ResearchArea): WorkItem[] => {
                   {works.map((work, workIndex) => (
                     <li>
                       <button
-                        class={`work-link ${workIndex === 0 ? 'active' : ''}`}
+                        class="work-link"
                         type="button"
                         data-work-trigger
                         data-area={areaIndex}
                         data-work={workIndex}
-                        aria-expanded={workIndex === 0 ? 'true' : 'false'}
+                        aria-expanded="false"
                       >
                         {work.title}
                       </button>
@@ -76,10 +76,10 @@ const getAreaWork = (area: ResearchArea): WorkItem[] => {
               )}
             </div>
 
-            <div class="work-detail-panel">
+            <div class="work-detail-panel" data-work-panel>
               {works.map((work, workIndex) => (
                 <div
-                  class={`featured-paper work-detail ${workIndex === 0 ? 'active' : ''}`}
+                  class="featured-paper work-detail"
                   data-work-detail
                   data-area={areaIndex}
                   data-work={workIndex}
@@ -118,6 +118,24 @@ const getAreaWork = (area: ResearchArea): WorkItem[] => {
     triggers.forEach((trigger) => {
       trigger.addEventListener('click', () => {
         const selected = trigger.dataset.work;
+        const panel = areaEl.querySelector<HTMLElement>('[data-work-panel]');
+        const wasActive = trigger.classList.contains('active');
+
+        if (wasActive) {
+          triggers.forEach((item) => {
+            item.classList.remove('active');
+            item.setAttribute('aria-expanded', 'false');
+          });
+
+          details.forEach((detail) => {
+            detail.classList.remove('active');
+          });
+
+          if (panel) {
+            panel.classList.remove('active');
+          }
+          return;
+        }
 
         triggers.forEach((item) => {
           const isActive = item.dataset.work === selected;
@@ -128,6 +146,10 @@ const getAreaWork = (area: ResearchArea): WorkItem[] => {
         details.forEach((detail) => {
           detail.classList.toggle('active', detail.dataset.work === selected);
         });
+
+        if (panel) {
+          panel.classList.add('active');
+        }
       });
     });
   });
@@ -196,7 +218,8 @@ const getAreaWork = (area: ResearchArea): WorkItem[] => {
     text-align: left;
     color: var(--slate-dim);
     cursor: pointer;
-    line-height: 1.55;
+    font-size: 0.92rem;
+    line-height: 1.5;
     transition: color 0.15s ease;
   }
 
@@ -211,10 +234,26 @@ const getAreaWork = (area: ResearchArea): WorkItem[] => {
   }
 
   .work-detail {
-    display: none;
+    opacity: 0;
+    transform: translateY(6px);
+    max-height: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transition: opacity 0.22s ease, transform 0.22s ease, max-height 0.22s ease;
   }
 
   .work-detail.active {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 500px;
+    pointer-events: auto;
+  }
+
+  .work-detail-panel {
+    display: none;
+  }
+
+  .work-detail-panel.active {
     display: block;
   }
 
