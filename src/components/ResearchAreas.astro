@@ -12,6 +12,7 @@ type WorkLinks = {
 type WorkItem = {
   title: string;
   venue?: string;
+  order?: number;
   links?: WorkLinks;
 };
 
@@ -34,10 +35,12 @@ type ResearchArea = WorkContainer & {
 const researchAreas = research as ResearchArea[];
 
 const getFeaturedWork = (item: WorkContainer): WorkItem[] => item.featuredWork ?? item.featuredPapers ?? [];
+const isExternalUrl = (value?: string): boolean => !!value && /^https?:\/\//.test(value);
 const getAreaWork = (area: ResearchArea): WorkItem[] => {
   const topLevel = getFeaturedWork(area);
   const nested = (area.subareas ?? []).flatMap((subarea) => getFeaturedWork(subarea));
-  return [...topLevel, ...nested];
+  const combined = [...nested, ...topLevel];
+  return combined.sort((a, b) => (a.order ?? 999) - (b.order ?? 999));
 };
 ---
 
@@ -64,7 +67,7 @@ const getAreaWork = (area: ResearchArea): WorkItem[] => {
                   {work.links?.paper && (
                     <a href={work.links.paper} target="_blank" rel="noopener"><Tag label="Paper" /></a>
                   )}
-                  {work.links?.code && (
+                  {isExternalUrl(work.links?.code) && (
                     <a href={work.links.code} target="_blank" rel="noopener"><Tag label="Code" /></a>
                   )}
                 </div>

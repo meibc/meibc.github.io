@@ -8,6 +8,7 @@
         "featuredWork": [
           {
             "title": "HIV Stigma & Service Engagement Modeling",
+            "order": 1,
             "venue": "Stigma mitigation for priority populations across the US",
             "links": {
               "viewMore": "/research/hiv-stigma-service-engagement",
@@ -21,6 +22,7 @@
         "featuredWork": [
           {
             "title": "Maternal Health & Service Delivery Redesign Modeling",
+            "order": 2,
             "venue": "Health systems modeling in Kenya",
             "links": {
               "viewMore": "/research/maternal-health-service-redesign",
@@ -40,7 +42,8 @@
       "description": "Translating qualitative system representations (e.g., causal maps) into empirically parameterized dynamic models using constrained estimation approaches.",
       "featuredWork": [
         {
-          "title": "From Causal Maps to Quantitative Dynamics",
+          "title": "Causal Maps to Quantitative Dynamics",
+          "order": 1,
           "venue": "Dynamic model estimation from qualitative system structure",
           "links": {
             "viewMore": "/research/cld-to-dynamics",
@@ -53,18 +56,20 @@
   "featuredWork": [
     {
       "title": "Latent MSM Population Estimation from Survey and Census Data",
+      "order": 2,
       "venue": "Multi-source population estimation and simulation",
       "links": {
         "viewMore": "/research/msm-population-estimation",
-        "code": "/projects/msm-estimation"
+        "code": "https://github.com/meibc/MSM-Population-Estimates"
       }
     },
     {
       "title": "Bias-Corrected Trend Estimation from Survey Data",
+      "order": 3,
       "venue": "Survey harmonization and calibration",
       "links": {
         "viewMore": "/research/reweighting-bias-correction",
-        "code": "/projects/reweighting-bias-correction"
+        "code": "https://github.com/meibc/AMIS-Variable-Trends"
       }
     }
   ]
@@ -79,6 +84,7 @@
       "featuredWork": [
         {
           "title": "HIV Stigma Causal Loop Diagramming",
+          "order": 3,
           "venue": "Participatory modeling with U.S. health departments",
           "links": {
             "viewMore": "/research/hiv-stigma-service-engagement",
@@ -87,6 +93,7 @@
         },
         {
           "title": "Maternal Health Stakeholder Modeling in Kenya",
+          "order": 2,
           "venue": "Group model building and implementation research",
           "links": {
             "viewMore": "/research/maternal-health-service-redesign",
@@ -99,6 +106,7 @@
   "featuredWork": [
     {
       "title": "Decision Dashboards for Health Systems",
+      "order": 1,
       "venue": "Stakeholder-facing tools and scenario exploration",
       "links": {
         "viewMore": "/research/decision-dashboards-health-systems",
@@ -107,6 +115,7 @@
     },
     {
       "title": "Wiki-Surveys for Health System Prioritization",
+      "order": 4,
       "venue": "Survey design and preference elicitation",
       "links": {
         "viewMore": "/research/wiki-survey",
