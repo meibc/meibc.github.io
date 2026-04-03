@@ -204,10 +204,10 @@ const getAreaWork = (area: ResearchArea): WorkItem[] => {
 
   .work-list {
     list-style: none;
-    margin-top: 12px;
+    margin-top: 14px;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 10px;
   }
 
   .work-link {
@@ -219,13 +219,8 @@ const getAreaWork = (area: ResearchArea): WorkItem[] => {
     color: var(--slate-dim);
     cursor: pointer;
     font-size: 0.92rem;
-    line-height: 1.5;
+    line-height: 1.45;
     transition: color 0.15s ease;
-  }
-
-  .work-link::before {
-    content: '* ';
-    color: var(--gold);
   }
 
   .work-link:hover,
@@ -239,7 +234,7 @@ const getAreaWork = (area: ResearchArea): WorkItem[] => {
     max-height: 0;
     overflow: hidden;
     pointer-events: none;
-    transition: opacity 0.22s ease, transform 0.22s ease, max-height 0.22s ease;
+    transition: opacity 0.38s ease, transform 0.38s ease, max-height 0.38s ease;
   }
 
   .work-detail.active {
