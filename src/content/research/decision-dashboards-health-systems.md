@@ -1,7 +1,6 @@
 ---
 title: Decision Dashboards for Health Systems
 area: "Decision Support & Participatory Methods"
-summary: This page highlights stakeholder-facing dashboards presenting modeling efforts to support scenario comparison and planning decisions."
 ---
 
 ## Overview
@@ -21,6 +20,8 @@ I design stakeholder-facing dashboards that translate complex system models into
 * Developed survey-based feedback tools to assess usability and guide iterative design improvements
 
 [View StigmaScope Dashboard](StigmaScope.com)
+
+
 
 ### Service Delivery Redesign Dashboard (Maternal Health, Kenya)
 

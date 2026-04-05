@@ -70,7 +70,8 @@ const additionalPublications = deduped.filter((pub) => !selectedIds.has(pub.id))
                   </a>
                 ) : (
                   <span>{pub.data.title}</span>
-                )}
+                )}{' '}
+                <span class="meta">({pub.data.venue}, {pub.data.year})</span>
               </li>
             ))}
           </ul>
