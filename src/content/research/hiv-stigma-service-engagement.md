@@ -15,7 +15,9 @@ This work is part of a broader effort to bridge participatory system mapping wit
 
 ## Causal Loop Diagram
 
-![Full CLD](/images/research/BMCPH_Fig1.png)  
+<a href="/images/research/BMCPH_Fig1.png" target="_blank" rel="noopener">
+  <img class="wide-figure" src="/images/research/BMCPH_Fig1.png" alt="Full CLD" />
+</a>  
 *Participatory causal loop diagram mapping stigma across HIV service engagement*
 
 I developed initial system structures and facilitation materials, which we used to facilitate group model building sessions with U.S. public health departments to iteratively refine and finalize the above diagram.

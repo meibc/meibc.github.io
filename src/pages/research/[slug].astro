@@ -129,6 +129,13 @@ const { Content } = await render(work);
     margin: 0;
   }
 
+  .detail-content :global(img.wide-figure) {
+    width: min(1120px, 94vw);
+    max-width: none;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+
   @media (max-width: 768px) {
     .research-detail {
       padding: var(--space-lg) var(--space-md);
@@ -140,6 +147,13 @@ const { Content } = await render(work);
 
     .detail-content :global(.research-image-grid) {
       grid-template-columns: 1fr;
+    }
+
+    .detail-content :global(img.wide-figure) {
+      width: 100%;
+      max-width: 100%;
+      margin-left: 0;
+      transform: none;
     }
   }
 </style>
