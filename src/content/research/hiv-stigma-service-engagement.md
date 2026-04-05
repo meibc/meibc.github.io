@@ -12,18 +12,16 @@ I use participatory systems methods to translate stakeholder knowledge into caus
 
 This work is part of a broader effort to bridge participatory system mapping with data-informed modeling for decision support in public health systems.
 
----
 
 ## Causal Loop Diagram
 
-![Full CLD](/images/research/BMCPH_Figure2.png)  
+![Full CLD](/images/research/BMCPH_Fig1.png)  
 *Participatory causal loop diagram mapping stigma across HIV service engagement*
 
 I developed initial system structures and facilitation materials, which we used to facilitate group model building sessions with U.S. public health departments to iteratively refine and finalize the above diagram.
 
 I used qualitative coding and network analysis to identify key feedback loops, shared in the key insights below.
 
----
 
 ## Key Insights
 
@@ -36,7 +34,6 @@ Positive care interactions strengthen health literacy and self-advocacy, while n
 ### 3. Community context determines direction of change
 Community norms and visibility can either reinforce stigma or help reduce it, depending on local social dynamics.
 
----
 
 ## Implications
 
