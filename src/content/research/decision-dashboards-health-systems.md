@@ -1,6 +1,7 @@
 ---
 title: Decision Dashboards for Health Systems
 area: "Decision Support & Participatory Methods"
+summary: "This page highlights stakeholder-facing dashboards presenting modeling efforts to support scenario comparison and planning decisions."
 ---
 
 ## Overview
