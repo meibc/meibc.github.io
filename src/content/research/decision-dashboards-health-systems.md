@@ -1,11 +1,9 @@
 ---
 title: Decision Dashboards for Health Systems
 area: "Decision Support & Participatory Methods"
-summary: "This page highlights stakeholder-facing dashboards presenting modeling efforts to support scenario comparison and planning decisions."
+summary: "I design stakeholder-facing dashboards that translate complex system models into tools for scenario exploration and policy decision-making. These dashboards allow users to compare interventions, understand tradeoffs, and explore uncertainty in a structured and accessible way."
 ---
 
-## Overview
-I design stakeholder-facing dashboards that translate complex system models into tools for scenario exploration and policy decision-making. These dashboards allow users to compare interventions, understand tradeoffs, and explore uncertainty in a structured and accessible way.
 
 ## Works
 
