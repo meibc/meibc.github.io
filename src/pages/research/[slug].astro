@@ -135,11 +135,16 @@ const { Content } = await render(work);
     margin: 0;
   }
 
-  .detail-content :global(img.wide-figure) {
-    width: min(1120px, 94vw);
-    max-width: none;
-    margin-left: 50%;
-    transform: translateX(-50%);
+  .detail-content :global(.cta-links) {
+    margin-top: 16px;
+  }
+
+  .detail-content :global(.cta-links p) {
+    margin: 0 0 12px;
+  }
+
+  .detail-content :global(.cta-links p:last-child) {
+    margin-bottom: 0;
   }
 
   @media (max-width: 768px) {
@@ -155,11 +160,5 @@ const { Content } = await render(work);
       grid-template-columns: 1fr;
     }
 
-    .detail-content :global(img.wide-figure) {
-      width: 100%;
-      max-width: 100%;
-      margin-left: 0;
-      transform: none;
-    }
   }
 </style>
