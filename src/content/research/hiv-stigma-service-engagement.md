@@ -1,13 +1,16 @@
 ---
 title: "HIV Stigma & Service Engagement Modeling"
 area: "Quantitative Modeling of Complex Systems"
-summary: "This work focuses on understanding how HIV-related stigma shapes engagement across prevention, testing, and treatment within complex health systems.
+summary: ""
+---
+
+## Overview
+
+This work focuses on understanding how HIV-related stigma shapes engagement across prevention, testing, and treatment within complex health systems.
 
 I use participatory systems methods to translate stakeholder knowledge into causal loop diagrams (CLDs), capturing how stigma operates across individual, healthcare, and community levels. These diagrams reveal feedback loops linking factors such as social support, care experiences, and service quality, and show how stigma can both reinforce and disrupt engagement in care.
 
-This work is part of a broader effort to bridge participatory system mapping with data-informed modeling for decision support in public health systems."
----
-
+This work is part of a broader effort to bridge participatory system mapping with data-informed modeling for decision support in public health systems.
 
 ## Causal Loop Diagram
 
