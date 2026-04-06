@@ -12,6 +12,12 @@ I use participatory systems methods to translate stakeholder knowledge into caus
 
 This work is part of a broader effort to bridge participatory system mapping with data-informed modeling for decision support in public health systems.
 
+<div class="cta-links">
+  <p>→ <a href="../cld-to-dynamics">See quantitative modeling extension</a></p>
+  <p>→ <a href="https://your-google-doc-link">View paper draft</a></p>
+</div>
+
+
 ## Causal Loop Diagram
 
 <a href="/images/research/BMCPH_Fig1.png" target="_blank" rel="noopener">
@@ -45,7 +51,3 @@ These system structures highlight leverage points for intervention, including:
 
 The CLD also serves as a foundation for quantitative modeling.
 
-<div class="cta-links">
-  <p>→ <a href="../cld-to-dynamics">See quantitative modeling extension</a></p>
-  <p>→ <a href="https://your-google-doc-link">View paper draft</a></p>
-</div>
