@@ -15,7 +15,7 @@ This work is part of a broader effort to bridge participatory system mapping wit
 ## Causal Loop Diagram
 
 <a href="/images/research/BMCPH_Fig1.png" target="_blank" rel="noopener">
-  <img class="wide-figure" src="/images/research/BMCPH_Fig1.png" alt="Full CLD" />
+  <img src="/images/research/BMCPH_Fig1.png" alt="Full CLD" />
 </a>  
 *Participatory causal loop diagram mapping stigma across HIV service engagement*
 
@@ -45,6 +45,7 @@ These system structures highlight leverage points for intervention, including:
 
 The CLD also serves as a foundation for quantitative modeling.
 
-→ [See quantitative modeling extension](../cld-to-dynamics)
-
-→ [View paper draft](https://your-google-doc-link)
+<div class="cta-links">
+  <p>→ <a href="../cld-to-dynamics">See quantitative modeling extension</a></p>
+  <p>→ <a href="https://your-google-doc-link">View paper draft</a></p>
+</div>
