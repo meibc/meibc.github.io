@@ -71,7 +71,7 @@ const navLinks = [
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding: 44px 36px 28px;
+    padding: 84px 36px 28px;
     gap: 22px;
   }
 
@@ -82,10 +82,10 @@ const navLinks = [
 
   .sidebar-photo,
   .sidebar-photo-fallback {
-    width: 104px;
-    height: 104px;
+    width: 122px;
+    height: 122px;
     border-radius: 999px;
-    border: 1px solid rgba(47, 42, 33, 0.35);
+    border: 1px solid rgba(219, 196, 136, 0.45);
     margin-bottom: 18px;
   }
 
@@ -109,14 +109,14 @@ const navLinks = [
     font-family: var(--font-sans);
     font-weight: 700;
     font-size: 2rem;
-    color: #2f2a21;
+    color: #dbc488;
     line-height: 1.15;
     margin-bottom: 8px;
   }
 
   .site-title,
   .site-affiliation {
-    color: rgba(47, 42, 33, 0.85);
+    color: rgba(219, 196, 136, 0.9);
     font-size: 0.98rem;
     line-height: 1.45;
     margin: 0;
@@ -138,10 +138,10 @@ const navLinks = [
     font-weight: 400;
     font-size: 0.95rem;
     letter-spacing: 0.04em;
-    color: rgba(47, 42, 33, 0.72);
+    color: rgba(219, 196, 136, 0.78);
     text-decoration: none;
     padding: 9px 0;
-    border-bottom: 1px solid rgba(47, 42, 33, 0.09);
+    border-bottom: 1px solid rgba(219, 196, 136, 0.16);
     display: flex;
     align-items: center;
     gap: 10px;
@@ -153,14 +153,14 @@ const navLinks = [
     display: block;
     width: 0;
     height: 1px;
-    background: rgba(47, 42, 33, 0.8);
+    background: rgba(219, 196, 136, 0.9);
     transition: width 0.2s ease;
     flex-shrink: 0;
   }
 
-  .nav-link:hover { color: rgba(47, 42, 33, 0.92); }
+  .nav-link:hover { color: rgba(238, 221, 169, 0.96); }
   .nav-link:hover::before { width: 8px; }
-  .nav-link.active { color: #2f2a21; }
+  .nav-link.active { color: #f1dfb0; }
   .nav-link.active::before { width: 14px; }
 
   .sidebar-social {
@@ -173,11 +173,11 @@ const navLinks = [
   }
 
   .sidebar-social :global(.social-links a) {
-    color: rgba(47, 42, 33, 0.62);
+    color: rgba(219, 196, 136, 0.72);
   }
 
   .sidebar-social :global(.social-links a:hover) {
-    color: #2f2a21;
+    color: #f1dfb0;
     transform: translateY(-1px);
   }
 
@@ -186,16 +186,16 @@ const navLinks = [
     padding-top: 12px;
     font-size: 0.76rem;
     line-height: 1.45;
-    color: rgba(47, 42, 33, 0.72);
-    border-top: 1px solid rgba(47, 42, 33, 0.12);
+    color: rgba(219, 196, 136, 0.72);
+    border-top: 1px solid rgba(219, 196, 136, 0.18);
   }
 
   .sidebar-footer a {
-    color: rgba(47, 42, 33, 0.82);
+    color: rgba(236, 218, 164, 0.9);
   }
 
   .sidebar-footer a:hover {
-    color: #2f2a21;
+    color: #f6e6be;
   }
 
   /* ── Mobile ── */
@@ -215,13 +215,13 @@ const navLinks = [
       top: 0; left: 0; right: 0;
       background: var(--sidebar-bg);
       z-index: 100;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(219, 196, 136, 0.16);
     }
 
     .mobile-name {
       font-family: var(--font-sans);
       font-weight: 700;
-      color: #2f2a21;
+      color: #dbc488;
       font-size: 1rem;
       text-decoration: none;
     }
@@ -237,7 +237,7 @@ const navLinks = [
     .nav-hamburger span {
       width: 22px;
       height: 1px;
-      background: rgba(47, 42, 33, 0.62);
+      background: rgba(219, 196, 136, 0.72);
       transition: transform 0.2s, opacity 0.2s;
       display: block;
     }
@@ -260,11 +260,11 @@ const navLinks = [
     .mobile-nav a {
       font-family: var(--font-sans);
       font-weight: 400;
-      color: rgba(47, 42, 33, 0.85);
+      color: rgba(219, 196, 136, 0.9);
       text-decoration: none;
       padding: 0.5rem 0;
       font-size: 0.95rem;
-      border-bottom: 1px solid rgba(47, 42, 33, 0.1);
+      border-bottom: 1px solid rgba(219, 196, 136, 0.16);
     }
 
     .nav-toggle:checked ~ .nav-hamburger span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
