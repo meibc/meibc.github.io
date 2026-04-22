@@ -1,6 +1,7 @@
 ---
 import profile from '../data/profile.json';
 import SocialLinks from './SocialLinks.astro';
+const year = new Date().getFullYear();
 
 const navLinks = [
   { label: 'Research', href: '#research' },
@@ -39,6 +40,7 @@ const navLinks = [
     <div class="sidebar-social">
       <SocialLinks links={profile.socialLinks} />
     </div>
+    <p class="sidebar-footer">&copy; {year} Meibin Chen. Built with <a href="https://astro.build" target="_blank" rel="noopener">Astro</a>.</p>
   </div>
 </aside>
 
@@ -69,8 +71,8 @@ const navLinks = [
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding: 56px 44px;
-    gap: 44px;
+    padding: 44px 36px 28px;
+    gap: 22px;
   }
 
   .profile-block {
@@ -80,11 +82,11 @@ const navLinks = [
 
   .sidebar-photo,
   .sidebar-photo-fallback {
-    width: 130px;
-    height: 130px;
+    width: 104px;
+    height: 104px;
     border-radius: 999px;
-    border: 2px solid rgba(255, 255, 255, 0.45);
-    margin-bottom: 24px;
+    border: 1px solid rgba(47, 42, 33, 0.35);
+    margin-bottom: 18px;
   }
 
   .sidebar-photo {
@@ -106,49 +108,63 @@ const navLinks = [
   .site-name {
     font-family: var(--font-sans);
     font-weight: 700;
-    font-size: 2.25rem;
-    color: #ecf0f4;
-    line-height: 1.1;
-    margin-bottom: 10px;
+    font-size: 2rem;
+    color: #2f2a21;
+    line-height: 1.15;
+    margin-bottom: 8px;
   }
 
   .site-title,
   .site-affiliation {
-    color: rgba(232, 236, 241, 0.9);
-    font-size: 1.15rem;
-    line-height: 1.35;
+    color: rgba(47, 42, 33, 0.85);
+    font-size: 0.98rem;
+    line-height: 1.45;
     margin: 0;
   }
 
   .site-affiliation {
     margin-top: 4px;
-    max-width: 210px;
+    max-width: 220px;
   }
 
   nav {
     display: flex;
     flex-direction: column;
-    gap: 2px;
-    margin-top: 6px;
+    margin-top: 8px;
   }
 
   .nav-link {
     font-family: var(--font-sans);
     font-weight: 400;
-    font-size: 1.05rem;
-    color: rgba(230, 234, 240, 0.85);
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    color: rgba(47, 42, 33, 0.72);
     text-decoration: none;
-    padding: 6px 0;
+    padding: 9px 0;
+    border-bottom: 1px solid rgba(47, 42, 33, 0.09);
     display: flex;
     align-items: center;
-    transition: color 0.2s ease, transform 0.2s ease;
+    gap: 10px;
+    transition: color 0.2s ease;
   }
 
-  .nav-link:hover { color: #ffffff; }
-  .nav-link.active { color: #ffffff; transform: translateX(2px); }
+  .nav-link::before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background: rgba(47, 42, 33, 0.8);
+    transition: width 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  .nav-link:hover { color: rgba(47, 42, 33, 0.92); }
+  .nav-link:hover::before { width: 8px; }
+  .nav-link.active { color: #2f2a21; }
+  .nav-link.active::before { width: 14px; }
 
   .sidebar-social {
-    margin-top: 8px;
+    margin-top: 2px;
   }
 
   .sidebar-social :global(.social-links) {
@@ -157,12 +173,29 @@ const navLinks = [
   }
 
   .sidebar-social :global(.social-links a) {
-    color: rgba(230, 234, 240, 0.72);
+    color: rgba(47, 42, 33, 0.62);
   }
 
   .sidebar-social :global(.social-links a:hover) {
-    color: #ffffff;
+    color: #2f2a21;
     transform: translateY(-1px);
+  }
+
+  .sidebar-footer {
+    margin-top: auto;
+    padding-top: 12px;
+    font-size: 0.76rem;
+    line-height: 1.45;
+    color: rgba(47, 42, 33, 0.72);
+    border-top: 1px solid rgba(47, 42, 33, 0.12);
+  }
+
+  .sidebar-footer a {
+    color: rgba(47, 42, 33, 0.82);
+  }
+
+  .sidebar-footer a:hover {
+    color: #2f2a21;
   }
 
   /* ── Mobile ── */
@@ -180,7 +213,7 @@ const navLinks = [
       padding: 0.875rem 1.25rem;
       position: fixed;
       top: 0; left: 0; right: 0;
-      background: #1e2535;
+      background: var(--sidebar-bg);
       z-index: 100;
       border-bottom: 1px solid rgba(255,255,255,0.06);
     }
@@ -188,7 +221,7 @@ const navLinks = [
     .mobile-name {
       font-family: var(--font-sans);
       font-weight: 700;
-      color: #ecf0f4;
+      color: #2f2a21;
       font-size: 1rem;
       text-decoration: none;
     }
@@ -204,7 +237,7 @@ const navLinks = [
     .nav-hamburger span {
       width: 22px;
       height: 1px;
-      background: #6a7a8a;
+      background: rgba(47, 42, 33, 0.62);
       transition: transform 0.2s, opacity 0.2s;
       display: block;
     }
@@ -227,11 +260,11 @@ const navLinks = [
     .mobile-nav a {
       font-family: var(--font-sans);
       font-weight: 400;
-      color: #e6eaf0;
+      color: rgba(47, 42, 33, 0.85);
       text-decoration: none;
       padding: 0.5rem 0;
       font-size: 0.95rem;
-      border-bottom: 1px solid rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(47, 42, 33, 0.1);
     }
 
     .nav-toggle:checked ~ .nav-hamburger span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
