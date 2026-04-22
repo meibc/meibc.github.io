@@ -6,9 +6,21 @@ import profile from '../data/profile.json';
 <section id="about" class="section hero">
   <div class="container hero-grid">
     <div class="hero-photo">
-      <div class="photo-placeholder">
-        <span>{profile.name.split(' ').map(n => n[0]).join('')}</span>
-      </div>
+      {
+        profile.photo ? (
+          <img
+            src={profile.photo}
+            alt={`${profile.name} profile photo`}
+            class="photo-image"
+            loading="eager"
+            decoding="async"
+          />
+        ) : (
+          <div class="photo-placeholder">
+            <span>{profile.name.split(' ').map(n => n[0]).join('')}</span>
+          </div>
+        )
+      }
     </div>
     <div class="hero-content">
       <h1 class="hero-name">{profile.name}</h1>
@@ -30,6 +42,15 @@ import profile from '../data/profile.json';
     grid-template-columns: 200px 1fr;
     gap: var(--space-xl);
     align-items: center;
+  }
+
+  .photo-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
   }
 
   .photo-placeholder {
@@ -76,6 +97,11 @@ import profile from '../data/profile.json';
       grid-template-columns: 1fr;
       text-align: center;
       justify-items: center;
+    }
+
+    .photo-image {
+      width: 150px;
+      height: 150px;
     }
 
     .photo-placeholder {
