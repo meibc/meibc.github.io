@@ -1,16 +1,26 @@
 ---
 import profile from '../data/profile.json';
 
-const highlightedBio = profile.bio
-  .replace('quantitative and systems-based approaches', '<strong>quantitative and systems-based approaches</strong>')
-  .replace('simulation modeling', '<span class="hover-term" tabindex="0"><strong>simulation modeling</strong></span>')
-  .replace('decision-relevant tools', '<strong>decision-relevant tools</strong>');
+const emphasizeBio = (text: string) =>
+  text
+    .replace('quantitative and systems-based approaches', '<strong>quantitative and systems-based approaches</strong>')
+    .replace('simulation modeling', '<span class="hover-term" tabindex="0"><strong>simulation modeling</strong></span>')
+    .replace('decision-relevant tools', '<strong>decision-relevant tools</strong>');
+
+const bioParagraphs = Array.isArray(profile.bio)
+  ? profile.bio
+  : String(profile.bio)
+      .split(/\n+/)
+      .map((p) => p.trim())
+      .filter(Boolean);
 ---
 
 <section id="about" class="section hero">
   <div class="container hero-grid hero-copy">
     <div class="hero-content">
-      <p class="hero-bio" set:html={highlightedBio}></p>
+      {bioParagraphs.map((paragraph) => (
+        <p class="hero-bio" set:html={emphasizeBio(paragraph)}></p>
+      ))}
     </div>
     <aside class="detail-panel" aria-live="polite">
       <h3>Simulation Modeling</h3>
@@ -39,6 +49,11 @@ const highlightedBio = profile.bio
     line-height: 1.68;
     max-width: 100%;
     margin: 0;
+  }
+
+  .hero-content {
+    display: grid;
+    gap: 0.9rem;
   }
 
   .hero-bio :global(strong) {

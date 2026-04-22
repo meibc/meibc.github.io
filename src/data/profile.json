@@ -2,7 +2,12 @@
   "name": "Meibin Chen",
   "title": "PhD Candidate",
   "affiliation": "Department of Systems Engineering, Johns Hopkins University",
-  "bio": "I am a PhD Candidate in the Department of Systems Engineering at Johns Hopkins University. \n Broadly, I develop machine learning approaches to conduct forecasting and evaluation. \n My main interest is in how structural causality can be used to understand human behavior in complex systems. \n integrating  causal inference, simulation modeling, and systems methods. My work focuses on translating complex social and behavioral dynamics into decision-relevant tools.",
+  "bio": [
+    "I am a PhD Candidate in the Department of Systems Engineering at Johns Hopkins University.",
+    "Broadly, I develop machine learning approaches to conduct forecasting and evaluation.",
+    "My main interest is in how structural causality can be used to understand human behavior in complex systems, integrating causal inference, simulation modeling, and systems methods.",
+    "My work focuses on translating complex social and behavioral dynamics into decision-relevant tools."
+  ],
   "photo": "/images/research/meibin-chen.png",
   "email": "mchen148@jhu.edu",
   "socialLinks": [
