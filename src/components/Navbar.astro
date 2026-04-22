@@ -12,33 +12,35 @@ const navLinks = [
 
 <aside class="sidebar">
   <div class="sidebar-inner">
-    <a href="#about" class="profile-block">
-      {
-        profile.photo ? (
-          <img
-            src={profile.photo}
-            alt={`${profile.name} profile photo`}
-            class="sidebar-photo"
-            loading="eager"
-            decoding="async"
-          />
-        ) : (
-          <div class="sidebar-photo-fallback">
-            <span>{profile.name.split(' ').map(n => n[0]).join('')}</span>
-          </div>
-        )
-      }
-      <h1 class="site-name">{profile.name}</h1>
-      <p class="site-title">{profile.title}</p>
-      <p class="site-affiliation">{profile.affiliation}</p>
-    </a>
-    <nav>
-      {navLinks.map(link => (
-        <a href={link.href} class="nav-link">{link.label}</a>
-      ))}
-    </nav>
-    <div class="sidebar-social">
-      <SocialLinks links={profile.socialLinks} />
+    <div class="sidebar-shell">
+      <a href="#about" class="profile-block">
+        {
+          profile.photo ? (
+            <img
+              src={profile.photo}
+              alt={`${profile.name} profile photo`}
+              class="sidebar-photo"
+              loading="eager"
+              decoding="async"
+            />
+          ) : (
+            <div class="sidebar-photo-fallback">
+              <span>{profile.name.split(' ').map(n => n[0]).join('')}</span>
+            </div>
+          )
+        }
+        <h1 class="site-name">{profile.name}</h1>
+        <p class="site-title">{profile.title}</p>
+        <p class="site-affiliation">{profile.affiliation}</p>
+      </a>
+      <nav>
+        {navLinks.map(link => (
+          <a href={link.href} class="nav-link">{link.label}</a>
+        ))}
+      </nav>
+      <div class="sidebar-social">
+        <SocialLinks links={profile.socialLinks} />
+      </div>
     </div>
     <p class="sidebar-footer">&copy; {year} Meibin Chen. Built with <a href="https://astro.build" target="_blank" rel="noopener">Astro</a>.</p>
   </div>
@@ -71,19 +73,27 @@ const navLinks = [
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding: 84px 36px 28px;
-    gap: 22px;
+    padding: 70px 28px 24px;
+    gap: 16px;
+  }
+
+  .sidebar-shell {
+    width: min(236px, 100%);
+    margin: 0 auto;
   }
 
   .profile-block {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     text-decoration: none;
   }
 
   .sidebar-photo,
   .sidebar-photo-fallback {
-    width: 122px;
-    height: 122px;
+    width: 132px;
+    height: 132px;
     border-radius: 999px;
     border: 1px solid rgba(219, 196, 136, 0.45);
     margin-bottom: 18px;
@@ -108,17 +118,17 @@ const navLinks = [
   .site-name {
     font-family: var(--font-sans);
     font-weight: 700;
-    font-size: 2rem;
+    font-size: 1.95rem;
     color: #dbc488;
     line-height: 1.15;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
   }
 
   .site-title,
   .site-affiliation {
     color: rgba(219, 196, 136, 0.9);
-    font-size: 0.98rem;
-    line-height: 1.45;
+    font-size: 0.96rem;
+    line-height: 1.5;
     margin: 0;
   }
 
@@ -130,46 +140,47 @@ const navLinks = [
   nav {
     display: flex;
     flex-direction: column;
-    margin-top: 8px;
+    margin-top: 26px;
+    gap: 8px;
   }
 
   .nav-link {
     font-family: var(--font-sans);
-    font-weight: 400;
-    font-size: 0.95rem;
-    letter-spacing: 0.04em;
+    font-weight: 700;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.11em;
     color: rgba(219, 196, 136, 0.78);
     text-decoration: none;
-    padding: 9px 0;
-    border-bottom: 1px solid rgba(219, 196, 136, 0.16);
+    padding: 9px 14px;
+    border: 1px solid rgba(219, 196, 136, 0.28);
+    border-radius: 999px;
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 10px;
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
   }
 
-  .nav-link::before {
-    content: '';
-    display: block;
-    width: 0;
-    height: 1px;
-    background: rgba(219, 196, 136, 0.9);
-    transition: width 0.2s ease;
-    flex-shrink: 0;
+  .nav-link:hover {
+    color: #f3e2b6;
+    border-color: rgba(243, 226, 182, 0.56);
+    background: rgba(243, 226, 182, 0.07);
   }
 
-  .nav-link:hover { color: rgba(238, 221, 169, 0.96); }
-  .nav-link:hover::before { width: 8px; }
-  .nav-link.active { color: #f1dfb0; }
-  .nav-link.active::before { width: 14px; }
+  .nav-link.active {
+    color: #f7e9c4;
+    border-color: rgba(243, 226, 182, 0.68);
+    background: rgba(243, 226, 182, 0.14);
+  }
 
   .sidebar-social {
-    margin-top: 2px;
+    margin-top: 18px;
   }
 
   .sidebar-social :global(.social-links) {
     margin-top: 0;
-    gap: 14px;
+    gap: 12px;
+    justify-content: center;
   }
 
   .sidebar-social :global(.social-links a) {
@@ -183,9 +194,10 @@ const navLinks = [
 
   .sidebar-footer {
     margin-top: auto;
-    padding-top: 12px;
-    font-size: 0.76rem;
+    padding-top: 14px;
+    font-size: 0.74rem;
     line-height: 1.45;
+    text-align: center;
     color: rgba(219, 196, 136, 0.72);
     border-top: 1px solid rgba(219, 196, 136, 0.18);
   }
