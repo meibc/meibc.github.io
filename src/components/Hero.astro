@@ -1,117 +1,50 @@
 ---
-import SocialLinks from './SocialLinks.astro';
 import profile from '../data/profile.json';
+
+const highlightedBio = profile.bio
+  .replace('quantitative and systems-based approaches', '<strong>quantitative and systems-based approaches</strong>')
+  .replace('simulation modeling', '<strong>simulation modeling</strong>')
+  .replace('decision-relevant tools', '<strong>decision-relevant tools</strong>');
 ---
 
 <section id="about" class="section hero">
   <div class="container hero-grid">
-    <div class="hero-photo">
-      {
-        profile.photo ? (
-          <img
-            src={profile.photo}
-            alt={`${profile.name} profile photo`}
-            class="photo-image"
-            loading="eager"
-            decoding="async"
-          />
-        ) : (
-          <div class="photo-placeholder">
-            <span>{profile.name.split(' ').map(n => n[0]).join('')}</span>
-          </div>
-        )
-      }
-    </div>
     <div class="hero-content">
-      <h1 class="hero-name">{profile.name}</h1>
-      <p class="hero-title">{profile.title}</p>
-      <p class="hero-affiliation">{profile.affiliation}</p>
-      <p class="hero-bio">{profile.bio}</p>
-      <SocialLinks links={profile.socialLinks} />
+      <p class="hero-bio" set:html={highlightedBio}></p>
     </div>
   </div>
 </section>
 
 <style>
   .hero {
-    padding-top: var(--space-2xl);
+    padding-top: 84px;
   }
 
   .hero-grid {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: var(--space-xl);
-    align-items: center;
-  }
-
-  .photo-image {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center;
     display: block;
-  }
-
-  .photo-placeholder {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 2.5rem;
-    font-weight: 700;
-  }
-
-  .hero-name {
-    font-size: 2.25rem;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: var(--space-xs);
-  }
-
-  .hero-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--color-accent);
-    margin-bottom: var(--space-xs);
-  }
-
-  .hero-affiliation {
-    font-size: 0.95rem;
-    color: var(--color-text-secondary);
-    margin-bottom: var(--space-md);
   }
 
   .hero-bio {
     color: var(--color-text-secondary);
-    line-height: 1.8;
-    max-width: 600px;
+    font-size: 1.95rem;
+    line-height: 1.28;
+    max-width: 920px;
+    margin: 0;
+  }
+
+  .hero-bio :global(strong) {
+    color: #4d4a46;
+    font-weight: 700;
   }
 
   @media (max-width: 768px) {
-    .hero-grid {
-      grid-template-columns: 1fr;
-      text-align: center;
-      justify-items: center;
-    }
-
-    .photo-image {
-      width: 150px;
-      height: 150px;
-    }
-
-    .photo-placeholder {
-      width: 150px;
-      height: 150px;
-      font-size: 2rem;
+    .hero {
+      padding-top: var(--space-md);
     }
 
     .hero-bio {
-      text-align: left;
+      font-size: 1.15rem;
+      line-height: 1.6;
     }
   }
 </style>

@@ -1,9 +1,9 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --navy:      #1e2535;
-  --beige:     #e8e4dc;
-  --beige-mid: #dedad2;
+  --navy:      #1c2641;
+  --beige:     #e5e2dc;
+  --beige-mid: #d8d4cd;
   --slate:     #5b7c99;
   --slate-dim: #4a6478;
   --gold:      #c9a961;
@@ -20,7 +20,7 @@
   --color-accent-light: #7a9ab5;
   --color-border: var(--rule);
   --sidebar-bg: var(--navy);
-  --sidebar-width: 230px;
+  --sidebar-width: 340px;
   --mobile-header-height: 52px;
 
   --font-sans: 'Lato', system-ui, -apple-system, sans-serif;
@@ -30,10 +30,10 @@
   --space-sm: 0.5rem;
   --space-md: 1rem;
   --space-lg: 2rem;
-  --space-xl: 4rem;
-  --space-2xl: 5rem;
+  --space-xl: 3.5rem;
+  --space-2xl: 4.5rem;
 
-  --max-width: 860px;
+  --max-width: 980px;
 
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
   --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
@@ -46,9 +46,10 @@ html {
 body {
   font-family: var(--font-sans);
   color: var(--color-text);
-  background: var(--sidebar-bg);
+  background: #cfcfd1;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+  padding: 24px;
 }
 
 a {
@@ -70,20 +71,20 @@ img {
 .page-layout {
   display: grid;
   grid-template-columns: var(--sidebar-width) 1fr;
-  min-height: 100vh;
+  min-height: calc(100vh - 48px);
+  background: var(--color-bg);
 }
 
 .main-panel {
   background: var(--color-bg);
-  min-height: 100vh;
+  min-height: calc(100vh - 48px);
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 /* ── Content sections ── */
 .section {
-  padding: var(--space-2xl) var(--space-lg);
+  padding: var(--space-2xl) 56px;
   display: none;
 }
 
@@ -99,7 +100,7 @@ img {
 
 .container {
   max-width: var(--max-width);
-  margin: 0 auto;
+  margin: 0;
 }
 
 .section-title {
@@ -129,9 +130,19 @@ img {
 
 /* ── Mobile ── */
 @media (max-width: 768px) {
+  body {
+    padding: 0;
+    background: var(--sidebar-bg);
+  }
+
   .page-layout {
     grid-template-columns: 1fr;
+    min-height: 100vh;
     padding-top: var(--mobile-header-height);
+  }
+
+  .main-panel {
+    min-height: 100vh;
   }
 
   .section {
