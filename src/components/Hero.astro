@@ -56,21 +56,28 @@ const linkifyBio = (text: string) =>
 
 <style>
   .hero {
-    padding-top: 84px;
+    padding-top: 8px;
   }
 
   .hero-grid {
     display: grid;
-    grid-template-columns: minmax(0, 500px) minmax(420px, 1fr);
-    gap: 38px;
+    grid-template-columns: minmax(0, 1fr) 0;
+    gap: 0;
     align-items: start;
+    transition: grid-template-columns 0.22s ease, gap 0.22s ease;
+    width: 100%;
+  }
+
+  .hero-copy {
+    max-width: none !important;
+    width: 100%;
   }
 
   .hero-bio {
     color: var(--color-text-secondary);
     font-size: 1.1rem;
-    line-height: 1.68;
-    max-width: 100%;
+    line-height: 1.58;
+    max-width: min(56vw, 1060px);
     margin: 0;
   }
 
@@ -115,6 +122,7 @@ const linkifyBio = (text: string) =>
   .detail-panel {
     min-height: clamp(460px, 68vh, 720px);
     max-height: 78vh;
+    width: clamp(360px, 33vw, 560px);
     overflow-y: auto;
     padding: 24px 26px;
     border-radius: 6px;
@@ -127,6 +135,7 @@ const linkifyBio = (text: string) =>
     opacity: 0;
     transform: translateX(10px);
     pointer-events: none;
+    overflow: hidden;
     transition: opacity 0.18s ease, transform 0.18s ease;
   }
 
@@ -165,11 +174,19 @@ const linkifyBio = (text: string) =>
     opacity: 1;
     transform: translateX(0);
     pointer-events: auto;
+    overflow-y: auto;
+  }
+
+  .hero-copy:has(.hover-term:hover),
+  .hero-copy:has(.hover-term:focus),
+  .hero-copy:has(.hover-term:focus-within) {
+    grid-template-columns: minmax(0, 1fr) clamp(360px, 33vw, 560px);
+    gap: 32px;
   }
 
   @media (max-width: 768px) {
     .hero {
-      padding-top: var(--space-md);
+      padding-top: 0;
     }
 
     .hero-bio {
