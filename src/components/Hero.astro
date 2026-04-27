@@ -13,6 +13,18 @@ const bioParagraphs = Array.isArray(profile.bio)
       .split(/\n+/)
       .map((p) => p.trim())
       .filter(Boolean);
+
+const linkByPlatform = Object.fromEntries(
+  (profile.socialLinks ?? []).map((link) => [link.platform, link.url])
+);
+
+const quickLinks = [
+  { label: 'GitHub', href: linkByPlatform.github || 'https://github.com/meibc', external: true },
+  { label: 'LinkedIn', href: linkByPlatform.linkedin || 'https://linkedin.com/in/', external: true },
+  { label: 'Google Scholar', href: linkByPlatform.googleScholar || '#', external: true },
+  { label: 'Publications', href: '#publications', external: false },
+  { label: 'Research', href: '#research', external: false },
+];
 ---
 
 <section id="about" class="section hero">
@@ -21,6 +33,18 @@ const bioParagraphs = Array.isArray(profile.bio)
       {bioParagraphs.map((paragraph) => (
         <p class="hero-bio" set:html={emphasizeBio(paragraph)}></p>
       ))}
+      <nav class="hero-links" aria-label="Quick links">
+        {quickLinks.map((link) => (
+          <a
+            href={link.href}
+            class="hero-link"
+            target={link.external ? '_blank' : undefined}
+            rel={link.external ? 'noopener noreferrer' : undefined}
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
     </div>
     <aside class="detail-panel" aria-live="polite">
       <h3>Simulation Modeling</h3>
@@ -54,6 +78,29 @@ const bioParagraphs = Array.isArray(profile.bio)
   .hero-content {
     display: grid;
     gap: 0.9rem;
+  }
+
+  .hero-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem 0.8rem;
+    margin-top: 0.2rem;
+  }
+
+  .hero-link {
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #5f5a52;
+    border-bottom: 1px solid rgba(95, 90, 82, 0.28);
+    padding-bottom: 0.08rem;
+    text-decoration: none;
+    transition: color 0.18s ease, border-color 0.18s ease;
+  }
+
+  .hero-link:hover {
+    color: #3d3934;
+    border-bottom-color: rgba(61, 57, 52, 0.52);
   }
 
   .hero-bio :global(strong) {
@@ -139,6 +186,14 @@ const bioParagraphs = Array.isArray(profile.bio)
     .hero-bio {
       font-size: 1.02rem;
       line-height: 1.6;
+    }
+
+    .hero-links {
+      gap: 0.4rem 0.7rem;
+    }
+
+    .hero-link {
+      font-size: 0.78rem;
     }
 
     .hero-grid {

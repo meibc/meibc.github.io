@@ -1,6 +1,5 @@
 ---
 import profile from '../data/profile.json';
-import SocialLinks from './SocialLinks.astro';
 const year = new Date().getFullYear();
 
 const navLinks = [
@@ -33,9 +32,6 @@ const navLinks = [
         <p class="site-title">{profile.title}</p>
         <p class="site-affiliation">{profile.affiliation}</p>
       </a>
-      <div class="sidebar-social">
-        <SocialLinks links={profile.socialLinks} />
-      </div>
       <nav>
         {navLinks.map(link => (
           <a href={link.href} class="nav-link">{link.label}</a>
@@ -181,25 +177,6 @@ const navLinks = [
 
   .nav-link.active::before {
     width: 16px;
-  }
-
-  .sidebar-social {
-    margin-top: 16px;
-  }
-
-  .sidebar-social :global(.social-links) {
-    margin-top: 0;
-    gap: 12px;
-    justify-content: center;
-  }
-
-  .sidebar-social :global(.social-links a) {
-    color: rgba(195, 178, 138, 0.68);
-  }
-
-  .sidebar-social :global(.social-links a:hover) {
-    color: #dac8a2;
-    transform: translateY(-1px);
   }
 
   .sidebar-footer {
