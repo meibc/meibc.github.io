@@ -18,33 +18,32 @@ const linkByPlatform = Object.fromEntries(
   (profile.socialLinks ?? []).map((link) => [link.platform, link.url])
 );
 
-const quickLinks = [
-  { label: 'GitHub', href: linkByPlatform.github || 'https://github.com/meibc', external: true },
-  { label: 'LinkedIn', href: linkByPlatform.linkedin || 'https://linkedin.com/in/', external: true },
-  { label: 'Google Scholar', href: linkByPlatform.googleScholar || '#', external: true },
-  { label: 'Publications', href: '#publications', external: false },
-  { label: 'Research', href: '#research', external: false },
-];
+const linkifyBio = (text: string) =>
+  text
+    .replace(
+      'Research and Publications',
+      `<a href="#research">Research</a> and <a href="#publications">Publications</a>`
+    )
+    .replace(
+      'GitHub',
+      `<a href="${linkByPlatform.github || 'https://github.com/meibc'}" target="_blank" rel="noopener noreferrer">GitHub</a>`
+    )
+    .replace(
+      'LinkedIn',
+      `<a href="${linkByPlatform.linkedin || 'https://linkedin.com/in/'}" target="_blank" rel="noopener noreferrer">LinkedIn</a>`
+    )
+    .replace(
+      'Google Scholar',
+      `<a href="${linkByPlatform.googleScholar || '#'}" target="_blank" rel="noopener noreferrer">Google Scholar</a>`
+    );
 ---
 
 <section id="about" class="section hero">
   <div class="container hero-grid hero-copy">
     <div class="hero-content">
       {bioParagraphs.map((paragraph) => (
-        <p class="hero-bio" set:html={emphasizeBio(paragraph)}></p>
+        <p class="hero-bio" set:html={linkifyBio(emphasizeBio(paragraph))}></p>
       ))}
-      <nav class="hero-links" aria-label="Quick links">
-        {quickLinks.map((link) => (
-          <a
-            href={link.href}
-            class="hero-link"
-            target={link.external ? '_blank' : undefined}
-            rel={link.external ? 'noopener noreferrer' : undefined}
-          >
-            {link.label}
-          </a>
-        ))}
-      </nav>
     </div>
     <aside class="detail-panel" aria-live="polite">
       <h3>Simulation Modeling</h3>
@@ -80,29 +79,6 @@ const quickLinks = [
     gap: 0.9rem;
   }
 
-  .hero-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.45rem 0.8rem;
-    margin-top: 0.2rem;
-  }
-
-  .hero-link {
-    font-size: 0.82rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: #5f5a52;
-    border-bottom: 1px solid rgba(95, 90, 82, 0.28);
-    padding-bottom: 0.08rem;
-    text-decoration: none;
-    transition: color 0.18s ease, border-color 0.18s ease;
-  }
-
-  .hero-link:hover {
-    color: #3d3934;
-    border-bottom-color: rgba(61, 57, 52, 0.52);
-  }
-
   .hero-bio :global(strong) {
     color: #4d4a46;
     font-weight: 700;
@@ -121,6 +97,19 @@ const quickLinks = [
   .hero-bio :global(.hover-term:focus-within) {
     color: #3f3b36;
     border-bottom-color: rgba(63, 59, 54, 0.78);
+  }
+
+  .hero-bio :global(a) {
+    color: #4f4a43;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-color: rgba(79, 74, 67, 0.35);
+    transition: color 0.16s ease, text-decoration-color 0.16s ease;
+  }
+
+  .hero-bio :global(a:hover) {
+    color: #2f2b26;
+    text-decoration-color: rgba(47, 43, 38, 0.55);
   }
 
   .detail-panel {
@@ -186,14 +175,6 @@ const quickLinks = [
     .hero-bio {
       font-size: 1.02rem;
       line-height: 1.6;
-    }
-
-    .hero-links {
-      gap: 0.4rem 0.7rem;
-    }
-
-    .hero-link {
-      font-size: 0.78rem;
     }
 
     .hero-grid {
