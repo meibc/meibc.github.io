@@ -84,7 +84,7 @@ img {
 
 /* ── Content sections ── */
 .section {
-  padding: var(--space-2xl) 38px;
+  padding: var(--space-2xl) 32px;
   display: none;
 }
 

@@ -1,13 +1,11 @@
 {
   "name": "Meibin Chen",
   "bio": [
-  "I am a PhD candidate in the Department of Systems Engineering at Johns Hopkins University, where I also completed a master’s in Applied Mathematics and Statistics. Before my PhD, I graduated from Yale with a degree in Biomedical Engineering, lived abroad in China while conducting clinical research, and led a data management team at H1, a Series C-backed healthcare startup.",
+    "I am a quantitative researcher who designs data-driven representations of real-world systems for forecasting and intervention evaluation.", 
+    "My main interest is in how structural causality and mechanistic relationships can be used to understand and shape human behavior in complex systems. This work has informed program evaluation for an NGO in Kenya, supported Gates Foundation investment decisions around point-of-care ultrasound, and helped foreground stigma as an important factor in HIV service engagement at the national level.",
+    "I'm currently finishing up my PhD in Systems Engineering at Johns Hopkins University, where I also completed a master’s in Applied Mathematics and Statistics. Before my PhD, I graduated from Yale with a degree in Biomedical Engineering, lived abroad in China while conducting clinical research, and led a data management team at H1, a Series C-backed healthcare startup.", 
+     "You can read more about my ongoing work in the Research and Publications sections, and find me on GitHub, LinkedIn, and Google Scholar."
 
-  "Broadly, I design data-driven quantitative models of real-world systems for forecasting and intervention evaluation.",
-
-  "My main research interest is in how structural causality and mechanistic relationships can be used to understand and shape human behavior in complex systems. This work integrates approaches from agent-based modeling, causal inference, Bayesian statistics, and systems science.",
-
-  "You can read more about my ongoing work in the Research and Publications sections, and find me on GitHub, LinkedIn, and Google Scholar."
 ],
   "photo": "/images/research/meibin-chen.png",
   "email": "mchen148@jhu.edu",
