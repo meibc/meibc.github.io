@@ -1,5 +1,6 @@
 ---
 import profile from '../data/profile.json';
+import SocialLinks from './SocialLinks.astro';
 const year = new Date().getFullYear();
 
 const navLinks = [
@@ -28,10 +29,12 @@ const navLinks = [
             </div>
           )
         }
-        <h1 class="site-name">{profile.name}</h1>
-        <p class="site-title">{profile.title}</p>
-        <p class="site-affiliation">{profile.affiliation}</p>
+        <p class="site-title"><strong>PhD Candidate</strong></p>
+        <p class="site-affiliation">Department of Systems Engineering,<br />Johns Hopkins University</p>
       </a>
+      <div class="sidebar-social">
+        <SocialLinks links={profile.socialLinks} />
+      </div>
       <nav>
         {navLinks.map(link => (
           <a href={link.href} class="nav-link">{link.label}</a>
@@ -74,7 +77,7 @@ const navLinks = [
   }
 
   .sidebar-shell {
-    width: min(236px, 100%);
+    width: min(210px, 100%);
     margin: 0 auto;
   }
 
@@ -91,8 +94,12 @@ const navLinks = [
     width: 126px;
     height: 126px;
     border-radius: 999px;
-    border: 1px solid rgba(219, 196, 136, 0.45);
+    border: 1px solid rgba(61, 61, 61, 0.22);
+    margin-top: 8px;
     margin-bottom: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
   }
 
   .sidebar-photo {
@@ -111,20 +118,11 @@ const navLinks = [
     font-weight: 700;
   }
 
-  .site-name {
-    font-family: var(--font-sans);
-    font-weight: 700;
-    font-size: 1.88rem;
-    color: #c3b28a;
-    line-height: 1.15;
-    margin-bottom: 10px;
-  }
-
   .site-title,
   .site-affiliation {
-    color: rgba(195, 178, 138, 0.86);
+    color: rgba(61, 61, 61, 0.9);
     font-size: 0.94rem;
-    line-height: 1.52;
+    line-height: 1.55;
     margin: 0;
   }
 
@@ -133,25 +131,52 @@ const navLinks = [
     max-width: 220px;
   }
 
+  .sidebar-social {
+    margin-top: 20px;
+    margin-bottom: 8px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .sidebar-social :global(.social-links) {
+    margin-top: 0;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .sidebar-social :global(.social-links a) {
+    color: rgba(61, 61, 61, 0.78);
+  }
+
+  .sidebar-social :global(.social-links a:hover) {
+    color: #5F7FA1;
+    transform: translateY(-1px);
+  }
+
   nav {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     margin-top: 24px;
-    gap: 6px;
+    margin-left: 8px;
+    gap: 10px;
   }
 
   .nav-link {
     font-family: var(--font-sans);
     font-weight: 700;
-    font-size: 0.74rem;
+    font-size: 0.88rem;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: rgba(195, 178, 138, 0.74);
+    letter-spacing: 0.08em;
+    color: rgba(61, 61, 61, 0.92);
     text-decoration: none;
-    padding: 8px 0;
+    padding: 10px 0;
     display: flex;
+    justify-content: flex-start;
     align-items: center;
     gap: 10px;
+    text-align: left;
     transition: color 0.2s ease;
   }
 
@@ -159,12 +184,12 @@ const navLinks = [
     content: '';
     width: 0;
     height: 1px;
-    background: rgba(220, 204, 166, 0.85);
+    background: rgba(95, 127, 161, 0.9);
     transition: width 0.2s ease;
   }
 
   .nav-link:hover {
-    color: #d9c8a4;
+    color: #47698C;
   }
 
   .nav-link:hover::before {
@@ -172,7 +197,7 @@ const navLinks = [
   }
 
   .nav-link.active {
-    color: #e5d4b2;
+    color: #47698C;
   }
 
   .nav-link.active::before {
@@ -185,16 +210,16 @@ const navLinks = [
     font-size: 0.74rem;
     line-height: 1.5;
     text-align: center;
-    color: rgba(195, 178, 138, 0.7);
-    border-top: 1px solid rgba(195, 178, 138, 0.18);
+    color: rgba(61, 61, 61, 0.72);
+    border-top: 1px solid rgba(61, 61, 61, 0.18);
   }
 
   .sidebar-footer a {
-    color: rgba(214, 198, 160, 0.9);
+    color: #5F7FA1;
   }
 
   .sidebar-footer a:hover {
-    color: #dcc9a4;
+    color: #47698C;
   }
 
   /* ── Mobile ── */
@@ -214,13 +239,13 @@ const navLinks = [
       top: 0; left: 0; right: 0;
       background: var(--sidebar-bg);
       z-index: 100;
-      border-bottom: 1px solid rgba(195, 178, 138, 0.16);
+      border-bottom: 1px solid rgba(61, 61, 61, 0.16);
     }
 
     .mobile-name {
       font-family: var(--font-sans);
       font-weight: 700;
-      color: #c3b28a;
+      color: #3D3D3D;
       font-size: 1rem;
       text-decoration: none;
     }
@@ -236,7 +261,7 @@ const navLinks = [
     .nav-hamburger span {
       width: 22px;
       height: 1px;
-      background: rgba(195, 178, 138, 0.7);
+      background: rgba(61, 61, 61, 0.72);
       transition: transform 0.2s, opacity 0.2s;
       display: block;
     }
@@ -259,11 +284,11 @@ const navLinks = [
     .mobile-nav a {
       font-family: var(--font-sans);
       font-weight: 400;
-      color: rgba(195, 178, 138, 0.88);
+      color: rgba(61, 61, 61, 0.92);
       text-decoration: none;
       padding: 0.5rem 0;
       font-size: 0.95rem;
-      border-bottom: 1px solid rgba(195, 178, 138, 0.16);
+      border-bottom: 1px solid rgba(61, 61, 61, 0.16);
     }
 
     .nav-toggle:checked ~ .nav-hamburger span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }

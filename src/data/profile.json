@@ -1,12 +1,10 @@
 {
   "name": "Meibin Chen",
   "bio": [
-    "I am a quantitative researcher who designs data-driven representations of real-world systems for forecasting and intervention evaluation.", 
-    "My main interest is in how structural causality and mechanistic relationships can be used to understand and shape human behavior in complex systems. This work has informed program evaluation for an NGO in Kenya, supported Gates Foundation investment decisions around point-of-care ultrasound, and helped foreground stigma as an important factor in HIV service engagement at the national level.",
-    "I'm currently finishing up my PhD in Systems Engineering at Johns Hopkins University, where I also completed a master’s in Applied Mathematics and Statistics. Before my PhD, I graduated from Yale with a degree in Biomedical Engineering, lived abroad in China while conducting clinical research, and led a data management team at H1, a Series C-backed healthcare startup.", 
-     "You can read more about my ongoing work in the Research and Publications sections, and find me on GitHub, LinkedIn, and Google Scholar."
-
-],
+    "I am a quantitative researcher who designs data-driven representations of real-world systems for forecasting and intervention evaluation. Specifically, I'm interested in how structural causality and mechanistic relationships can shape human behavior in complex systems.", 
+    "My research has informed program evaluation for an <a href=\"https://jacarandahealth.org/\" target=\"_blank\" rel=\"noopener noreferrer\">NGO in Kenya</a>, supported Gates Foundation investments in <a href=\"https://www.qure.ai/us/news-press-coverages/qureai-secures-major-global-health-grant-to-build-ai-powered-point-of-care-ultrasound\" target=\"_blank\" rel=\"noopener noreferrer\">point-of-care ultrasound</a>, and helped foreground <a href=\"https://aidsvu.org/news-updates/the-new-jhu-stigma-dashboard/\" target=\"_blank\" rel=\"noopener noreferrer\">stigma</a> nationally in HIV service delivery.",
+    "You can read more about my ongoing work in the Research or Publications sections, or check out my GitHub, LinkedIn, or Google Scholar profiles."
+  ],
   "photo": "/images/research/meibin-chen.png",
   "email": "mchen148@jhu.edu",
   "socialLinks": [

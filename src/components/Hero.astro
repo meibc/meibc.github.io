@@ -21,19 +21,19 @@ const linkByPlatform = Object.fromEntries(
 const linkifyBio = (text: string) =>
   text
     .replace(
-      'Research and Publications',
+      /Research\s+(?:and|or)\s+Publications/i,
       `<a href="#research">Research</a> and <a href="#publications">Publications</a>`
     )
     .replace(
-      'GitHub',
+      /GitHub|Github/i,
       `<a href="${linkByPlatform.github || 'https://github.com/meibc'}" target="_blank" rel="noopener noreferrer">GitHub</a>`
     )
     .replace(
-      'LinkedIn',
+      /LinkedIn/i,
       `<a href="${linkByPlatform.linkedin || 'https://linkedin.com/in/'}" target="_blank" rel="noopener noreferrer">LinkedIn</a>`
     )
     .replace(
-      'Google Scholar',
+      /Google Scholar/i,
       `<a href="${linkByPlatform.googleScholar || '#'}" target="_blank" rel="noopener noreferrer">Google Scholar</a>`
     );
 ---
@@ -41,6 +41,7 @@ const linkifyBio = (text: string) =>
 <section id="about" class="section hero">
   <div class="container hero-grid hero-copy">
     <div class="hero-content">
+      <h1 class="hero-name">{profile.name}</h1>
       {bioParagraphs.map((paragraph) => (
         <p class="hero-bio" set:html={linkifyBio(emphasizeBio(paragraph))}></p>
       ))}
@@ -56,7 +57,7 @@ const linkifyBio = (text: string) =>
 
 <style>
   .hero {
-    padding-top: 8px;
+    padding-top: 125px;
   }
 
   .hero-grid {
@@ -71,23 +72,34 @@ const linkifyBio = (text: string) =>
   .hero-copy {
     max-width: none !important;
     width: 100%;
+    padding-left: 50px;
   }
 
   .hero-bio {
     color: var(--color-text-secondary);
-    font-size: 1.1rem;
-    line-height: 1.58;
-    max-width: min(56vw, 1060px);
+    font-size: 1rem;
+    line-height: 1.56;
+    max-width: min(45vw, 684px);
     margin: 0;
   }
 
   .hero-content {
-    display: grid;
-    gap: 0.9rem;
+    display: block;
+  }
+
+  .hero-name {
+    font-size: 1.85rem;
+    line-height: 1.1;
+    color: var(--color-text);
+    margin-bottom: 2rem;
+  }
+
+  .hero-bio + .hero-bio {
+    margin-top: 1.25rem;
   }
 
   .hero-bio :global(strong) {
-    color: #4d4a46;
+    color: var(--color-text);
     font-weight: 700;
   }
 
@@ -107,16 +119,16 @@ const linkifyBio = (text: string) =>
   }
 
   .hero-bio :global(a) {
-    color: #4f4a43;
+    color: var(--color-accent);
     text-decoration: underline;
     text-underline-offset: 2px;
-    text-decoration-color: rgba(79, 74, 67, 0.35);
+    text-decoration-color: rgba(95, 127, 161, 0.45);
     transition: color 0.16s ease, text-decoration-color 0.16s ease;
   }
 
   .hero-bio :global(a:hover) {
-    color: #2f2b26;
-    text-decoration-color: rgba(47, 43, 38, 0.55);
+    color: var(--color-accent-light);
+    text-decoration-color: rgba(71, 105, 140, 0.65);
   }
 
   .detail-panel {
@@ -186,16 +198,24 @@ const linkifyBio = (text: string) =>
 
   @media (max-width: 768px) {
     .hero {
-      padding-top: 0;
+      padding-top: 8px;
     }
 
     .hero-bio {
-      font-size: 1.02rem;
+      font-size: 0.94rem;
       line-height: 1.6;
+    }
+
+    .hero-name {
+      font-size: 1.8rem;
     }
 
     .hero-grid {
       display: block;
+    }
+
+    .hero-copy {
+      padding-left: 0;
     }
 
     .detail-panel {
