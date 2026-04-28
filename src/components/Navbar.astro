@@ -234,19 +234,20 @@ const navLinks = [
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
-      padding: 0.875rem 1.25rem;
+      padding: 0.9rem 1rem 0.7rem;
       position: fixed;
       top: 0; left: 0; right: 0;
       background: var(--sidebar-bg);
       z-index: 100;
       border-bottom: 1px solid rgba(61, 61, 61, 0.16);
+      backdrop-filter: blur(8px);
     }
 
     .mobile-name {
       font-family: var(--font-sans);
       font-weight: 700;
       color: #3D3D3D;
-      font-size: 1rem;
+      font-size: 1.05rem;
       text-decoration: none;
     }
 
@@ -275,25 +276,32 @@ const navLinks = [
       transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
                   padding 0.35s cubic-bezier(0.4, 0, 0.2, 1);
       padding: 0;
+      margin-top: 0.35rem;
+      border-radius: 8px;
+      background: rgba(253, 251, 247, 0.86);
     }
 
     .nav-toggle:checked ~ .mobile-nav {
-      padding-top: 0.75rem;
+      padding: 0.45rem 0.8rem 0.35rem;
     }
 
     .mobile-nav a {
       font-family: var(--font-sans);
-      font-weight: 400;
+      font-weight: 600;
       color: rgba(61, 61, 61, 0.92);
       text-decoration: none;
-      padding: 0.5rem 0;
-      font-size: 0.95rem;
+      padding: 0.62rem 0;
+      font-size: 0.98rem;
       border-bottom: 1px solid rgba(61, 61, 61, 0.16);
+    }
+
+    .mobile-nav a:last-child {
+      border-bottom: none;
     }
 
     .nav-toggle:checked ~ .nav-hamburger span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
     .nav-toggle:checked ~ .nav-hamburger span:nth-child(2) { opacity: 0; }
     .nav-toggle:checked ~ .nav-hamburger span:nth-child(3) { transform: rotate(-45deg) translate(4px, -4px); }
-    .nav-toggle:checked ~ .mobile-nav { max-height: 300px; }
+    .nav-toggle:checked ~ .mobile-nav { max-height: 420px; }
   }
 </style>

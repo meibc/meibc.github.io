@@ -198,16 +198,18 @@ const linkifyBio = (text: string) =>
 
   @media (max-width: 768px) {
     .hero {
-      padding-top: 8px;
+      padding-top: 0.25rem;
     }
 
     .hero-bio {
       font-size: 0.94rem;
-      line-height: 1.6;
+      line-height: 1.62;
+      max-width: 100%;
     }
 
     .hero-name {
-      font-size: 1.8rem;
+      font-size: 1.55rem;
+      margin-bottom: 0.85rem;
     }
 
     .hero-grid {
@@ -215,26 +217,11 @@ const linkifyBio = (text: string) =>
     }
 
     .hero-copy {
-      padding-left: 0;
+      padding-left: 0.1rem;
     }
 
     .detail-panel {
-      margin-top: 14px;
-      min-height: 0;
-      max-height: 300px;
-      padding: 16px 16px;
-      opacity: 1;
-      transform: none;
-      pointer-events: auto;
-    }
-
-    .detail-panel h3 {
-      font-size: 1.6rem;
-      margin-bottom: 10px;
-    }
-
-    .detail-panel p:first-of-type {
-      font-size: 1rem;
+      display: none;
     }
   }
 </style>

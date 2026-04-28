@@ -38,7 +38,7 @@
   /* ── Layout ── */
   --sidebar-bg:            var(--navy);
   --sidebar-width:         270px;
-  --mobile-header-height:  52px;
+  --mobile-header-height:  64px;
   --max-width:             980px;
 
   /* ── Typography ── */
@@ -171,7 +171,7 @@ img {
 /* Mobile */
 @media (max-width: 768px) {
   body {
-    background: var(--sidebar-bg);
+    background: var(--color-bg);
   }
 
   .page-layout {
@@ -179,8 +179,17 @@ img {
     padding-top: var(--mobile-header-height);
   }
 
+  .main-panel {
+    min-height: calc(100vh - var(--mobile-header-height));
+  }
+
   .section {
-    padding: var(--space-lg) var(--space-md);
+    padding: 1.25rem 1rem;
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
   }
 }
 
