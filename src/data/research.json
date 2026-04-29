@@ -1,127 +1,51 @@
 [
   {
-    "title": "Quantitative Modeling of Complex Systems",
-    "description": "Developing and translating conceptual models and behavioral frameworks to quantitative simlulations to understand health and social system dynamics on key behavioral outcomes",
-    "subareas": [
-      {
-        "title": "HIV Stigma & Service Engagement",
-        "featuredWork": [
-          {
-            "title": "HIV Stigma & Service Engagement Modeling",
-            "order": 1,
-            "venue": "Stigma mitigation for priority populations across the US",
-            "links": {
-              "viewMore": "/research/hiv-stigma-service-engagement",
-              "code": "/projects/hiv-stigma-model"
-            }
-          }
-        ]
-      },
-      {
-        "title": "Maternal Health & Service Delivery Redesign",
-        "featuredWork": [
-          {
-            "title": "Maternal Health & Service Delivery Redesign Modeling",
-            "order": 2,
-            "venue": "Health systems modeling in Kenya",
-            "links": {
-              "viewMore": "/research/maternal-health-service-redesign",
-              "code": "/projects/sdr-model"
-            }
-          }
-        ]
-      }
-    ]
+    "title": "HIV Service Engagement (Socio-Behavioral Feedbacks)",
+    "preview": "How do stigma, social support, and care experiences interact to shape HIV testing and PrEP uptake? I model how these socio-behavioral feedbacks propagate through service engagement over time.",
+    "image": "/images/research/BMCPH_Fig1.png",
+    "imageAlt": "Causal loop diagram for HIV stigma and service engagement",
+    "viewMore": "/research/hiv-stigma-service-engagement"
   },
   {
-  "title": "Data & Inference",
-  "description": "Developing statistical and methodological approaches to learn from incomplete, biased, or structurally constrained data, with a focus on using qualitative knowledge for quantitative translation.",
-  "subareas": [
-    {
-      "title": "Structure-Constrained Inference for System Dynamics",
-      "description": "Translating qualitative system representations (e.g., causal maps) into empirically parameterized dynamic models using constrained estimation approaches.",
-      "featuredWork": [
-        {
-          "title": "Causal Maps to Quantitative Dynamics",
-          "order": 1,
-          "venue": "Dynamic model estimation from qualitative system structure",
-          "links": {
-            "viewMore": "/research/cld-to-dynamics",
-            "code": "/projects/cld-inference"
-          }
-        }
-      ]
-    }
-  ],
-  "featuredWork": [
-    {
-      "title": "Latent Population Estimation from Survey and Census Data",
-      "order": 2,
-      "venue": "Multi-source population estimation and simulation",
-      "links": {
-        "viewMore": "/research/msm-population-estimation",
-        "code": "https://github.com/meibc/MSM-Population-Estimates"
-      }
-    },
-    {
-      "title": "Bias-Corrected Trend Estimation from Survey Data",
-      "order": 3,
-      "venue": "Survey harmonization and calibration",
-      "links": {
-        "viewMore": "/research/reweighting-bias-correction",
-        "code": "https://github.com/meibc/AMIS-Variable-Trends"
-      }
-    }
-  ]
-},
+    "title": "Maternal Health Service Delivery",
+    "preview": "How do referral pathways, community trust, and service readiness shape maternal and neonatal outcomes? I use systems modeling to evaluate how maternal health interventions unfold across real-world settings.",
+    "image": "/images/research/SDR1.png",
+    "imageAlt": "Service delivery redesign systems diagram",
+    "viewMore": "/research/maternal-health-service-redesign"
+  },
   {
-  "title": "Decision Support & Participatory Methods",
-  "description": "Designing participatory approaches and decision-support tools that translate complex system insights into actionable knowledge, including stakeholder-engaged modeling, survey design, and dashboards.",
-  "subareas": [
-    {
-      "title": "Participatory Modeling & Stakeholder-Informed Design",
-      "description": "Using group model building, causal loop diagramming, and survey-based methods to capture stakeholder perspectives and inform system structure and decision-making.",
-      "featuredWork": [
-        {
-          "title": "HIV Stigma Causal Loop Diagramming",
-          "order": 3,
-          "venue": "Participatory modeling with U.S. health departments",
-          "links": {
-            "viewMore": "/research/hiv-stigma-service-engagement",
-            "code": "/projects/hiv-stigma-model"
-          }
-        },
-        {
-          "title": "Maternal Health Stakeholder Modeling in Kenya",
-          "order": 2,
-          "venue": "Group model building and implementation research",
-          "links": {
-            "viewMore": "/research/maternal-health-service-redesign",
-            "code": "/projects/sdr-model"
-          }
-        }
-      ]
-    }
-  ],
-  "featuredWork": [
-    {
-      "title": "Decision Dashboards for Health Systems",
-      "order": 1,
-      "venue": "Stakeholder-facing tools and scenario exploration",
-      "links": {
-        "viewMore": "/research/decision-dashboards-health-systems",
-        "code": "/projects/decision-dashboard"
-      }
-    },
-    {
-      "title": "Wiki-Surveys for Health System Prioritization",
-      "order": 4,
-      "venue": "Survey design and preference elicitation",
-      "links": {
-        "viewMore": "/research/wiki-survey",
-        "code": "/projects/wiki-survey"
-      }
-    }
-  ]
-}
+    "title": "Causal Maps to Dynamical Models",
+    "preview": "How do you turn a qualitative causal map into a model you can calibrate and simulate? I develop methods that bridge participatory systems mapping with statistical modeling and intervention evaluation.",
+    "image": "/images/research/sankey1.png",
+    "imageAlt": "Causal map to quantitative model translation graphic",
+    "viewMore": "/research/cld-to-dynamics"
+  },
+  {
+    "title": "Estimating Latent Populations for HIV Surveillance",
+    "preview": "Some populations are difficult to measure directly. I integrate census, survey, and surveillance data to estimate hard-to-reach populations for HIV surveillance and resource allocation.",
+    "image": "/images/research/StigmaScope2.png",
+    "imageAlt": "Map-based HIV surveillance visualization",
+    "viewMore": "/research/msm-population-estimation"
+  },
+  {
+    "title": "Eliciting Expert-Informed Causal Structures",
+    "preview": "What do researchers and practitioners already know about how an intervention works? I facilitate participatory modeling to elicit causal assumptions, feedback loops, and context-specific barriers.",
+    "image": "/images/research/BMCPH_Fig1.png",
+    "imageAlt": "Collaborative causal structure map",
+    "viewMore": "/research/hiv-stigma-service-engagement"
+  },
+  {
+    "title": "Decision-Support Tools for Policy Evaluation",
+    "preview": "How can policymakers explore intervention scenarios under uncertainty? I build interactive tools that make complex model outputs interpretable and useful for planning.",
+    "image": "/images/research/StigmaScope1.png",
+    "imageAlt": "Interactive decision-support dashboard",
+    "viewMore": "/research/decision-dashboards-health-systems"
+  },
+  {
+    "title": "Participatory Survey Methods for Smoking Cessation",
+    "preview": "What do people actually want from a smoking cessation program? I use wiki-survey methods to crowdsource and prioritize behavioral insights in an open, iterative format.",
+    "image": "/images/research/sankey1.png",
+    "imageAlt": "Participatory survey prioritization visualization",
+    "viewMore": "/research/wiki-survey"
+  }
 ]

@@ -1,301 +1,148 @@
 ---
 import PageTitle from './PageTitle.astro';
-import Tag from './Tag.astro';
 import research from '../data/research.json';
 
-type WorkLinks = {
-  viewMore?: string;
-  paper?: string;
-  code?: string;
-};
-
-type WorkItem = {
+type ResearchItem = {
   title: string;
-  venue?: string;
-  order?: number;
-  links?: WorkLinks;
+  preview: string;
+  image: string;
+  imageAlt: string;
+  viewMore: string;
 };
 
-type WorkContainer = {
-  featuredWork?: WorkItem[];
-  featuredPapers?: WorkItem[];
-};
-
-type ResearchSubarea = WorkContainer & {
-  title: string;
-  description?: string;
-};
-
-type ResearchArea = WorkContainer & {
-  title: string;
-  description: string;
-  subareas?: ResearchSubarea[];
-};
-
-const researchAreas = research as ResearchArea[];
-
-const getFeaturedWork = (item: WorkContainer): WorkItem[] => item.featuredWork ?? item.featuredPapers ?? [];
-const isExternalUrl = (value?: string): boolean => !!value && /^https?:\/\//.test(value);
-const getAreaWork = (area: ResearchArea): WorkItem[] => {
-  const topLevel = getFeaturedWork(area);
-  const nested = (area.subareas ?? []).flatMap((subarea) => getFeaturedWork(subarea));
-  const combined = [...nested, ...topLevel];
-  return combined.sort((a, b) => (a.order ?? 999) - (b.order ?? 999));
-};
+const items = research as ResearchItem[];
 ---
 
 <section id="research" class="section">
   <div class="container">
     <PageTitle title="Research" />
-    <div class="research-list">
-      {researchAreas.map((area, areaIndex) => {
-        const works = getAreaWork(area);
-        return (
-          <div class="research-area">
-            <div class="area-main">
-              <h3 class="area-title">{area.title}</h3>
-              <p class="area-desc">{area.description}</p>
 
-              {works.length > 0 && (
-                <ul class="work-list">
-                  {works.map((work, workIndex) => (
-                    <li>
-                      <button
-                        class="work-link"
-                        type="button"
-                        data-work-trigger
-                        data-area={areaIndex}
-                        data-work={workIndex}
-                        aria-expanded="false"
-                      >
-                        {work.title}
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
+    <div class="research-grid">
+      {items.map((item, idx) => (
+        <article class={`research-row ${idx % 2 ? 'reverse' : ''}`}>
+          <a class="research-image-wrap" href={item.viewMore} aria-label={`Read more about ${item.title}`}>
+            <img src={item.image} alt={item.imageAlt} class="research-image" loading="lazy" />
+          </a>
 
-            <div class="work-detail-panel" data-work-panel>
-              {works.map((work, workIndex) => (
-                <div
-                  class="featured-paper work-detail"
-                  data-work-detail
-                  data-area={areaIndex}
-                  data-work={workIndex}
-                >
-                  <p class="paper-label">Project Details</p>
-                  <p class="paper-title">{work.title}</p>
-                  <p class="paper-venue">{work.venue}</p>
-                  <div class="paper-links">
-                    {work.links?.viewMore && (
-                      <a href={work.links.viewMore}><Tag label="View More" /></a>
-                    )}
-                    {work.links?.paper && (
-                      <a href={work.links.paper} target="_blank" rel="noopener"><Tag label="Paper" /></a>
-                    )}
-                    {isExternalUrl(work.links?.code) && (
-                      <a href={work.links.code} target="_blank" rel="noopener"><Tag label="Code" /></a>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div class="research-copy">
+            <h3>{item.title}</h3>
+            <p>{item.preview}</p>
+            <a href={item.viewMore} class="read-more">Read more →</a>
           </div>
-        );
-      })}
+        </article>
+      ))}
     </div>
   </div>
 </section>
 
-<script>
-  document.querySelectorAll<HTMLElement>('.research-area').forEach((areaEl) => {
-    const triggers = areaEl.querySelectorAll<HTMLButtonElement>('[data-work-trigger]');
-    const details = areaEl.querySelectorAll<HTMLElement>('[data-work-detail]');
-
-    if (!triggers.length || !details.length) return;
-
-    triggers.forEach((trigger) => {
-      trigger.addEventListener('click', () => {
-        const selected = trigger.dataset.work;
-        const panel = areaEl.querySelector<HTMLElement>('[data-work-panel]');
-        const wasActive = trigger.classList.contains('active');
-
-        if (wasActive) {
-          triggers.forEach((item) => {
-            item.classList.remove('active');
-            item.setAttribute('aria-expanded', 'false');
-          });
-
-          details.forEach((detail) => {
-            detail.classList.remove('active');
-          });
-
-          if (panel) {
-            panel.classList.remove('active');
-          }
-          return;
-        }
-
-        triggers.forEach((item) => {
-          const isActive = item.dataset.work === selected;
-          item.classList.toggle('active', isActive);
-          item.setAttribute('aria-expanded', isActive ? 'true' : 'false');
-        });
-
-        details.forEach((detail) => {
-          detail.classList.toggle('active', detail.dataset.work === selected);
-        });
-
-        if (panel) {
-          panel.classList.add('active');
-        }
-      });
-    });
-  });
-</script>
-
 <style>
-  .research-list {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .research-area {
+  .research-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-lg);
-    padding: 20px 0 20px 16px;
-    border-bottom: 1px solid var(--rule);
-    border-left: 2px solid transparent;
-    transition: border-left-color 0.2s ease;
-    align-items: start;
+    gap: 2rem;
   }
 
-  .research-area:last-child {
-    border-bottom: none;
+  .research-row {
+    display: grid;
+    grid-template-columns: minmax(240px, 320px) 1fr;
+    gap: 1.4rem;
+    align-items: center;
+    padding: 0.9rem 0;
   }
 
-  .research-area:hover {
-    border-left-color: var(--gold);
+  .research-row.reverse {
+    grid-template-columns: 1fr minmax(240px, 320px);
   }
 
-  .area-title {
-    font-family: var(--font-sans);
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 8px;
+  .research-row.reverse .research-image-wrap {
+    order: 2;
   }
 
-  .area-desc {
-    font-family: var(--font-sans);
-    font-weight: 300;
-    font-size: 0.95rem;
-    color: var(--text);
-    line-height: 1.7;
+  .research-row.reverse .research-copy {
+    order: 1;
   }
 
-  .featured-papers {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .work-list {
-    list-style: none;
-    margin-top: 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-  }
-
-  .work-link {
-    font: inherit;
-    background: none;
-    border: none;
-    padding: 0 0 0 10px;
-    text-align: left;
-    color: var(--slate-dim);
-    cursor: pointer;
-    font-size: 0.92rem;
-    line-height: 1.45;
-    transition: color 0.15s ease;
-  }
-
-  .work-link:hover,
-  .work-link.active {
-    color: var(--slate);
-  }
-
-  .work-detail {
-    opacity: 0;
-    transform: translateY(6px);
-    max-height: 0;
+  .research-image-wrap {
+    display: block;
+    border-radius: 8px;
     overflow: hidden;
-    pointer-events: none;
-    transition: opacity 0.38s ease, transform 0.38s ease, max-height 0.38s ease;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   }
 
-  .work-detail.active {
-    opacity: 1;
-    transform: translateY(0);
-    max-height: 500px;
-    pointer-events: auto;
-  }
-
-  .work-detail-panel {
-    display: none;
-  }
-
-  .work-detail-panel.active {
+  .research-image {
+    width: 100%;
+    height: 100%;
+    min-height: 180px;
+    max-height: 220px;
+    object-fit: cover;
+    object-position: center;
     display: block;
   }
 
-  .featured-paper {
-    padding: 14px 16px;
-    border: 1px solid var(--rule);
-    border-left: 2px solid var(--gold);
-    background: rgba(201, 169, 97, 0.04);
+  .research-copy h3 {
+    font-size: 1.16rem;
+    line-height: 1.25;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
   }
 
-  .paper-label {
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 6px;
+  .research-copy p {
+    font-size: 0.98rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: 0.52rem;
+    max-width: 64ch;
   }
 
-  .paper-title {
-    font-size: 1rem;
-    font-weight: 400;
-    color: var(--slate);
-    line-height: 1.5;
-    margin-bottom: 4px;
-  }
-
-  .paper-venue {
-    font-size: 0.88rem;
-    font-style: italic;
-    color: var(--text-dim);
-    margin-bottom: 10px;
-  }
-
-  .paper-links {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-  }
-
-  .paper-links a {
+  .read-more {
+    font-size: 0.9rem;
+    color: var(--color-accent);
+    font-weight: 600;
     text-decoration: none;
   }
 
-  @media (max-width: 640px) {
-    .research-area {
+  .read-more:hover {
+    color: var(--color-accent-light);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  @media (max-width: 768px) {
+    .research-grid {
+      gap: 1.4rem;
+    }
+
+    .research-row,
+    .research-row.reverse {
       grid-template-columns: 1fr;
+      gap: 0.75rem;
+      padding: 0.4rem 0 0.75rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .research-row:last-child {
+      border-bottom: none;
+    }
+
+    .research-row.reverse .research-image-wrap,
+    .research-row.reverse .research-copy {
+      order: initial;
+    }
+
+    .research-image {
+      min-height: 165px;
+      max-height: 210px;
+    }
+
+    .research-copy h3 {
+      font-size: 1.03rem;
+    }
+
+    .research-copy p {
+      font-size: 0.92rem;
+      line-height: 1.55;
+      max-width: 100%;
     }
   }
 </style>
