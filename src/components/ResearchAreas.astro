@@ -5,29 +5,37 @@ import research from '../data/research.json';
 type ResearchItem = {
   title: string;
   preview: string;
-  image: string;
-  imageAlt: string;
   viewMore: string;
+  paper?: string;
+  code?: string;
+  abstract?: string;
 };
 
 const items = research as ResearchItem[];
 ---
 
 <section id="research" class="section">
-  <div class="container">
+  <div class="container research-shell">
     <PageTitle title="Research" />
 
     <div class="research-grid">
-      {items.map((item, idx) => (
-        <article class={`research-row ${idx % 2 ? 'reverse' : ''}`}>
-          <a class="research-image-wrap" href={item.viewMore} aria-label={`Read more about ${item.title}`}>
-            <img src={item.image} alt={item.imageAlt} class="research-image" loading="lazy" />
-          </a>
-
+      {items.map((item) => (
+        <article class="research-row">
           <div class="research-copy">
             <h3>{item.title}</h3>
             <p>{item.preview}</p>
-            <a href={item.viewMore} class="read-more">Read more →</a>
+            <div class="research-links">
+              {item.paper && (
+                <a href={item.paper} class="aux-link" target="_blank" rel="noopener noreferrer">Paper</a>
+              )}
+              {item.abstract && (
+                <a href={item.abstract} class="aux-link" target="_blank" rel="noopener noreferrer">Abstract</a>
+              )}
+              {item.code && (
+                <a href={item.code} class="aux-link" target="_blank" rel="noopener noreferrer">Code</a>
+              )}
+              <a href={item.viewMore} class="read-more">Read more →</a>
+            </div>
           </div>
         </article>
       ))}
@@ -36,47 +44,23 @@ const items = research as ResearchItem[];
 </section>
 
 <style>
+  .research-shell {
+    padding-left: 50px;
+  }
+
+  #research {
+    padding-top: 78px;
+  }
+
   .research-grid {
     display: grid;
     gap: 2rem;
   }
 
   .research-row {
-    display: grid;
-    grid-template-columns: minmax(240px, 320px) 1fr;
-    gap: 1.4rem;
-    align-items: center;
+    display: block;
     padding: 0.9rem 0;
-  }
-
-  .research-row.reverse {
-    grid-template-columns: 1fr minmax(240px, 320px);
-  }
-
-  .research-row.reverse .research-image-wrap {
-    order: 2;
-  }
-
-  .research-row.reverse .research-copy {
-    order: 1;
-  }
-
-  .research-image-wrap {
-    display: block;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  }
-
-  .research-image {
-    width: 100%;
-    height: 100%;
-    min-height: 180px;
-    max-height: 220px;
-    object-fit: cover;
-    object-position: center;
-    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   }
 
   .research-copy h3 {
@@ -102,6 +86,26 @@ const items = research as ResearchItem[];
     text-decoration: none;
   }
 
+  .research-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    align-items: center;
+  }
+
+  .aux-link {
+    font-size: 0.84rem;
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-color: rgba(95, 127, 161, 0.42);
+  }
+
+  .aux-link:hover {
+    color: var(--color-accent-light);
+    text-decoration-color: rgba(71, 105, 140, 0.62);
+  }
+
   .read-more:hover {
     color: var(--color-accent-light);
     text-decoration: underline;
@@ -109,30 +113,24 @@ const items = research as ResearchItem[];
   }
 
   @media (max-width: 768px) {
+    .research-shell {
+      padding-left: 0;
+    }
+
+    #research {
+      padding-top: 1rem;
+    }
+
     .research-grid {
       gap: 1.4rem;
     }
 
-    .research-row,
-    .research-row.reverse {
-      grid-template-columns: 1fr;
-      gap: 0.75rem;
+    .research-row {
       padding: 0.4rem 0 0.75rem;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     }
 
     .research-row:last-child {
       border-bottom: none;
-    }
-
-    .research-row.reverse .research-image-wrap,
-    .research-row.reverse .research-copy {
-      order: initial;
-    }
-
-    .research-image {
-      min-height: 165px;
-      max-height: 210px;
     }
 
     .research-copy h3 {

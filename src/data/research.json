@@ -1,51 +1,57 @@
 [
   {
-    "title": "HIV Service Engagement (Socio-Behavioral Feedbacks)",
-    "preview": "How do stigma, social support, and care experiences interact to shape HIV testing and PrEP uptake? I model how these socio-behavioral feedbacks propagate through service engagement over time.",
+    "title": "Socio-Behavioral Feedbacks in HIV Service Engagement",
+    "preview": "Modeling the dynamic interactions of social stigma, disclosure, care experiences, and prevention behaviors on downstream HIV outcomes.",
     "image": "/images/research/BMCPH_Fig1.png",
     "imageAlt": "Causal loop diagram for HIV stigma and service engagement",
-    "viewMore": "/research/hiv-stigma-service-engagement"
+    "viewMore": "/research/hiv-stigma-service-engagement",
+    "code": "https://github.com/meibc/EEE-Model-Dashboard-Integration"
   },
   {
-    "title": "Maternal Health Service Delivery",
-    "preview": "How do referral pathways, community trust, and service readiness shape maternal and neonatal outcomes? I use systems modeling to evaluate how maternal health interventions unfold across real-world settings.",
+    "title": "Maternal Health Service Delivery Modeling",
+    "preview": "Using multi-agent modeling to simulate how referral pathways, community trust, facility readiness, and implementation constraints shape maternal and neonatal outcomes in health system redesign efforts.",
     "image": "/images/research/SDR1.png",
     "imageAlt": "Service delivery redesign systems diagram",
-    "viewMore": "/research/maternal-health-service-redesign"
+    "viewMore": "/research/maternal-health-service-redesign",
+    "paper": "https://www.researchsquare.com/article/rs-8352244/v1"
   },
   {
-    "title": "Causal Maps to Dynamical Models",
-    "preview": "How do you turn a qualitative causal map into a model you can calibrate and simulate? I develop methods that bridge participatory systems mapping with statistical modeling and intervention evaluation.",
+    "title": "Translating Causal Maps into Dynamical Socio-Behavioral Models",
+    "preview": "Developing a data-informed method to instantiate calibrated dynamic models from qualitative causal maps for forecasting, counterfactual analysis, and intervention evaluation.",
     "image": "/images/research/sankey1.png",
     "imageAlt": "Causal map to quantitative model translation graphic",
-    "viewMore": "/research/cld-to-dynamics"
+    "viewMore": "/research/cld-to-dynamics",
+    "code": "https://github.com/meibc/EEE-SD-Model-2026",
+    "abstract": "https://drive.google.com/file/d/1s6C5TlUuTu5OlcVBqJSBkjNchio8vaS8/view?usp=sharing"
   },
   {
-    "title": "Estimating Latent Populations for HIV Surveillance",
-    "preview": "Some populations are difficult to measure directly. I integrate census, survey, and surveillance data to estimate hard-to-reach populations for HIV surveillance and resource allocation.",
+    "title": "Latent Population Estimation for HIV Surveillance",
+    "preview": "Integrating census, survey, and surveillance data to estimate hard-to-measure priority HIV populations for resource allocation and public health planning.",
     "image": "/images/research/StigmaScope2.png",
     "imageAlt": "Map-based HIV surveillance visualization",
-    "viewMore": "/research/msm-population-estimation"
+    "viewMore": "/research/msm-population-estimation",
+    "code": "https://github.com/meibc/MSM-Population-Estimates"
   },
   {
-    "title": "Eliciting Expert-Informed Causal Structures",
-    "preview": "What do researchers and practitioners already know about how an intervention works? I facilitate participatory modeling to elicit causal assumptions, feedback loops, and context-specific barriers.",
+    "title": "Expert-Informed Causal Structure Elicitation",
+    "preview": "Using participatory modeling and stakeholder engagement to elicit causal assumptions, feedback loops, implementation barriers, and context-specific mechanisms.",
     "image": "/images/research/BMCPH_Fig1.png",
     "imageAlt": "Collaborative causal structure map",
-    "viewMore": "/research/hiv-stigma-service-engagement"
+    "viewMore": "/research/hiv-stigma-service-engagement",
+    "paper": "https://drive.google.com/file/d/1bDLVWrMxTNicBNamFcFF41V9xeZvo6Rq/view?usp=sharing"
   },
   {
-    "title": "Decision-Support Tools for Policy Evaluation",
-    "preview": "How can policymakers explore intervention scenarios under uncertainty? I build interactive tools that make complex model outputs interpretable and useful for planning.",
-    "image": "/images/research/StigmaScope1.png",
-    "imageAlt": "Interactive decision-support dashboard",
-    "viewMore": "/research/decision-dashboards-health-systems"
-  },
-  {
-    "title": "Participatory Survey Methods for Smoking Cessation",
-    "preview": "What do people actually want from a smoking cessation program? I use wiki-survey methods to crowdsource and prioritize behavioral insights in an open, iterative format.",
+    "title": "Experimental Survey Methods for Smoking Cessation",
+    "preview": "Applying wiki-survey methods to crowdsource, organize, and prioritize participant-generated ideas for smoking cessation program design.",
     "image": "/images/research/sankey1.png",
     "imageAlt": "Participatory survey prioritization visualization",
     "viewMore": "/research/wiki-survey"
+  },
+    {
+    "title": "Decision-Support Tools for Policy Evaluation",
+    "preview": "Building interactive tools that translate model outputs, uncertainty, and intervention scenarios into accessible information for planning and decision-making.",
+    "image": "/images/research/StigmaScope1.png",
+    "imageAlt": "Interactive decision-support dashboard",
+    "viewMore": "/research/decision-dashboards-health-systems"
   }
 ]

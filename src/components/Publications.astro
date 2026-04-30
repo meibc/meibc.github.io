@@ -21,7 +21,7 @@ const additionalPublications = deduped.filter((pub) => !selectedIds.has(pub.id))
 ---
 
 <section id="publications" class="section">
-  <div class="container">
+  <div class="container publications-shell">
     <PageTitle title="Publications" />
     <div class="pub-sections">
       <div class="pub-block">
@@ -84,10 +84,19 @@ const additionalPublications = deduped.filter((pub) => !selectedIds.has(pub.id))
 </section>
 
 <style>
+  .publications-shell {
+    padding-left: 50px;
+  }
+
+  #publications {
+    padding-top: 78px;
+  }
+
   .pub-sections {
     display: flex;
     flex-direction: column;
     gap: 18px;
+    max-width: 64ch;
   }
 
   .pub-block {
@@ -130,6 +139,16 @@ const additionalPublications = deduped.filter((pub) => !selectedIds.has(pub.id))
 
   .meta {
     color: var(--text-dim);
+  }
+
+  @media (max-width: 768px) {
+    .publications-shell {
+      padding-left: 0;
+    }
+
+    #publications {
+      padding-top: 1rem;
+    }
   }
 
 </style>

@@ -6,7 +6,7 @@ import cv from '../data/cv-entries.json';
 ---
 
 <section id="cv" class="section">
-  <div class="container">
+  <div class="container cv-shell">
     <PageTitle title="CV" />
 
     <a href="/cv.pdf" target="_blank" rel="noopener" class="download-btn">
@@ -58,6 +58,14 @@ import cv from '../data/cv-entries.json';
 </section>
 
 <style>
+  .cv-shell {
+    padding-left: 50px;
+  }
+
+  #cv {
+    padding-top: 78px;
+  }
+
   .download-btn {
     display: inline-flex;
     align-items: center;
@@ -82,5 +90,15 @@ import cv from '../data/cv-entries.json';
     display: flex;
     flex-direction: column;
     gap: var(--space-lg);
+  }
+
+  @media (max-width: 768px) {
+    .cv-shell {
+      padding-left: 0;
+    }
+
+    #cv {
+      padding-top: 1rem;
+    }
   }
 </style>
