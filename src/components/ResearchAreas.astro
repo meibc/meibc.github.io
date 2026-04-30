@@ -9,6 +9,7 @@ type ResearchItem = {
   paper?: string;
   code?: string;
   abstract?: string;
+  methodology?: string;
 };
 
 const items = research as ResearchItem[];
@@ -33,6 +34,9 @@ const items = research as ResearchItem[];
               )}
               {item.code && (
                 <a href={item.code} class="aux-link" target="_blank" rel="noopener noreferrer">Code</a>
+              )}
+              {item.methodology && (
+                <a href={item.methodology} class="aux-link" target="_blank" rel="noopener noreferrer">Methodology</a>
               )}
               <a href={item.viewMore} class="read-more">Read more →</a>
             </div>

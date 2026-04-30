@@ -6,13 +6,17 @@ summary: ""
 
 ## Overview
 
-This Gates Foundation-funded project develops a hybrid multi-agent and dynamical systems model to evaluate Service Delivery Redesign (SDR), a health system strengthening strategy for improving maternal and neonatal health in Kakamega County, Kenya.
+<p class="project-links"><span>Project links</span> <a href="https://www.researchsquare.com/article/rs-8352244/v1" target="_blank" rel="noopener">Model Paper</a> · <a href="https://doi.org/10.1093/heapol/czaf099" target="_blank" rel="noopener">Conceptual Paper 1</a> · <a href="https://doi.org/10.1136/bmjgh-2024-018240" target="_blank" rel="noopener">Conceptual Paper 2</a></p>
 
-In Kakamega, SDR aims to shift deliveries and high-risk pregnancies from home or lower-capacity Level 2/3 facilities to better-equipped Level 4/5 hospitals. The central modeling question is not only whether this shift could improve outcomes, but under what implementation conditions it would do so.
+This Gates Foundation-funded project develops a hybrid agent-based and dynamical systems model to evaluate Service Delivery Redesign (SDR) for maternal and neonatal health in Kakamega County, Kenya.
 
-The model is informed by an integrated implementation science and systems science framework and translates hypothesized SDR pathways into a quantitative simulation environment. It represents both pregnant women’s care-seeking trajectories and the health system conditions that shape whether women receive the right care, at the right place, and at the right time.
+The model links maternal care-seeking behavior, facility capacity, referral systems, health outcomes, and cost-effectiveness to compare how different SDR implementation scenarios may perform over time.
 
-Related papers: the [full quantitative model (ResearchSquare preprint)](https://www.researchsquare.com/article/rs-8352244/v1), the [integrated systems + implementation science conceptual framework (Health Policy and Planning)](https://doi.org/10.1093/heapol/czaf099), and the [BMJ Global Health paper](https://doi.org/10.1136/bmjgh-2024-018240).
+## Background
+
+In Kakamega, SDR aims to shift deliveries and high-risk pregnancies from home or lower-capacity Level 2/3 facilities to better-equipped Level 4/5 hospitals. This shift depends on both demand-side strategies, such as encouraging antenatal care attendance and facility delivery, and supply-side investments, such as strengthening staffing, equipment, transport, and facility readiness.
+
+The model is informed by an integrated implementation science and systems science framework. It translates hypothesized SDR implementation pathways into a quantitative simulation environment, representing both pregnant women’s care-seeking trajectories and the health system conditions that shape whether women receive the right care, at the right place, and at the right time.
 
 ## Conceptual Design
 

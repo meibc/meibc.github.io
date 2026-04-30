@@ -1,20 +1,20 @@
 ---
-title: "From Causal Loop Diagrams to Quantitative Dynamics"
+title: "Translating Causal Maps into Dynamical Socio-Behavioral Models"
 area: "Data & Inference"
 summary: ""
 ---
 
 ## Overview
 
-Causal loop diagrams are useful for representing feedback in complex systems, but they often remain qualitative because their relationships are difficult to translate into quantitative model structure.
+<p class="project-links"><span>Project links</span> <a href="https://github.com/meibc/EEE-SD-Model-2026" target="_blank" rel="noopener">Code</a> · <a href="https://drive.google.com/file/d/1s6C5TlUuTu5OlcVBqJSBkjNchio8vaS8/view?usp=sharing" target="_blank" rel="noopener">Abstract</a></p>
 
-This project develops a constrained inference pipeline for instsantiating calibrated dynamical models from causal maps. The approach encodes causal-map relationships as sign and sparsity constraints, then uses observed data to estimate pathway strengths and simulate system behavior.
+Causal loop diagrams are useful for representing feedback in complex systems, but often remain qualitative.
 
-The goal is to make stakeholder-informed causal theory efficiently usable for forecasting, intervention evaluation, and decision support.
+This project develops a constrained inference pipeline for translating causal maps into calibrated dynamical models, using sign and sparsity constraints from the map and observed data to estimate pathway strengths.
 
-This work will be presented at the International Conference of Computational Social Science; the abstract is available [here](https://drive.google.com/file/d/1s6C5TlUuTu5OlcVBqJSBkjNchio8vaS8/view?usp=sharing).
+The goal is to make stakeholder-informed causal theory usable for forecasting, intervention evaluation, and decision support.
 
-## Methodological Challenge
+## Background
 
 The central challenge is that causal loop diagrams describe hypothesized relationships, but they do not directly specify the mathematical form, magnitude, or timing of those relationships.
 
@@ -27,6 +27,8 @@ This creates a translation problem:
 - The quantitative model needs to set quantitative system parameters that is consistent with both.
 
 Traditionally, moving from causal loop diagrams to quantitative system models requires expert modelers to define the governing equations, functional relationships, and parameter values. My approach reframes this translation as a constrained dynamical inference problem: rather than manually specifying every relationship, I estimate the parameters of a dynamical system under sign and sparsity constraints derived from the causal map.
+
+## Methodological Challenge
 
 <figure>
   <a href="/images/research/cld.jpeg" target="_blank" rel="noopener">

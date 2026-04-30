@@ -28,7 +28,6 @@ const { Content } = await render(work);
           <h2 class="section-meta-title">{work.data.title}</h2>
           <p class="section-meta-summary">{work.data.summary}</p>
         </div>
-        <p class="section-nav-label">On This Page</p>
         <nav class="section-nav-list" id="section-nav-list"></nav>
         <a class="back-link side-back-link" href="/#research">← Back to Research</a>
       </aside>
@@ -91,6 +90,7 @@ const { Content } = await render(work);
         if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
+
   }
 </script>
 
@@ -123,10 +123,11 @@ const { Content } = await render(work);
 
   .section-meta {
     margin-bottom: 24px;
-    padding-right: 0;
+    padding: 0 0 16px;
     text-align: center;
     max-width: 220px;
     width: 100%;
+    border-bottom: 1px solid rgba(61, 61, 61, 0.16);
   }
 
   .section-meta-area {
@@ -135,7 +136,7 @@ const { Content } = await render(work);
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: rgba(61, 61, 61, 0.72);
+    color: var(--text-dim);
     margin-bottom: 8px;
     text-align: center;
   }
@@ -172,7 +173,7 @@ const { Content } = await render(work);
   .section-nav-list {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 6px;
     align-items: center;
     width: 100%;
     max-width: 210px;
@@ -244,7 +245,7 @@ const { Content } = await render(work);
     font-size: 0.8rem;
     letter-spacing: 0.03em;
     margin-bottom: 20px;
-    color: var(--text-mid);
+    color: var(--text-dim);
   }
 
   .side-back-link {
@@ -285,6 +286,40 @@ const { Content } = await render(work);
     line-height: 1.72;
     margin: 0 0 18px;
     max-width: 68ch;
+  }
+
+  :global(.project-links) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.55rem;
+    margin: 2px 0 18px;
+    padding: 0 0 0 10px;
+    border-left: 2px solid rgba(95, 127, 161, 0.32);
+    font-size: 0.82rem;
+    line-height: 1.2;
+    color: #706a65;
+    background: transparent;
+  }
+
+  :global(.project-links span) {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #6f6a64;
+    margin-right: 4px;
+  }
+
+  :global(.project-links a) {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    color: #3f678f;
+    font-weight: 600;
+  }
+
+  :global(.project-links a:hover) {
+    color: #2f587f;
   }
 
   .detail-content :global(a) {

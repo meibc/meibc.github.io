@@ -30,7 +30,8 @@
     "image": "/images/research/StigmaScope2.png",
     "imageAlt": "Map-based HIV surveillance visualization",
     "viewMore": "/research/msm-population-estimation",
-    "code": "https://github.com/meibc/MSM-Population-Estimates"
+    "code": "https://github.com/meibc/MSM-Population-Estimates",
+    "methodology": "https://github.com/meibc/MSM-Population-Estimates/blob/main/eee_msm_methodology.pdf"
   },
   {
     "title": "Expert-Informed Causal Structure Elicitation",

@@ -1,13 +1,17 @@
 ---
-title: "Stigma & HIV Service Engagement Modeling"
+title: "Socio-Behavioral Feedbacks in HIV Service Engagement"
 area: "Quantitative Modeling of Complex Systems"
 summary: ""
 ---
 ## Overview
 
-This NIH-funded project develops a dynamical systems model of socio-behavioral relationships to forecast how stigma mitigation interventions may influence key outcomes related to Ending the HIV Epidemic, including HIV prevention service use, HIV testing, diagnoses, and incidence across all US states.
+<p class="project-links"><span>Project links</span> <a href="https://github.com/meibc/EEE-SD-Model-2026" target="_blank" rel="noopener">Code</a></p>
 
-The model structure is shown in **Figure 1**. In brief, the model links a constrained linear autoregressive model of socio-behavioral feedbacks with an HIV compartmental model. The socio-behavioral model estimates how stigma, disclosure, healthcare engagement, prevention behavior, and testing evolve over time, while the epidemiological model translates these intermediate behavioral trajectories into projected HIV diagnoses and incidence.
+This NIH-funded project develops a dynamical systems model to evaluate how stigma mitigation strategies may influence HIV prevention and care outcomes across US states.
+
+The model combines a constrained linear autoregressive model of socio-behavioral feedbacks with an HIV compartmental model. Together, these components translate changes in stigma, disclosure, healthcare engagement, prevention behavior, and testing into projected PrEP use, HIV testing, diagnoses, and incidence over time.
+
+The integrated model structure is shown in **Figure 1**.
 
 <figure>
   <a href="/images/research/EEE_slide_model.png" target="_blank" rel="noopener">
@@ -16,7 +20,11 @@ The model structure is shown in **Figure 1**. In brief, the model links a constr
   <figcaption><strong>Figure 1.</strong> Integrated model structure linking socio-behavioral dynamics and HIV epidemiology.</figcaption>
 </figure>
 
-The model is informed by three sources of information: a conceptual model of stigma and behavioral relationships, [American Men’s Internet Survey data (AMIS 2016–2022)](https://emoryamis.org/), and [CDC AtlasPlus surveillance data (2017–2022)](https://www.cdc.gov/nchhstp/about/atlasplus.html).
+## Background
+
+This work brings together stakeholder-informed causal theory, behavioral survey data, and HIV surveillance data to model how stigma-related mechanisms may propagate through HIV service engagement.
+
+The socio-behavioral component is informed by a conceptual model of stigma and behavioral relationships and estimated using [American Men’s Internet Survey data (AMIS 2016–2022)](https://emoryamis.org/). The epidemiological component is calibrated using [CDC AtlasPlus surveillance data (2017–2022)](https://www.cdc.gov/nchhstp/about/atlasplus.html).
 
 A brief overview of the model components is provided below. Detailed code is available in the [EEE-SD-Model-2026 repository](https://github.com/meibc/EEE-SD-Model-2026).
 
