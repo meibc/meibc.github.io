@@ -5,7 +5,7 @@ summary: ""
 ---
 ## Overview
 
-This project develops a dynamical systems model of socio-behavioral relationships to forecast how stigma mitigation interventions may influence key outcomes related to Ending the HIV Epidemic, including HIV prevention service use, HIV testing, diagnoses, and incidence across all US states.
+This NIH-funded project develops a dynamical systems model of socio-behavioral relationships to forecast how stigma mitigation interventions may influence key outcomes related to Ending the HIV Epidemic, including HIV prevention service use, HIV testing, diagnoses, and incidence across all US states.
 
 The model structure is shown in **Figure 1**. In brief, the model links a constrained linear autoregressive model of socio-behavioral feedbacks with an HIV compartmental model. The socio-behavioral model estimates how stigma, disclosure, healthcare engagement, prevention behavior, and testing evolve over time, while the epidemiological model translates these intermediate behavioral trajectories into projected HIV diagnoses and incidence.
 
