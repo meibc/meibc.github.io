@@ -16,16 +16,15 @@ The model links maternal care-seeking behavior, facility capacity, referral syst
 
 In Kakamega, SDR aims to shift deliveries and high-risk pregnancies from home or lower-capacity Level 2/3 facilities to better-equipped Level 4/5 hospitals. This shift depends on both demand-side strategies, such as encouraging antenatal care attendance and facility delivery, and supply-side investments, such as strengthening staffing, equipment, transport, and facility readiness.
 
-The model is informed by an integrated implementation science and systems science framework. It translates hypothesized SDR implementation pathways into a quantitative simulation environment, representing both pregnant women’s care-seeking trajectories and the health system conditions that shape whether women receive the right care, at the right place, and at the right time.
+The model is informed by a conceptual framework that translates hypothesized SDR implementation pathways into a quantitative simulation environment, representing both pregnant women’s care-seeking trajectories and the health system conditions that shape whether women receive the right care, at the right place, and at the right time. The conceptual framework and quantitative methodology are described in detail below. 
 
 ## Conceptual Design
 
 The model was conceptually grounded in an integrated implementation science and systems science framework. Implementation science helped identify the key intervention components, implementation strategies, barriers, facilitators, and outcomes relevant to Service Delivery Redesign. Systems science helped organize these relationships into causal pathways and feedback loops that could be translated into a quantitative simulation model.
 
-
 The resulting conceptual design represents SDR as a set of interacting demand-side and supply-side mechanisms. Demand-side strategies, including community health promoter outreach and SMS-based engagement, influence antenatal care attendance, self-referral, and delivery at higher-level facilities. Supply-side strategies, including facility upgrades, workforce strengthening, equipment availability, and referral system improvements, influence service readiness, quality of care, and emergency response capacity.
 
-**Figure 1** visualizes resource flows within L2/3 and L4/5 facilities separately, while **Figure 2** shows how those flows interact across facility levels through intersectional pathways and feedback.
+**Figure 1** visualizes resource flows within L2/3 and L4/5 facilities separately, while **Figure 2** shows how those flows interact across facility levels through intersectional pathways and feedback. **Figure 3** incorporates the supply-side resource flows with the demand-side factors to form the [traditional causal loop diagram](/research/expert-elicited-causal-structure/) as the basis for the model.
 
 <figure>
   <a href="/images/research/sdr_resource1.png" target="_blank" rel="noopener">
@@ -41,9 +40,16 @@ The resulting conceptual design represents SDR as a set of interacting demand-si
   <figcaption><strong>Figure 2.</strong> Resource flows across L2/3 and L4/5 facilities intersectionally and with feedback.</figcaption>
 </figure>
 
+<figure>
+  <a href="/images/research/SDR_MM_Figure%201.jpg" target="_blank" rel="noopener">
+    <img src="/images/research/SDR_MM_Figure%201.jpg" alt="Integrated causal loop diagram combining demand- and supply-side pathways" />
+  </a>
+  <figcaption><strong>Figure 3.</strong> Integrated causal loop diagram combining demand- and supply-side pathways for SDR.</figcaption>
+</figure>
+
 This structure makes it possible to evaluate not only whether SDR increases use of higher-level facilities, but whether the health system can adapt to that increased demand. The conceptual model therefore serves as the bridge between implementation theory, stakeholder-informed causal pathways, and the hybrid agent-based/system dynamics simulation.
 
-## Methodology
+## Quantitative Methodology
 
 The model uses a hybrid simulation approach:
 
@@ -51,14 +57,7 @@ The model uses a hybrid simulation approach:
 - **System dynamics** represents evolving health system conditions, including facility capacity, staffing, equipment, and referral readiness.
 - **Cost-effectiveness modeling** links simulated maternal outcomes to DALYs, costs, and cost per DALY averted.
 
-The simulation follows pregnant women through four broad phases: baseline condition, antenatal care, labor/delivery/immediate postnatal care, and maternal outcomes. During these phases, women may attend ANC, be risk stratified, be referred, receive interventions, deliver at home or in a facility, require emergency transfer, experience complications, or die from maternal causes. **Figure 3** illustrates this process. 
-
-<figure>
-  <a href="/images/research/sdrdiagram1.png" target="_blank" rel="noopener">
-    <img src="/images/research/sdrdiagram1.png" alt="Maternal care simulation process across baseline, ANC, delivery, and outcomes" />
-  </a>
-  <figcaption><strong>Figure 3.</strong> Maternal care simulation process across baseline condition, antenatal care, delivery, and outcomes.</figcaption>
-</figure>
+The simulation follows pregnant women through four broad phases: baseline condition, antenatal care, labor/delivery/immediate postnatal care, and maternal outcomes. During these phases, women may attend ANC, be risk stratified, be referred, receive interventions, deliver at home or in a facility, require emergency transfer, experience complications, or die from maternal causes.
 
 Model parameters were informed by multiple data sources, including Kakamega County health facility data, Jacaranda Health implementation and costing data, Rescue.co emergency referral data, Kenya Health Information System data, Kenya Demographic and Health Survey data, and published literature.
 

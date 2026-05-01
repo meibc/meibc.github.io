@@ -38,15 +38,8 @@
     "preview": "Using participatory modeling and stakeholder engagement to elicit causal assumptions, feedback loops, implementation barriers, and context-specific mechanisms.",
     "image": "/images/research/BMCPH_Fig1.png",
     "imageAlt": "Collaborative causal structure map",
-    "viewMore": "/research/hiv-stigma-service-engagement",
+    "viewMore": "/research/expert-elicited-causal-structure",
     "paper": "https://drive.google.com/file/d/1bDLVWrMxTNicBNamFcFF41V9xeZvo6Rq/view?usp=sharing"
-  },
-  {
-    "title": "Experimental Survey Methods for Smoking Cessation",
-    "preview": "Applying wiki-survey methods to crowdsource, organize, and prioritize participant-generated ideas for smoking cessation program design.",
-    "image": "/images/research/sankey1.png",
-    "imageAlt": "Participatory survey prioritization visualization",
-    "viewMore": "/research/wiki-survey"
   },
     {
     "title": "Decision-Support Tools for Policy Evaluation",
@@ -54,5 +47,12 @@
     "image": "/images/research/StigmaScope1.png",
     "imageAlt": "Interactive decision-support dashboard",
     "viewMore": "/research/decision-dashboards-health-systems"
+  },
+    {
+    "title": "Experimental Survey Methods for Smoking Cessation",
+    "preview": "Applying wiki-survey methods to crowdsource, organize, and prioritize participant-generated ideas for smoking cessation program design.",
+    "image": "/images/research/sankey1.png",
+    "imageAlt": "Participatory survey prioritization visualization",
+    "viewMore": "/research/wiki-survey"
   }
 ]

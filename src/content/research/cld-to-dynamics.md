@@ -8,11 +8,11 @@ summary: ""
 
 <p class="project-links"><span>Project links</span> <a href="https://github.com/meibc/EEE-SD-Model-2026" target="_blank" rel="noopener">Code</a> · <a href="https://drive.google.com/file/d/1s6C5TlUuTu5OlcVBqJSBkjNchio8vaS8/view?usp=sharing" target="_blank" rel="noopener">Abstract</a></p>
 
-Causal loop diagrams are useful for representing feedback in complex systems, but often remain qualitative.
+Causal loop diagrams are useful for representing feedback in complex systems, but though they are precursors to quantitative system dynamics models, they are not often converted to quantitative models in the social sciences.
 
 This project develops a constrained inference pipeline for translating causal maps into calibrated dynamical models, using sign and sparsity constraints from the map and observed data to estimate pathway strengths.
 
-The goal is to make stakeholder-informed causal theory usable for forecasting, intervention evaluation, and decision support.
+The goal is to encourage more translation of stakeholder-informed causal theory into quantitative models usable for forecasting, intervention evaluation, and decision support.
 
 ## Background
 
