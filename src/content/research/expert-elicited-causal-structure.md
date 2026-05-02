@@ -32,7 +32,21 @@ After the workshops, diagrams are refined through synthesis, expert review, and 
 
 In one project, I used participatory systems methods to examine how HIV stigma shapes engagement across the HIV care continuum. We conducted virtual group model building sessions with stakeholders from city and state health departments and community-based organizations across Ending the HIV Epidemic priority jurisdictions.
 
-The resulting causal loop diagrams mapped feedback pathways across HIV prevention, testing, and treatment. They highlighted three interconnected domains: personal health attitudes and care navigation, provision of quality services, and community influences on HIV-related health and care.
+The resulting causal loop diagrams mapped feedback pathways across HIV prevention, testing, and treatment. They highlighted three interconnected domains: personal health attitudes and care navigation, provision of quality services, and community influences on HIV-related health and care. The complete diagram is shown in **Figure 1** and the three feedback pathways are highlighted in **Figure 2**.
+
+<figure>
+  <a href="/images/research/BMCPH_Fig1.png" target="_blank" rel="noopener">
+    <img src="/images/research/BMCPH_Fig1.png" alt="Causal loop diagram of stigma in HIV-related service systems" />
+  </a>
+  <figcaption><strong>Figure 1.</strong> Integrated causal loop diagram combining demand- and supply-side pathways for SDR.</figcaption>
+</figure>
+
+<figure>
+  <a href="/images/research/BMCPH_Figure3.png" target="_blank" rel="noopener">
+    <img src="/images/research/BMCPH_Figure3.png" alt="Highlighted feedback pathways from the causal loop diagram" />
+  </a>
+  <figcaption><strong>Figure 2.</strong> Integrated causal loop diagram combining demand- and supply-side pathways for SDR.</figcaption>
+</figure>
 
 This work showed how anticipated, internalized, enacted, and community-level stigma can operate through individual, social, and structural pathways. For example, anticipated and internalized stigma may weaken social support and resilience, while enacted stigma from providers can reduce care quality and compromise trust in services. The diagrams help identify potential leverage points for stigma mitigation and multi-level intervention design.
 
@@ -40,13 +54,13 @@ This work showed how anticipated, internalized, enacted, and community-level sti
 
 In another project, I applied participatory causal mapping to Service Delivery Redesign for maternal and neonatal health in Kakamega County, Kenya. This work focused on how a complex health system strengthening intervention could shift deliveries and high-risk pregnancies toward better-equipped facilities while improving maternal and neonatal outcomes.
 
-Using a theory-of-change approach, we identified factors influencing the demand and supply of maternal and neonatal health services, then mapped their causal relationships through a participatory group model building workshop. The resulting diagrams, **Figure 2** included as an example, helped clarify implementation pathways, barriers, facilitators, and feedback loops across community, facility, referral, and policy levels. 
+Using a theory-of-change approach, we identified factors influencing the demand and supply of maternal and neonatal health services, then mapped their causal relationships through a participatory group model building workshop. The resulting diagrams, **Figure 3** included as an example, helped clarify implementation pathways, barriers, facilitators, and feedback loops across community, facility, referral, and policy levels. 
 
 <figure>
   <a href="/images/research/SDR_MM_Figure%201.jpg" target="_blank" rel="noopener">
     <img src="/images/research/SDR_MM_Figure%201.jpg" alt="Integrated causal loop diagram combining demand- and supply-side pathways" />
   </a>
-  <figcaption><strong>Figure 2.</strong> Integrated causal loop diagram combining demand- and supply-side pathways for SDR.</figcaption>
+  <figcaption><strong>Figure 3.</strong> Integrated causal loop diagram combining demand- and supply-side pathways for SDR.</figcaption>
 </figure>
 
 Several key mechanisms emerged. At the community level, trust in the health system reinforced use of quality services. Across facilities, a well-functioning referral system supported timely, coordinated care. At the policy and system level, increasing demand for services needed to be matched by available resources and supportive financing. Across these pathways, trust emerged as a central mechanism connecting co-creation, coordination, service readiness, and sustained improvements in maternal and neonatal outcomes.

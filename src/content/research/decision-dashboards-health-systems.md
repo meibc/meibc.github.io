@@ -15,8 +15,12 @@ We design decision-support dashboards that allow stakeholders to compare interve
 [View StigmaScope Dashboard](https://StigmaScope.com)
 
 <div class="research-image-grid">
-  <img src="/images/research/StigmaScope1.png" alt="StigmaScope dashboard screenshot 1" />
-  <img src="/images/research/StigmaScope2.png" alt="StigmaScope dashboard screenshot 2" />
+  <a href="/images/research/StigmaScope1.png" target="_blank" rel="noopener">
+    <img src="/images/research/StigmaScope1.png" alt="StigmaScope dashboard screenshot 1" />
+  </a>
+  <a href="/images/research/StigmaScope2.png" target="_blank" rel="noopener">
+    <img src="/images/research/StigmaScope2.png" alt="StigmaScope dashboard screenshot 2" />
+  </a>
 </div>
 
 StigmaScope is a dashboard for visualizing HIV-related stigma and exploring how stigma mitigation could influence HIV prevention and care outcomes (forthcoming!). The goal of the dashboard is to bring stigma to the forefront of HIV planning by making stigma-related data, model outputs, and intervention scenarios more visible and accessible within HIV-related public health planning.
@@ -31,8 +35,18 @@ The dashboard also functions as a dissemination and tracking tool. It provides a
 
 
 <div class="research-image-grid">
-  <img src="/images/research/SDR1.png" alt="Service Delivery Redesign dashboard screenshot" />
-  <img src="/images/research/sankey1.png" alt="Service Delivery Redesign sankey visualization" />
+  <a href="/images/research/SDR1.png" target="_blank" rel="noopener">
+    <img src="/images/research/SDR1.png" alt="Service Delivery Redesign dashboard screenshot 1" />
+  </a>
+  <a href="/images/research/sankey1.png" target="_blank" rel="noopener">
+    <img src="/images/research/sankey1.png" alt="Service Delivery Redesign visualization screenshot 2" />
+  </a>
+  <a href="/images/research/sdr_dashboard.png" target="_blank" rel="noopener">
+    <img src="/images/research/sdr_dashboard.png" alt="Service Delivery Redesign dashboard screenshot 3" />
+  </a>
+  <a href="/images/research/sdr_dashboard2.png" target="_blank" rel="noopener">
+    <img src="/images/research/sdr_dashboard2.png" alt="Service Delivery Redesign dashboard screenshot 4" />
+  </a>
 </div>
 
 The Service Delivery Redesign dashboard translates a hybrid agent-based and dynamical systems model of maternal health service delivery into an interactive scenario exploration tool. Initially developed for Kakamega County, Kenya, the model is currently also being adapted for Kisii, Mombasa, and Makueni Counties in Kenya.

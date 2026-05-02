@@ -193,20 +193,3 @@ img {
     margin-bottom: 1.5rem;
   }
 }
-
-/* Add hover state to nav */
-.nav-link:hover {
-  color: var(--color-accent-light);
-  transform: translateX(4px);
-  transition: all 0.2s ease;
-}
-
-/* Active nav indicator */
-.nav-link.active::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  width: 3px;
-  height: 100%;
-  background: var(--gold);
-}
